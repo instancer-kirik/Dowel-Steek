@@ -1,0 +1,15 @@
+{
+    "name": "notes-vault",
+    "description": "A notes vault manager with tagging and sorting capabilities",
+    "authors": ["Your Name"],
+    "copyright": "Copyright © 2024",
+    "dependencies": {
+        "dlangui": "~>0.10.4"
+    },
+    "configurations": [
+        {
+            "name": "application",
+            "targetType": "executable"
+        }
+    ]
+}
