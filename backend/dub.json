@@ -1,0 +1,11 @@
+{
+    "name": "backend",
+    "description": "Notes vault backend server",
+    "dependencies": {
+        "vibe-d": "~>0.9.7"
+    },
+    "sourcePaths": ["source", "../common"],
+    "importPaths": ["source", "../common"],
+    "targetType": "executable",
+    "mainSourceFile": "source/app.d"
+} 

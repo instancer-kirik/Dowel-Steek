@@ -1,0 +1,976 @@
+[2025-02-20 03:40:12.712 main(----) INF] Starting Notes Vault backend server...
+[2025-02-20 03:40:12.712 main(----) dbg] add route GET /api/notes
+[2025-02-20 03:40:12.712 main(----) dbg] add route POST /api/notes
+[2025-02-20 03:40:12.712 main(----) dbg] add route GET /api/notes/:id
+[2025-02-20 03:40:12.712 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-20 03:40:12.712 main(----) dbg] add route GET /api/tags
+[2025-02-20 03:40:12.712 main(----) dbg] add route GET *
+[2025-02-20 03:40:12.713 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-20 03:40:12.714 main(----) INF] Server running on http://localhost:3000/
+[2025-02-20 03:40:12.714 main(----) dbg] Starting event loop.
+[2025-02-20 03:40:16.332 main(kZxn) dbg] Disambiguate done: 83 nodes, 1264 max stack size
+[2025-02-20 03:40:16.333 main(kZxn) dbg] Match tree has 21 (of 83 in the builder) nodes, 6 terminals
+[2025-02-20 03:40:16.333 main(kZxn) dbg] Path '' -> ''
+[2025-02-20 03:40:16.337 vibe-worker-0(----) dbg] entering worker thread
+[2025-02-20 03:40:16.337 vibe-worker-2(----) dbg] entering worker thread
+[2025-02-20 03:40:16.337 vibe-worker-6(----) dbg] entering worker thread
+[2025-02-20 03:40:16.338 vibe-worker-7(----) dbg] entering worker thread
+[2025-02-20 03:40:16.338 vibe-worker-13(----) dbg] entering worker thread
+[2025-02-20 03:40:16.338 vibe-worker-1(----) dbg] entering worker thread
+[2025-02-20 03:40:16.338 vibe-worker-8(----) dbg] entering worker thread
+[2025-02-20 03:40:16.338 vibe-worker-3(----) dbg] entering worker thread
+[2025-02-20 03:40:16.339 vibe-worker-9(----) dbg] entering worker thread
+[2025-02-20 03:40:16.339 vibe-worker-11(----) dbg] entering worker thread
+[2025-02-20 03:40:16.339 vibe-worker-10(----) dbg] entering worker thread
+[2025-02-20 03:40:16.339 vibe-worker-4(----) dbg] entering worker thread
+[2025-02-20 03:40:16.339 vibe-io-2(----) dbg] entering worker thread
+[2025-02-20 03:40:16.339 vibe-worker-5(----) dbg] entering worker thread
+[2025-02-20 03:40:16.340 vibe-worker-12(----) dbg] entering worker thread
+[2025-02-20 03:40:16.340 vibe-io-1(----) dbg] entering worker thread
+[2025-02-20 03:40:16.341 vibe-io-0(----) dbg] entering worker thread
+[2025-02-20 03:40:16.344 main(kZxn) INF] 127.0.0.1:42406 - - 2025-Feb-20 03:40:16.3109144Z "GET / HTTP/1.1" 200 396 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 03:40:16.428 main(4fuL) dbg] Path 'assets/index-wmRsx0or.css' -> 'assets/index-wmRsx0or.css'
+[2025-02-20 03:40:16.428 main(kZxn) dbg] Path 'assets/index-DE574nqo.js' -> 'assets/index-DE574nqo.js'
+[2025-02-20 03:40:16.429 main(4fuL) INF] 127.0.0.1:42416 - - 2025-Feb-20 03:40:16.4279767Z "GET /assets/index-wmRsx0or.css HTTP/1.1" 200 2553 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 03:40:16.430 main(kZxn) INF] 127.0.0.1:42406 - - 2025-Feb-20 03:40:16.4284151Z "GET /assets/index-DE574nqo.js HTTP/1.1" 200 144674 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 03:40:18.177 main(kZxn) dbg] Path 'favicon.ico' -> 'favicon.ico'
+[2025-02-20 03:40:18.177 main(kZxn) dbg] no route match: GET /favicon.ico
+[2025-02-20 03:40:18.177 main(kZxn) dia] No response written for /favicon.ico
+[2025-02-20 03:40:18.178 main(kZxn) INF] 127.0.0.1:42406 - - 2025-Feb-20 03:40:18.177158Z "GET /favicon.ico HTTP/1.1" 404 91 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 03:40:26.438 main(4fuL) dbg] Keep-alive connection timed out!
+[2025-02-20 03:40:28.180 main(kZxn) dbg] Keep-alive connection timed out!
+[2025-02-20 03:42:01.524 main(----) INF] Received signal 2. Shutting down.
+[2025-02-20 03:42:01.525 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-20 03:42:01.532 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-20 03:42:01.533 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-20 03:42:01.533 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-20 03:42:01.533 main(----) dia] Main thread exiting
+[2025-02-20 03:42:01.534 main(----) dia] Still waiting for worker threads to exit.
+[2025-02-20 03:42:01.535 vibe-worker-2(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.535 vibe-worker-2(----) dbg] Thread exit vibe-worker-2 (index 5) (main=false)
+[2025-02-20 03:42:01.535 vibe-worker-11(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.535 vibe-worker-1(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.535 vibe-worker-6(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.535 vibe-worker-5(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.535 vibe-worker-3(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.535 vibe-worker-10(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.535 vibe-worker-9(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.535 vibe-worker-13(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.535 vibe-worker-11(----) dbg] Thread exit vibe-worker-11 (index 8) (main=false)
+[2025-02-20 03:42:01.536 vibe-worker-0(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.536 vibe-worker-7(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.536 vibe-worker-4(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.536 vibe-worker-12(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.536 vibe-worker-8(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.536 vibe-worker-1(----) dbg] Thread exit vibe-worker-1 (index 14) (main=false)
+[2025-02-20 03:42:01.536 vibe-worker-6(----) dbg] Thread exit vibe-worker-6 (index 12) (main=false)
+[2025-02-20 03:42:01.536 vibe-worker-5(----) dbg] Thread exit vibe-worker-5 (index 19) (main=false)
+[2025-02-20 03:42:01.536 vibe-worker-3(----) dbg] Thread exit vibe-worker-3 (index 11) (main=false)
+[2025-02-20 03:42:01.536 vibe-worker-10(----) dbg] Thread exit vibe-worker-10 (index 18) (main=false)
+[2025-02-20 03:42:01.536 vibe-worker-9(----) dbg] Thread exit vibe-worker-9 (index 15) (main=false)
+[2025-02-20 03:42:01.536 vibe-worker-13(----) dbg] Thread exit vibe-worker-13 (index 13) (main=false)
+[2025-02-20 03:42:01.536 vibe-worker-0(----) dbg] Thread exit vibe-worker-0 (index 7) (main=false)
+[2025-02-20 03:42:01.537 vibe-worker-7(----) dbg] Thread exit vibe-worker-7 (index 6) (main=false)
+[2025-02-20 03:42:01.537 vibe-worker-4(----) dbg] Thread exit vibe-worker-4 (index 8) (main=false)
+[2025-02-20 03:42:01.537 vibe-worker-12(----) dbg] Thread exit vibe-worker-12 (index 11) (main=false)
+[2025-02-20 03:42:01.538 vibe-worker-8(----) dbg] Thread exit vibe-worker-8 (index 9) (main=false)
+[2025-02-20 03:42:01.540 main(----) dia] Still waiting for I/O worker threads to exit.
+[2025-02-20 03:42:01.540 vibe-io-0(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.540 vibe-io-0(----) dbg] Thread exit vibe-io-0 (index 6) (main=false)
+[2025-02-20 03:42:01.540 vibe-io-2(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.541 vibe-io-2(----) dbg] Thread exit vibe-io-2 (index 6) (main=false)
+[2025-02-20 03:42:01.541 vibe-io-1(----) dbg] Worker thread exit.
+[2025-02-20 03:42:01.541 vibe-io-1(----) dbg] Thread exit vibe-io-1 (index 5) (main=false)
+[2025-02-20 03:42:01.542 21B01ADD(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 03:42:01.542 21B018DD(----) dbg] Thread exit  (index 0) (main=false)
+[2025-02-20 03:42:01.542 21B019DD(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 03:42:01.542 21B017DD(----) dbg] Thread exit  (index 0) (main=false)
+[2025-02-20 03:42:07.209 main(----) INF] Starting Notes Vault backend server...
+[2025-02-20 03:42:07.209 main(----) dbg] add route GET /api/notes
+[2025-02-20 03:42:07.209 main(----) dbg] add route POST /api/notes
+[2025-02-20 03:42:07.209 main(----) dbg] add route GET /api/notes/:id
+[2025-02-20 03:42:07.209 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-20 03:42:07.209 main(----) dbg] add route GET /api/tags
+[2025-02-20 03:42:07.209 main(----) dbg] add route GET *
+[2025-02-20 03:42:07.209 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-20 03:42:07.210 main(----) INF] Server running on http://localhost:3000/
+[2025-02-20 03:42:07.210 main(----) dbg] Starting event loop.
+[2025-02-20 03:42:11.410 main(hgHe) dbg] Disambiguate done: 83 nodes, 1264 max stack size
+[2025-02-20 03:42:11.411 main(hgHe) dbg] Match tree has 21 (of 83 in the builder) nodes, 6 terminals
+[2025-02-20 03:42:11.411 main(hgHe) dbg] Path '' -> ''
+[2025-02-20 03:42:11.416 vibe-worker-2(----) dbg] entering worker thread
+[2025-02-20 03:42:11.416 vibe-worker-10(----) dbg] entering worker thread
+[2025-02-20 03:42:11.416 vibe-worker-11(----) dbg] entering worker thread
+[2025-02-20 03:42:11.416 vibe-io-0(----) dbg] entering worker thread
+[2025-02-20 03:42:11.417 vibe-worker-8(----) dbg] entering worker thread
+[2025-02-20 03:42:11.417 vibe-io-1(----) dbg] entering worker thread
+[2025-02-20 03:42:11.417 vibe-worker-5(----) dbg] entering worker thread
+[2025-02-20 03:42:11.417 vibe-worker-4(----) dbg] entering worker thread
+[2025-02-20 03:42:11.417 vibe-io-2(----) dbg] entering worker thread
+[2025-02-20 03:42:11.417 vibe-worker-3(----) dbg] entering worker thread
+[2025-02-20 03:42:11.417 vibe-worker-7(----) dbg] entering worker thread
+[2025-02-20 03:42:11.417 vibe-worker-12(----) dbg] entering worker thread
+[2025-02-20 03:42:11.417 vibe-worker-13(----) dbg] entering worker thread
+[2025-02-20 03:42:11.418 vibe-worker-9(----) dbg] entering worker thread
+[2025-02-20 03:42:11.418 vibe-worker-1(----) dbg] entering worker thread
+[2025-02-20 03:42:11.418 vibe-worker-6(----) dbg] entering worker thread
+[2025-02-20 03:42:11.418 vibe-worker-0(----) dbg] entering worker thread
+[2025-02-20 03:42:11.420 main(hgHe) INF] 127.0.0.1:44262 - - 2025-Feb-20 03:42:11.3876442Z "GET / HTTP/1.1" 200 396 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 03:42:11.477 main(hgHe) dbg] Path 'assets/index-B7DVtVLw.js' -> 'assets/index-B7DVtVLw.js'
+[2025-02-20 03:42:11.481 main(nBP2) dbg] Path 'assets/index-wmRsx0or.css' -> 'assets/index-wmRsx0or.css'
+[2025-02-20 03:42:11.482 main(hgHe) INF] 127.0.0.1:44262 - - 2025-Feb-20 03:42:11.4770655Z "GET /assets/index-B7DVtVLw.js HTTP/1.1" 200 145811 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 03:42:11.483 main(nBP2) INF] 127.0.0.1:44270 - - 2025-Feb-20 03:42:11.4807921Z "GET /assets/index-wmRsx0or.css HTTP/1.1" 200 2553 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 03:42:21.493 main(hgHe) dbg] Keep-alive connection timed out!
+[2025-02-20 03:42:21.494 main(nBP2) dbg] Keep-alive connection timed out!
+[2025-02-20 03:42:44.652 main(rVKw) INF] 127.0.0.1:44004 - - 2025-Feb-20 03:42:44.6522476Z "PUT /api/notes/ff29f803-20ba-4461-933f-c53df726afc7 HTTP/1.1" 404 26 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 03:42:46.821 main(rVKw) INF] 127.0.0.1:44004 - - 2025-Feb-20 03:42:46.8209927Z "PUT /api/notes/ff29f803-20ba-4461-933f-c53df726afc7 HTTP/1.1" 404 26 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 03:42:56.831 main(rVKw) dbg] Keep-alive connection timed out!
+[2025-02-20 03:52:59.421 main(----) INF] Received signal 2. Shutting down.
+[2025-02-20 03:52:59.422 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-20 03:52:59.432 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-20 03:52:59.432 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-20 03:52:59.432 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-20 03:52:59.432 main(----) dia] Main thread exiting
+[2025-02-20 03:52:59.432 main(----) dia] Still waiting for worker threads to exit.
+[2025-02-20 03:52:59.434 vibe-worker-8(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.434 vibe-worker-8(----) dbg] Thread exit vibe-worker-8 (index 18) (main=false)
+[2025-02-20 03:52:59.434 vibe-worker-3(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.434 vibe-worker-2(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.434 vibe-worker-6(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.434 vibe-worker-12(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.434 vibe-worker-11(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.434 vibe-worker-9(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.434 vibe-worker-3(----) dbg] Thread exit vibe-worker-3 (index 12) (main=false)
+[2025-02-20 03:52:59.434 vibe-worker-10(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.434 vibe-worker-13(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.434 vibe-worker-1(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.435 vibe-worker-5(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.435 vibe-worker-0(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.435 vibe-worker-7(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.435 vibe-worker-4(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.435 vibe-worker-2(----) dbg] Thread exit vibe-worker-2 (index 5) (main=false)
+[2025-02-20 03:52:59.435 vibe-worker-6(----) dbg] Thread exit vibe-worker-6 (index 19) (main=false)
+[2025-02-20 03:52:59.435 vibe-worker-12(----) dbg] Thread exit vibe-worker-12 (index 13) (main=false)
+[2025-02-20 03:52:59.435 vibe-worker-11(----) dbg] Thread exit vibe-worker-11 (index 7) (main=false)
+[2025-02-20 03:52:59.435 vibe-worker-9(----) dbg] Thread exit vibe-worker-9 (index 16) (main=false)
+[2025-02-20 03:52:59.436 vibe-worker-10(----) dbg] Thread exit vibe-worker-10 (index 9) (main=false)
+[2025-02-20 03:52:59.436 vibe-worker-13(----) dbg] Thread exit vibe-worker-13 (index 9) (main=false)
+[2025-02-20 03:52:59.436 vibe-worker-1(----) dbg] Thread exit vibe-worker-1 (index 8) (main=false)
+[2025-02-20 03:52:59.437 vibe-worker-5(----) dbg] Thread exit vibe-worker-5 (index 12) (main=false)
+[2025-02-20 03:52:59.437 vibe-worker-0(----) dbg] Thread exit vibe-worker-0 (index 11) (main=false)
+[2025-02-20 03:52:59.437 vibe-worker-7(----) dbg] Thread exit vibe-worker-7 (index 9) (main=false)
+[2025-02-20 03:52:59.437 vibe-worker-4(----) dbg] Thread exit vibe-worker-4 (index 10) (main=false)
+[2025-02-20 03:52:59.439 main(----) dia] Still waiting for I/O worker threads to exit.
+[2025-02-20 03:52:59.440 vibe-io-0(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.440 vibe-io-0(----) dbg] Thread exit vibe-io-0 (index 7) (main=false)
+[2025-02-20 03:52:59.440 vibe-io-2(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.440 vibe-io-2(----) dbg] Thread exit vibe-io-2 (index 6) (main=false)
+[2025-02-20 03:52:59.440 vibe-io-1(----) dbg] Worker thread exit.
+[2025-02-20 03:52:59.440 vibe-io-1(----) dbg] Thread exit vibe-io-1 (index 5) (main=false)
+[2025-02-20 03:52:59.442 F9301631(----) dbg] Thread exit  (index 2) (main=false)
+[2025-02-20 03:52:59.442 F9301B31(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 03:52:59.442 F9301931(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 03:52:59.442 F9301831(----) dbg] Thread exit  (index 0) (main=false)
+[2025-02-20 04:06:14.000 main(----) INF] Starting Notes Vault backend server...
+[2025-02-20 04:06:14.001 main(----) dbg] add route GET /ws
+[2025-02-20 04:06:14.001 main(----) dbg] add route GET /api/notes
+[2025-02-20 04:06:14.001 main(----) dbg] add route POST /api/notes
+[2025-02-20 04:06:14.001 main(----) dbg] add route GET /api/notes/:id
+[2025-02-20 04:06:14.001 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-20 04:06:14.001 main(----) dbg] add route GET /api/tags
+[2025-02-20 04:06:14.002 main(----) dbg] add route GET *
+[2025-02-20 04:06:14.002 13701B47(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 04:06:14.002 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-20 04:06:14.003 main(----) INF] Server running on http://localhost:3000/
+[2025-02-20 04:06:14.003 main(----) dbg] Starting event loop.
+[2025-02-20 04:06:20.506 main(xeF5) dbg] Disambiguate done: 91 nodes, 1264 max stack size
+[2025-02-20 04:06:20.506 main(xeF5) dbg] Match tree has 24 (of 91 in the builder) nodes, 7 terminals
+[2025-02-20 04:06:20.507 main(xeF5) dbg] Path '' -> ''
+[2025-02-20 04:06:20.513 vibe-worker-3(----) dbg] entering worker thread
+[2025-02-20 04:06:20.513 vibe-worker-0(----) dbg] entering worker thread
+[2025-02-20 04:06:20.513 vibe-worker-9(----) dbg] entering worker thread
+[2025-02-20 04:06:20.513 vibe-worker-6(----) dbg] entering worker thread
+[2025-02-20 04:06:20.514 vibe-worker-8(----) dbg] entering worker thread
+[2025-02-20 04:06:20.514 vibe-io-1(----) dbg] entering worker thread
+[2025-02-20 04:06:20.514 vibe-worker-10(----) dbg] entering worker thread
+[2025-02-20 04:06:20.514 vibe-worker-1(----) dbg] entering worker thread
+[2025-02-20 04:06:20.514 vibe-io-2(----) dbg] entering worker thread
+[2025-02-20 04:06:20.515 vibe-worker-11(----) dbg] entering worker thread
+[2025-02-20 04:06:20.515 vibe-worker-12(----) dbg] entering worker thread
+[2025-02-20 04:06:20.516 vibe-worker-5(----) dbg] entering worker thread
+[2025-02-20 04:06:20.516 vibe-worker-7(----) dbg] entering worker thread
+[2025-02-20 04:06:20.516 vibe-worker-4(----) dbg] entering worker thread
+[2025-02-20 04:06:20.516 vibe-worker-13(----) dbg] entering worker thread
+[2025-02-20 04:06:20.516 vibe-worker-2(----) dbg] entering worker thread
+[2025-02-20 04:06:20.516 vibe-io-0(----) dbg] entering worker thread
+[2025-02-20 04:06:20.524 main(xeF5) INF] 127.0.0.1:46330 - - 2025-Feb-20 04:06:20.4735331Z "GET / HTTP/1.1" 200 396 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 04:06:20.584 main(xeF5) dbg] Path 'assets/index-BQZ7foFd.js' -> 'assets/index-BQZ7foFd.js'
+[2025-02-20 04:06:20.585 main(a6y6) dbg] Path 'assets/index-BbJc0FSl.css' -> 'assets/index-BbJc0FSl.css'
+[2025-02-20 04:06:20.586 main(a6y6) INF] 127.0.0.1:46338 - - 2025-Feb-20 04:06:20.5849557Z "GET /assets/index-BbJc0FSl.css HTTP/1.1" 200 3965 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 04:06:20.586 main(xeF5) INF] 127.0.0.1:46330 - - 2025-Feb-20 04:06:20.584503Z "GET /assets/index-BQZ7foFd.js HTTP/1.1" 200 149723 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 04:06:30.596 main(a6y6) dbg] Keep-alive connection timed out!
+[2025-02-20 04:06:30.596 main(xeF5) dbg] Keep-alive connection timed out!
+[2025-02-20 04:06:34.269 main(U0ET) dbg] Path '' -> ''
+[2025-02-20 04:06:34.270 main(U0ET) INF] 127.0.0.1:39612 - - 2025-Feb-20 04:06:34.2691083Z "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 04:06:34.319 main(U0ET) dbg] Path 'assets/index-BQZ7foFd.js' -> 'assets/index-BQZ7foFd.js'
+[2025-02-20 04:06:34.320 main(U0ET) INF] 127.0.0.1:39612 - - 2025-Feb-20 04:06:34.3192899Z "GET /assets/index-BQZ7foFd.js HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 04:06:34.335 main(U0ET) dbg] Path 'assets/index-BbJc0FSl.css' -> 'assets/index-BbJc0FSl.css'
+[2025-02-20 04:06:34.336 main(U0ET) INF] 127.0.0.1:39612 - - 2025-Feb-20 04:06:34.3350351Z "GET /assets/index-BbJc0FSl.css HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 04:06:36.228 main(U0ET) dbg] Path '' -> ''
+[2025-02-20 04:06:36.229 main(U0ET) INF] 127.0.0.1:39612 - - 2025-Feb-20 04:06:36.2286725Z "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 04:06:36.279 main(U0ET) dbg] Path 'assets/index-BQZ7foFd.js' -> 'assets/index-BQZ7foFd.js'
+[2025-02-20 04:06:36.281 main(1MYU) dbg] Path 'assets/index-BbJc0FSl.css' -> 'assets/index-BbJc0FSl.css'
+[2025-02-20 04:06:36.283 main(U0ET) INF] 127.0.0.1:39612 - - 2025-Feb-20 04:06:36.2793263Z "GET /assets/index-BQZ7foFd.js HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 04:06:36.285 main(1MYU) INF] 127.0.0.1:39626 - - 2025-Feb-20 04:06:36.2803347Z "GET /assets/index-BbJc0FSl.css HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-02-20 04:06:46.295 main(U0ET) dbg] Keep-alive connection timed out!
+[2025-02-20 04:06:46.296 main(1MYU) dbg] Keep-alive connection timed out!
+[2025-02-20 04:34:16.760 main(----) INF] Received signal 2. Shutting down.
+[2025-02-20 04:34:16.761 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-20 04:34:16.781 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-20 04:34:16.781 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-20 04:34:16.782 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-20 04:34:16.782 main(----) dia] Main thread exiting
+[2025-02-20 04:34:16.782 main(----) dia] Still waiting for worker threads to exit.
+[2025-02-20 04:34:16.787 vibe-worker-10(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.787 vibe-worker-10(----) dbg] Thread exit vibe-worker-10 (index 10) (main=false)
+[2025-02-20 04:34:16.788 vibe-worker-13(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.788 vibe-worker-2(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.788 vibe-worker-3(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.788 vibe-worker-3(----) dbg] Thread exit vibe-worker-3 (index 5) (main=false)
+[2025-02-20 04:34:16.789 vibe-worker-0(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.789 vibe-worker-0(----) dbg] Thread exit vibe-worker-0 (index 8) (main=false)
+[2025-02-20 04:34:16.789 vibe-worker-5(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.789 vibe-worker-5(----) dbg] Thread exit vibe-worker-5 (index 15) (main=false)
+[2025-02-20 04:34:16.789 vibe-worker-2(----) dbg] Thread exit vibe-worker-2 (index 5) (main=false)
+[2025-02-20 04:34:16.790 vibe-worker-13(----) dbg] Thread exit vibe-worker-13 (index 8) (main=false)
+[2025-02-20 04:34:16.791 vibe-worker-1(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.791 vibe-worker-1(----) dbg] Thread exit vibe-worker-1 (index 11) (main=false)
+[2025-02-20 04:34:16.792 vibe-worker-4(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.793 vibe-worker-4(----) dbg] Thread exit vibe-worker-4 (index 11) (main=false)
+[2025-02-20 04:34:16.793 vibe-worker-7(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.793 vibe-worker-7(----) dbg] Thread exit vibe-worker-7 (index 8) (main=false)
+[2025-02-20 04:34:16.794 vibe-worker-9(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.794 vibe-worker-9(----) dbg] Thread exit vibe-worker-9 (index 6) (main=false)
+[2025-02-20 04:34:16.794 vibe-worker-12(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.794 vibe-worker-12(----) dbg] Thread exit vibe-worker-12 (index 5) (main=false)
+[2025-02-20 04:34:16.794 vibe-worker-8(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.794 vibe-worker-8(----) dbg] Thread exit vibe-worker-8 (index 9) (main=false)
+[2025-02-20 04:34:16.794 vibe-worker-6(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.795 vibe-worker-6(----) dbg] Thread exit vibe-worker-6 (index 7) (main=false)
+[2025-02-20 04:34:16.797 vibe-worker-11(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.797 vibe-worker-11(----) dbg] Thread exit vibe-worker-11 (index 5) (main=false)
+[2025-02-20 04:34:16.799 main(----) dia] Still waiting for I/O worker threads to exit.
+[2025-02-20 04:34:16.800 vibe-io-0(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.800 vibe-io-0(----) dbg] Thread exit vibe-io-0 (index 7) (main=false)
+[2025-02-20 04:34:16.801 vibe-io-1(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.802 vibe-io-1(----) dbg] Thread exit vibe-io-1 (index 6) (main=false)
+[2025-02-20 04:34:16.803 vibe-io-2(----) dbg] Worker thread exit.
+[2025-02-20 04:34:16.803 vibe-io-2(----) dbg] Thread exit vibe-io-2 (index 5) (main=false)
+[2025-02-20 04:34:16.804 13701947(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 04:34:16.804 13701747(----) dbg] Thread exit  (index 0) (main=false)
+[2025-02-20 04:34:16.805 13701847(----) dbg] Thread exit  (index 0) (main=false)
+[2025-02-20 04:34:16.805 13701647(----) dbg] Thread exit  (index 0) (main=false)
+[2025-02-20 22:21:39.469 main(----) dbg] add route GET /ws
+[2025-02-20 22:21:39.469 main(----) dbg] add route GET /api/notes
+[2025-02-20 22:21:39.469 main(----) dbg] add route POST /api/notes
+[2025-02-20 22:21:39.469 main(----) dbg] add route GET /api/notes/:id
+[2025-02-20 22:21:39.469 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-20 22:21:39.469 main(----) dbg] add route GET /api/tags
+[2025-02-20 22:21:39.470 main(----) dbg] add route GET *
+[2025-02-20 22:21:39.470 main(----) INF] Starting Notes Vault backend server...
+[2025-02-20 22:21:39.471 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-20 22:21:39.471 main(----) INF] Server running on http://localhost:3000/
+[2025-02-20 22:21:39.471 main(----) dia] Running event loop...
+[2025-02-20 22:21:39.471 main(----) dbg] Starting event loop.
+[2025-02-20 22:22:27.089 main(qnr6) dbg] Disambiguate done: 91 nodes, 1264 max stack size
+[2025-02-20 22:22:27.090 main(qnr6) dbg] Match tree has 24 (of 91 in the builder) nodes, 7 terminals
+[2025-02-20 22:22:27.090 main(qnr6) dbg] Path '' -> ''
+[2025-02-20 22:22:27.093 vibe-io-0(----) dbg] entering worker thread
+[2025-02-20 22:22:27.094 vibe-worker-0(----) dbg] entering worker thread
+[2025-02-20 22:22:27.095 vibe-worker-4(----) dbg] entering worker thread
+[2025-02-20 22:22:27.095 vibe-io-2(----) dbg] entering worker thread
+[2025-02-20 22:22:27.095 vibe-worker-9(----) dbg] entering worker thread
+[2025-02-20 22:22:27.095 vibe-worker-2(----) dbg] entering worker thread
+[2025-02-20 22:22:27.095 vibe-worker-6(----) dbg] entering worker thread
+[2025-02-20 22:22:27.095 vibe-io-1(----) dbg] entering worker thread
+[2025-02-20 22:22:27.095 vibe-worker-1(----) dbg] entering worker thread
+[2025-02-20 22:22:27.096 vibe-worker-11(----) dbg] entering worker thread
+[2025-02-20 22:22:27.096 vibe-worker-7(----) dbg] entering worker thread
+[2025-02-20 22:22:27.096 vibe-worker-10(----) dbg] entering worker thread
+[2025-02-20 22:22:27.096 vibe-worker-8(----) dbg] entering worker thread
+[2025-02-20 22:22:27.096 vibe-worker-12(----) dbg] entering worker thread
+[2025-02-20 22:22:27.096 vibe-worker-3(----) dbg] entering worker thread
+[2025-02-20 22:22:27.096 vibe-worker-13(----) dbg] entering worker thread
+[2025-02-20 22:22:27.096 vibe-worker-5(----) dbg] entering worker thread
+[2025-02-20 22:22:27.238 main(qnr6) dbg] Path 'assets/index-BQZ7foFd.js' -> 'assets/index-BQZ7foFd.js'
+[2025-02-20 22:22:27.239 main(LNnn) dbg] Path 'assets/index-BbJc0FSl.css' -> 'assets/index-BbJc0FSl.css'
+[2025-02-20 22:22:27.364 main(qnr6) dbg] Path 'favicon.ico' -> 'favicon.ico'
+[2025-02-20 22:22:27.365 main(qnr6) dbg] no route match: GET /favicon.ico
+[2025-02-20 22:22:27.365 main(qnr6) dia] No response written for /favicon.ico
+[2025-02-20 22:22:37.241 main(LNnn) dbg] Keep-alive connection timed out!
+[2025-02-20 22:22:37.365 main(qnr6) dbg] Keep-alive connection timed out!
+[2025-02-20 22:22:37.417 main(Wunn) dbg] Path '' -> ''
+[2025-02-20 22:22:47.423 main(Wunn) dbg] Keep-alive connection timed out!
+[2025-02-20 22:38:31.791 main(----) INF] Received signal 2. Shutting down.
+[2025-02-20 22:38:31.791 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-20 22:38:31.829 main(----) dbg] Event loop done (scheduled tasks=0, waiters=2, thread exit=false).
+[2025-02-20 22:38:31.829 main(----) dia] Event loop exited with status 0.
+[2025-02-20 22:38:31.829 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-20 22:38:31.829 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-20 22:38:31.829 main(----) dia] Main thread exiting
+[2025-02-20 22:38:31.829 main(----) dia] Still waiting for worker threads to exit.
+[2025-02-20 22:38:31.830 vibe-worker-8(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.830 vibe-worker-10(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.831 vibe-worker-4(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.831 vibe-worker-8(----) dbg] Thread exit vibe-worker-8 (index 13) (main=false)
+[2025-02-20 22:38:31.831 vibe-worker-12(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.831 vibe-worker-1(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.831 vibe-worker-5(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.831 vibe-worker-0(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.831 vibe-worker-13(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.831 vibe-worker-7(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.831 vibe-worker-6(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.832 vibe-worker-2(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.832 vibe-worker-3(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.832 vibe-worker-9(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.832 vibe-worker-11(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.832 vibe-worker-10(----) dbg] Thread exit vibe-worker-10 (index 12) (main=false)
+[2025-02-20 22:38:31.832 vibe-worker-4(----) dbg] Thread exit vibe-worker-4 (index 3) (main=false)
+[2025-02-20 22:38:31.832 vibe-worker-12(----) dbg] Thread exit vibe-worker-12 (index 14) (main=false)
+[2025-02-20 22:38:31.832 vibe-worker-1(----) dbg] Thread exit vibe-worker-1 (index 9) (main=false)
+[2025-02-20 22:38:31.832 vibe-worker-5(----) dbg] Thread exit vibe-worker-5 (index 8) (main=false)
+[2025-02-20 22:38:31.832 vibe-worker-0(----) dbg] Thread exit vibe-worker-0 (index 1) (main=false)
+[2025-02-20 22:38:31.832 vibe-worker-13(----) dbg] Thread exit vibe-worker-13 (index 16) (main=false)
+[2025-02-20 22:38:31.832 vibe-worker-7(----) dbg] Thread exit vibe-worker-7 (index 11) (main=false)
+[2025-02-20 22:38:31.833 vibe-worker-6(----) dbg] Thread exit vibe-worker-6 (index 7) (main=false)
+[2025-02-20 22:38:31.833 vibe-worker-2(----) dbg] Thread exit vibe-worker-2 (index 6) (main=false)
+[2025-02-20 22:38:31.833 vibe-worker-3(----) dbg] Thread exit vibe-worker-3 (index 15) (main=false)
+[2025-02-20 22:38:31.833 vibe-worker-9(----) dbg] Thread exit vibe-worker-9 (index 5) (main=false)
+[2025-02-20 22:38:31.833 vibe-worker-11(----) dbg] Thread exit vibe-worker-11 (index 10) (main=false)
+[2025-02-20 22:38:31.837 main(----) dia] Still waiting for I/O worker threads to exit.
+[2025-02-20 22:38:31.837 vibe-io-0(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.838 vibe-io-0(----) dbg] Thread exit vibe-io-0 (index 2) (main=false)
+[2025-02-20 22:38:31.838 vibe-io-1(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.838 vibe-io-1(----) dbg] Thread exit vibe-io-1 (index 1) (main=false)
+[2025-02-20 22:38:31.838 vibe-io-2(----) dbg] Worker thread exit.
+[2025-02-20 22:38:31.838 vibe-io-2(----) dbg] Thread exit vibe-io-2 (index 4) (main=false)
+[2025-02-20 22:38:31.839 F4F159DF(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 22:38:31.839 F4F154DF(----) dbg] Thread exit  (index 2) (main=false)
+[2025-02-20 22:38:31.839 F4F18DDF(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 22:38:31.839 F4F151DF(----) dbg] Thread exit  (index 0) (main=false)
+[2025-02-20 23:03:19.207 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-20 23:03:19.207 main(----) dia] Main thread exiting
+[2025-02-20 23:06:40.268 main(----) dbg] add route GET /ws
+[2025-02-20 23:06:40.268 main(----) dbg] add route GET /api/notes
+[2025-02-20 23:06:40.268 main(----) dbg] add route POST /api/notes
+[2025-02-20 23:06:40.268 main(----) dbg] add route GET /api/notes/:id
+[2025-02-20 23:06:40.268 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-20 23:06:40.268 main(----) dbg] add route GET /api/tags
+[2025-02-20 23:06:40.269 main(----) dbg] add route GET *
+[2025-02-20 23:06:40.269 main(----) INF] Starting Notes Vault backend server...
+[2025-02-20 23:06:40.270 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-20 23:06:40.270 main(----) INF] Server running on http://localhost:3000/
+[2025-02-20 23:06:40.270 main(----) dia] Running event loop...
+[2025-02-20 23:06:40.270 main(----) dbg] Starting event loop.
+[2025-02-20 23:06:42.268 5C031419(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 23:07:08.322 main(UOjq) dbg] Disambiguate done: 91 nodes, 1264 max stack size
+[2025-02-20 23:07:08.323 main(UOjq) dbg] Match tree has 24 (of 91 in the builder) nodes, 7 terminals
+[2025-02-20 23:07:08.323 main(UOjq) dbg] Path '' -> ''
+[2025-02-20 23:07:08.326 vibe-worker-7(----) dbg] entering worker thread
+[2025-02-20 23:07:08.326 vibe-worker-0(----) dbg] entering worker thread
+[2025-02-20 23:07:08.326 vibe-io-2(----) dbg] entering worker thread
+[2025-02-20 23:07:08.326 vibe-worker-1(----) dbg] entering worker thread
+[2025-02-20 23:07:08.327 vibe-worker-4(----) dbg] entering worker thread
+[2025-02-20 23:07:08.327 vibe-worker-12(----) dbg] entering worker thread
+[2025-02-20 23:07:08.327 vibe-io-0(----) dbg] entering worker thread
+[2025-02-20 23:07:08.327 vibe-io-1(----) dbg] entering worker thread
+[2025-02-20 23:07:08.327 vibe-worker-10(----) dbg] entering worker thread
+[2025-02-20 23:07:08.327 vibe-worker-9(----) dbg] entering worker thread
+[2025-02-20 23:07:08.327 vibe-worker-11(----) dbg] entering worker thread
+[2025-02-20 23:07:08.327 vibe-worker-5(----) dbg] entering worker thread
+[2025-02-20 23:07:08.327 vibe-worker-2(----) dbg] entering worker thread
+[2025-02-20 23:07:08.327 vibe-worker-13(----) dbg] entering worker thread
+[2025-02-20 23:07:08.328 vibe-worker-6(----) dbg] entering worker thread
+[2025-02-20 23:07:08.328 vibe-worker-8(----) dbg] entering worker thread
+[2025-02-20 23:07:08.328 vibe-worker-3(----) dbg] entering worker thread
+[2025-02-20 23:07:09.489 main(UOjq) dbg] Path 'assets/index-BQZ7foFd.js' -> 'assets/index-BQZ7foFd.js'
+[2025-02-20 23:07:09.525 main(UOjq) dbg] Path 'assets/index-BbJc0FSl.css' -> 'assets/index-BbJc0FSl.css'
+[2025-02-20 23:07:12.228 main(UOjq) dbg] Path 'favicon.ico' -> 'favicon.ico'
+[2025-02-20 23:07:12.229 main(UOjq) dbg] no route match: GET /favicon.ico
+[2025-02-20 23:07:12.229 main(UOjq) dia] No response written for /favicon.ico
+[2025-02-20 23:07:22.230 main(UOjq) dbg] Keep-alive connection timed out!
+[2025-02-20 23:15:06.897 main(vGQL) dbg] Path '' -> ''
+[2025-02-20 23:15:16.900 main(vGQL) dbg] Keep-alive connection timed out!
+[2025-02-20 23:33:30.508 main(fnlD) dbg] Path '' -> ''
+[2025-02-20 23:33:40.511 main(fnlD) dbg] Keep-alive connection timed out!
+[2025-02-20 23:33:50.859 main(----) INF] Received signal 2. Shutting down.
+[2025-02-20 23:33:50.859 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-20 23:33:50.859 main(----) dbg] Event loop done (scheduled tasks=0, waiters=2, thread exit=false).
+[2025-02-20 23:33:50.859 main(----) dia] Event loop exited with status 0.
+[2025-02-20 23:33:50.859 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-20 23:33:50.859 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-20 23:33:50.859 main(----) dia] Main thread exiting
+[2025-02-20 23:33:50.859 main(----) dia] Still waiting for worker threads to exit.
+[2025-02-20 23:33:50.860 vibe-worker-10(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.860 vibe-worker-6(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.860 vibe-worker-5(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.860 vibe-worker-3(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-11(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-10(----) dbg] Thread exit vibe-worker-10 (index 7) (main=false)
+[2025-02-20 23:33:50.861 vibe-worker-9(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-7(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-0(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-4(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-12(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-1(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-2(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-8(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-13(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.861 vibe-worker-6(----) dbg] Thread exit vibe-worker-6 (index 14) (main=false)
+[2025-02-20 23:33:50.861 vibe-worker-5(----) dbg] Thread exit vibe-worker-5 (index 9) (main=false)
+[2025-02-20 23:33:50.861 vibe-worker-3(----) dbg] Thread exit vibe-worker-3 (index 8) (main=false)
+[2025-02-20 23:33:50.861 vibe-worker-11(----) dbg] Thread exit vibe-worker-11 (index 11) (main=false)
+[2025-02-20 23:33:50.861 vibe-worker-9(----) dbg] Thread exit vibe-worker-9 (index 7) (main=false)
+[2025-02-20 23:33:50.861 vibe-worker-7(----) dbg] Thread exit vibe-worker-7 (index 1) (main=false)
+[2025-02-20 23:33:50.861 vibe-worker-0(----) dbg] Thread exit vibe-worker-0 (index 5) (main=false)
+[2025-02-20 23:33:50.862 vibe-worker-4(----) dbg] Thread exit vibe-worker-4 (index 10) (main=false)
+[2025-02-20 23:33:50.862 vibe-worker-12(----) dbg] Thread exit vibe-worker-12 (index 6) (main=false)
+[2025-02-20 23:33:50.862 vibe-worker-1(----) dbg] Thread exit vibe-worker-1 (index 4) (main=false)
+[2025-02-20 23:33:50.862 vibe-worker-2(----) dbg] Thread exit vibe-worker-2 (index 13) (main=false)
+[2025-02-20 23:33:50.862 vibe-worker-8(----) dbg] Thread exit vibe-worker-8 (index 10) (main=false)
+[2025-02-20 23:33:50.862 vibe-worker-13(----) dbg] Thread exit vibe-worker-13 (index 11) (main=false)
+[2025-02-20 23:33:50.869 main(----) dia] Still waiting for I/O worker threads to exit.
+[2025-02-20 23:33:50.870 vibe-io-0(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.870 vibe-io-1(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.870 vibe-io-0(----) dbg] Thread exit vibe-io-0 (index 1) (main=false)
+[2025-02-20 23:33:50.870 vibe-io-1(----) dbg] Thread exit vibe-io-1 (index 2) (main=false)
+[2025-02-20 23:33:50.870 vibe-io-2(----) dbg] Worker thread exit.
+[2025-02-20 23:33:50.870 vibe-io-2(----) dbg] Thread exit vibe-io-2 (index 1) (main=false)
+[2025-02-20 23:34:15.916 main(----) dbg] add route GET /api/notes
+[2025-02-20 23:34:15.916 main(----) dbg] add route POST /api/notes
+[2025-02-20 23:34:15.916 main(----) dbg] add route GET /api/notes/:id
+[2025-02-20 23:34:15.916 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-20 23:34:15.916 main(----) dbg] add route GET /api/tags
+[2025-02-20 23:34:15.916 main(----) dbg] add route GET /ws
+[2025-02-20 23:34:15.916 main(----) dbg] add route GET *
+[2025-02-20 23:34:15.917 main(----) dbg] add route GET /assets/*
+[2025-02-20 23:34:15.917 main(----) INF] Starting Notes Vault backend server...
+[2025-02-20 23:34:15.917 725019FA(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 23:34:15.917 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-20 23:34:15.917 main(----) INF] Server running on http://localhost:3000/
+[2025-02-20 23:34:15.917 main(----) dia] Running event loop...
+[2025-02-20 23:34:15.917 main(----) dbg] Starting event loop.
+[2025-02-20 23:46:04.605 main(----) INF] Received signal 2. Shutting down.
+[2025-02-20 23:46:04.605 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-20 23:46:04.616 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-20 23:46:04.616 main(----) dia] Event loop exited with status 0.
+[2025-02-20 23:46:04.616 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-20 23:46:04.617 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-20 23:46:04.617 main(----) dia] Main thread exiting
+[2025-02-20 23:48:49.537 91D01F10(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 23:48:49.542 main(----) dbg] add route GET /api/notes
+[2025-02-20 23:48:49.542 main(----) dbg] add route POST /api/notes
+[2025-02-20 23:48:49.542 main(----) dbg] add route GET /api/notes/:id
+[2025-02-20 23:48:49.542 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-20 23:48:49.542 main(----) dbg] add route GET /api/tags
+[2025-02-20 23:48:49.542 main(----) dbg] add route GET /ws
+[2025-02-20 23:48:49.542 main(----) dbg] add route GET /assets/*
+[2025-02-20 23:48:49.542 main(----) dbg] add route GET *
+[2025-02-20 23:48:49.543 main(----) INF] Starting Notes Vault backend server...
+[2025-02-20 23:48:49.543 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-20 23:48:49.543 main(----) INF] Server running on http://localhost:3000/
+[2025-02-20 23:48:49.543 main(----) dia] Running event loop...
+[2025-02-20 23:48:49.543 main(----) dbg] Starting event loop.
+[2025-02-20 23:50:21.850 main(----) INF] Received signal 2. Shutting down.
+[2025-02-20 23:50:21.850 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-20 23:50:21.850 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-20 23:50:21.850 main(----) dia] Event loop exited with status 0.
+[2025-02-20 23:50:21.850 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-20 23:50:21.850 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-20 23:50:21.850 main(----) dia] Main thread exiting
+[2025-02-20 23:50:35.295 main(----) dbg] add route GET /api/notes
+[2025-02-20 23:50:35.295 main(----) dbg] add route POST /api/notes
+[2025-02-20 23:50:35.295 main(----) dbg] add route GET /api/notes/:id
+[2025-02-20 23:50:35.295 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-20 23:50:35.295 main(----) dbg] add route GET /api/tags
+[2025-02-20 23:50:35.295 E1F018B4(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-20 23:50:35.295 main(----) dbg] add route GET /ws
+[2025-02-20 23:50:35.295 main(----) dbg] add route GET /assets/*
+[2025-02-20 23:50:35.295 main(----) dbg] add route GET *
+[2025-02-20 23:50:35.295 main(----) INF] Starting Notes Vault backend server...
+[2025-02-20 23:50:35.296 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-20 23:50:35.296 main(----) INF] Server running on http://localhost:3000/
+[2025-02-20 23:50:35.296 main(----) dia] Running event loop...
+[2025-02-20 23:50:35.296 main(----) dbg] Starting event loop.
+[2025-02-21 00:13:19.183 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 00:13:19.184 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 00:13:19.185 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 00:13:19.185 main(----) dia] Event loop exited with status 0.
+[2025-02-21 00:13:19.185 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 00:13:19.185 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 00:13:19.185 main(----) dia] Main thread exiting
+[2025-02-21 00:14:14.323 1BF011EA(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 00:14:14.323 main(----) dbg] add route GET /api/notes
+[2025-02-21 00:14:14.324 main(----) dbg] add route POST /api/notes
+[2025-02-21 00:14:14.324 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 00:14:14.324 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 00:14:14.324 main(----) dbg] add route GET /api/tags
+[2025-02-21 00:14:14.324 main(----) dbg] add route GET /ws
+[2025-02-21 00:14:14.324 main(----) dbg] add route GET /assets/*
+[2025-02-21 00:14:14.324 main(----) dbg] add route GET *
+[2025-02-21 00:14:14.324 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 00:14:14.324 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 00:14:14.324 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 00:14:14.324 main(----) dia] Running event loop...
+[2025-02-21 00:14:14.324 main(----) dbg] Starting event loop.
+[2025-02-21 00:15:51.804 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 00:15:51.804 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 00:15:51.811 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 00:15:51.811 main(----) dia] Event loop exited with status 0.
+[2025-02-21 00:15:51.811 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 00:15:51.811 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 00:15:51.811 main(----) dia] Main thread exiting
+[2025-02-21 00:24:26.603 2A5010EA(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 00:24:26.603 main(----) dbg] add route GET /api/notes
+[2025-02-21 00:24:26.603 main(----) dbg] add route POST /api/notes
+[2025-02-21 00:24:26.603 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 00:24:26.603 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 00:24:26.603 main(----) dbg] add route GET /api/tags
+[2025-02-21 00:24:26.603 main(----) dbg] add route GET /ws
+[2025-02-21 00:24:26.603 main(----) dbg] add route GET /assets/*
+[2025-02-21 00:24:26.604 main(----) dbg] add route GET *
+[2025-02-21 00:24:26.604 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 00:24:26.604 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 00:24:26.604 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 00:24:26.604 main(----) dia] Running event loop...
+[2025-02-21 00:24:26.604 main(----) dbg] Starting event loop.
+[2025-02-21 00:25:15.672 main(gCjG) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 00:25:15.673 main(gCjG) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 00:25:25.684 main(gCjG) dbg] Keep-alive connection timed out!
+[2025-02-21 00:27:05.781 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 00:27:05.782 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 00:27:05.791 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 00:27:05.791 main(----) dia] Event loop exited with status 0.
+[2025-02-21 00:27:05.791 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 00:27:05.791 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 00:27:05.791 main(----) dia] Main thread exiting
+[2025-02-21 00:27:56.961 main(----) dbg] add route GET /api/notes
+[2025-02-21 00:27:56.961 main(----) dbg] add route POST /api/notes
+[2025-02-21 00:27:56.961 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 00:27:56.961 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 00:27:56.961 main(----) dbg] add route GET /api/tags
+[2025-02-21 00:27:56.961 46D01349(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 00:27:56.961 main(----) dbg] add route GET /ws
+[2025-02-21 00:27:56.961 main(----) dbg] add route GET /assets/*
+[2025-02-21 00:27:56.961 main(----) dbg] add route GET *
+[2025-02-21 00:27:56.961 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 00:27:56.962 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 00:27:56.962 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 00:27:56.962 main(----) dia] Running event loop...
+[2025-02-21 00:27:56.962 main(----) dbg] Starting event loop.
+[2025-02-21 00:28:01.470 main(FRhc) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 00:28:01.470 main(FRhc) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 00:28:01.471 main(FRhc) INF] Request for path: /
+[2025-02-21 00:28:01.471 main(FRhc) INF] Serving index.html
+[2025-02-21 00:28:11.481 main(FRhc) dbg] Keep-alive connection timed out!
+[2025-02-21 00:29:36.071 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 00:29:36.072 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 00:29:36.076 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 00:29:36.076 main(----) dia] Event loop exited with status 0.
+[2025-02-21 00:29:36.076 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 00:29:36.076 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 00:29:36.076 main(----) dia] Main thread exiting
+[2025-02-21 00:29:50.203 AAB01C3D(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 00:29:50.204 main(----) dbg] add route GET /api/notes
+[2025-02-21 00:29:50.204 main(----) dbg] add route POST /api/notes
+[2025-02-21 00:29:50.204 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 00:29:50.204 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 00:29:50.204 main(----) dbg] add route GET /api/tags
+[2025-02-21 00:29:50.204 main(----) dbg] add route GET /ws
+[2025-02-21 00:29:50.205 main(----) dbg] add route GET /assets/*
+[2025-02-21 00:29:50.205 main(----) dbg] add route GET *
+[2025-02-21 00:29:50.205 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 00:29:50.206 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 00:29:50.206 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 00:29:50.206 main(----) dia] Running event loop...
+[2025-02-21 00:29:50.206 main(----) dbg] Starting event loop.
+[2025-02-21 00:30:00.634 main(VSUw) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 00:30:00.634 main(VSUw) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 00:30:00.635 main(VSUw) INF] === Request for path: / ===
+[2025-02-21 00:30:00.636 main(VSUw) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 00:30:00.637 main(VSUw) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 00:30:00.637 main(VSUw) INF] Serving index.html
+[2025-02-21 00:30:00.637 main(VSUw) INF] Index content length: 396
+[2025-02-21 00:30:08.655 main(VSUw) INF] === GET /api/notes ===
+[2025-02-21 00:30:08.656 main(VSUw) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-User": "?1", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 00:30:08.657 main(VSUw) INF] Creating VaultManager...
+[2025-02-21 00:30:08.657 main(VSUw) INF] Getting notes...
+[2025-02-21 00:30:08.658 main(VSUw) INF] Got 0 notes
+[2025-02-21 00:30:08.658 main(VSUw) INF] Writing response...
+[2025-02-21 00:30:08.658 AAB0183D(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 00:30:08.658 main(VSUw) INF] Response sent successfully
+[2025-02-21 00:30:18.160 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 00:30:18.160 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 00:30:18.161 main(----) dbg] Event loop done (scheduled tasks=0, waiters=3, thread exit=false).
+[2025-02-21 00:30:18.161 main(----) dia] Event loop exited with status 0.
+[2025-02-21 00:30:18.161 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 00:30:18.161 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 00:30:18.161 main(----) dia] Main thread exiting
+[2025-02-21 00:32:38.979 D7A31737(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 00:32:38.981 main(----) dbg] add route GET /api/notes
+[2025-02-21 00:32:38.981 main(----) dbg] add route POST /api/notes
+[2025-02-21 00:32:38.981 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 00:32:38.981 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 00:32:38.981 main(----) dbg] add route GET /api/tags
+[2025-02-21 00:32:38.981 main(----) dbg] add route GET /ws
+[2025-02-21 00:32:38.981 main(----) dbg] add route GET /assets/*
+[2025-02-21 00:32:38.981 main(----) dbg] add route GET *
+[2025-02-21 00:32:38.981 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 00:32:38.982 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 00:32:38.982 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 00:32:38.982 main(----) dia] Running event loop...
+[2025-02-21 00:32:38.982 main(----) dbg] Starting event loop.
+[2025-02-21 00:33:15.711 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 00:33:15.711 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 00:33:15.711 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 00:33:15.711 main(----) dia] Event loop exited with status 0.
+[2025-02-21 00:33:15.711 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 00:33:15.711 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 00:33:15.711 main(----) dia] Main thread exiting
+[2025-02-21 00:33:21.077 main(----) dbg] add route GET /api/notes
+[2025-02-21 00:33:21.078 AA701355(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 00:33:21.078 main(----) dbg] add route POST /api/notes
+[2025-02-21 00:33:21.078 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 00:33:21.078 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 00:33:21.078 main(----) dbg] add route GET /api/tags
+[2025-02-21 00:33:21.078 main(----) dbg] add route GET /ws
+[2025-02-21 00:33:21.078 main(----) dbg] add route GET /assets/*
+[2025-02-21 00:33:21.078 main(----) dbg] add route GET *
+[2025-02-21 00:33:21.078 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 00:33:21.079 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 00:33:21.079 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 00:33:21.079 main(----) dia] Running event loop...
+[2025-02-21 00:33:21.079 main(----) dbg] Starting event loop.
+[2025-02-21 00:33:25.198 main(Ji+W) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 00:33:25.199 main(Ji+W) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 00:33:25.199 main(Ji+W) INF] === Request for path: / ===
+[2025-02-21 00:33:25.200 main(Ji+W) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 00:33:25.202 main(Ji+W) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 00:33:25.202 main(Ji+W) INF] Serving index.html
+[2025-02-21 00:33:25.202 main(Ji+W) INF] Index content length: 396
+[2025-02-21 00:33:35.214 main(Ji+W) dbg] Keep-alive connection timed out!
+[2025-02-21 00:33:52.318 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 00:33:52.319 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 00:33:52.319 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 00:33:52.320 main(----) dia] Event loop exited with status 0.
+[2025-02-21 00:33:52.320 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 00:33:52.320 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 00:33:52.320 main(----) dia] Main thread exiting
+[2025-02-21 00:34:45.097 ADF01F33(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 00:34:45.097 main(----) dbg] add route GET /api/notes
+[2025-02-21 00:34:45.097 main(----) dbg] add route POST /api/notes
+[2025-02-21 00:34:45.098 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 00:34:45.098 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 00:34:45.098 main(----) dbg] add route GET /api/tags
+[2025-02-21 00:34:45.098 main(----) dbg] add route GET /ws
+[2025-02-21 00:34:45.098 main(----) dbg] add route GET /assets/*
+[2025-02-21 00:34:45.098 main(----) dbg] add route GET *
+[2025-02-21 00:34:45.098 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 00:34:45.098 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 00:34:45.098 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 00:34:45.098 main(----) dia] Running event loop...
+[2025-02-21 00:34:45.098 main(----) dbg] Starting event loop.
+[2025-02-21 00:34:50.002 main(txkQ) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 00:34:50.003 main(txkQ) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 00:34:50.003 main(txkQ) INF] === Request for path: / ===
+[2025-02-21 00:34:50.004 main(txkQ) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 00:34:50.005 main(txkQ) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 00:34:50.005 main(txkQ) INF] Serving index.html
+[2025-02-21 00:34:50.005 main(txkQ) INF] Index content length: 396
+[2025-02-21 00:35:00.015 main(txkQ) dbg] Keep-alive connection timed out!
+[2025-02-21 00:35:02.651 main(C4OA) INF] === Request for path: / ===
+[2025-02-21 00:35:02.652 main(C4OA) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "Cache-Control": "max-age=0", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-User": "?1", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 00:35:02.653 main(C4OA) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 00:35:02.653 main(C4OA) INF] Serving index.html
+[2025-02-21 00:35:02.653 main(C4OA) INF] Index content length: 396
+[2025-02-21 00:35:12.658 main(C4OA) dbg] Keep-alive connection timed out!
+[2025-02-21 00:35:17.136 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 00:35:17.137 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 00:35:17.137 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 00:35:17.137 main(----) dia] Event loop exited with status 0.
+[2025-02-21 00:35:17.137 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 00:35:17.137 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 00:35:17.137 main(----) dia] Main thread exiting
+[2025-02-21 01:21:44.149 0C236716(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 01:21:44.149 main(----) dbg] add route GET /api/notes
+[2025-02-21 01:21:44.149 main(----) dbg] add route POST /api/notes
+[2025-02-21 01:21:44.149 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 01:21:44.150 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 01:21:44.150 main(----) dbg] add route GET /api/tags
+[2025-02-21 01:21:44.150 main(----) dbg] add route GET /ws
+[2025-02-21 01:21:44.150 main(----) dbg] add route GET /assets/*
+[2025-02-21 01:21:44.150 main(----) dbg] add route GET *
+[2025-02-21 01:21:44.150 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 01:21:44.150 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 01:21:44.150 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 01:21:44.150 main(----) dia] Running event loop...
+[2025-02-21 01:21:44.150 main(----) dbg] Starting event loop.
+[2025-02-21 01:21:47.802 main(+rNg) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 01:21:47.802 main(+rNg) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 01:21:47.803 main(+rNg) INF] === Request for path: / ===
+[2025-02-21 01:21:47.804 main(+rNg) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 01:21:47.804 main(+rNg) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 01:21:47.805 main(+rNg) INF] Serving index.html
+[2025-02-21 01:21:47.805 main(+rNg) INF] Index content length: 396
+[2025-02-21 01:21:47.931 main(+rNg) dbg] Path 'assets/index-BQZ7foFd.js' -> 'assets/index-BQZ7foFd.js'
+[2025-02-21 01:21:47.935 vibe-worker-0(----) dbg] entering worker thread
+[2025-02-21 01:21:47.936 vibe-worker-7(----) dbg] entering worker thread
+[2025-02-21 01:21:47.936 vibe-worker-1(----) dbg] entering worker thread
+[2025-02-21 01:21:47.936 vibe-worker-4(----) dbg] entering worker thread
+[2025-02-21 01:21:47.937 vibe-worker-2(----) dbg] entering worker thread
+[2025-02-21 01:21:47.937 vibe-worker-12(----) dbg] entering worker thread
+[2025-02-21 01:21:47.938 vibe-worker-5(----) dbg] entering worker thread
+[2025-02-21 01:21:47.938 vibe-worker-9(----) dbg] entering worker thread
+[2025-02-21 01:21:47.939 vibe-io-1(----) dbg] entering worker thread
+[2025-02-21 01:21:47.939 vibe-worker-6(----) dbg] entering worker thread
+[2025-02-21 01:21:47.940 vibe-worker-8(----) dbg] entering worker thread
+[2025-02-21 01:21:47.941 vibe-worker-11(----) dbg] entering worker thread
+[2025-02-21 01:21:47.941 vibe-worker-13(----) dbg] entering worker thread
+[2025-02-21 01:21:47.942 vibe-worker-10(----) dbg] entering worker thread
+[2025-02-21 01:21:47.942 vibe-worker-3(----) dbg] entering worker thread
+[2025-02-21 01:21:47.942 vibe-io-0(----) dbg] entering worker thread
+[2025-02-21 01:21:47.943 vibe-io-2(----) dbg] entering worker thread
+[2025-02-21 01:21:47.958 main(+rNg) dbg] Path 'assets/index-BbJc0FSl.css' -> 'assets/index-BbJc0FSl.css'
+[2025-02-21 01:21:57.969 main(+rNg) dbg] Keep-alive connection timed out!
+[2025-02-21 01:22:06.278 main(w/FH) INF] === Request for path: / ===
+[2025-02-21 01:22:06.279 main(w/FH) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "Cache-Control": "max-age=0", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-User": "?1", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 01:22:06.280 main(w/FH) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 01:22:06.280 main(w/FH) INF] Serving index.html
+[2025-02-21 01:22:06.280 main(w/FH) INF] Index content length: 396
+[2025-02-21 01:22:11.359 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 01:22:11.359 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 01:22:11.359 main(----) dbg] Event loop done (scheduled tasks=0, waiters=3, thread exit=false).
+[2025-02-21 01:22:11.359 main(----) dia] Event loop exited with status 0.
+[2025-02-21 01:22:11.359 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 01:22:11.359 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 01:22:11.359 main(----) dia] Main thread exiting
+[2025-02-21 01:22:11.359 main(----) dia] Still waiting for worker threads to exit.
+[2025-02-21 01:22:11.360 vibe-worker-4(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.360 vibe-worker-8(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.360 vibe-worker-2(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.360 vibe-worker-4(----) dbg] Thread exit vibe-worker-4 (index 7) (main=false)
+[2025-02-21 01:22:11.360 vibe-worker-10(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.360 vibe-worker-1(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.360 vibe-worker-12(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.360 vibe-worker-8(----) dbg] Thread exit vibe-worker-8 (index 14) (main=false)
+[2025-02-21 01:22:11.360 vibe-worker-3(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.361 vibe-worker-13(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.361 vibe-worker-2(----) dbg] Thread exit vibe-worker-2 (index 8) (main=false)
+[2025-02-21 01:22:11.361 vibe-worker-6(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.361 vibe-worker-9(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.361 vibe-worker-7(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.361 vibe-worker-11(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.361 vibe-worker-0(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.361 vibe-worker-5(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.361 vibe-worker-6(----) dbg] Thread exit vibe-worker-6 (index 13) (main=false)
+[2025-02-21 01:22:11.361 vibe-worker-10(----) dbg] Thread exit vibe-worker-10 (index 12) (main=false)
+[2025-02-21 01:22:11.361 vibe-worker-1(----) dbg] Thread exit vibe-worker-1 (index 6) (main=false)
+[2025-02-21 01:22:11.362 vibe-worker-12(----) dbg] Thread exit vibe-worker-12 (index 3) (main=false)
+[2025-02-21 01:22:11.362 vibe-worker-3(----) dbg] Thread exit vibe-worker-3 (index 15) (main=false)
+[2025-02-21 01:22:11.362 vibe-worker-13(----) dbg] Thread exit vibe-worker-13 (index 5) (main=false)
+[2025-02-21 01:22:11.362 vibe-worker-9(----) dbg] Thread exit vibe-worker-9 (index 11) (main=false)
+[2025-02-21 01:22:11.363 vibe-worker-7(----) dbg] Thread exit vibe-worker-7 (index 4) (main=false)
+[2025-02-21 01:22:11.363 vibe-worker-11(----) dbg] Thread exit vibe-worker-11 (index 10) (main=false)
+[2025-02-21 01:22:11.363 vibe-worker-0(----) dbg] Thread exit vibe-worker-0 (index 1) (main=false)
+[2025-02-21 01:22:11.363 vibe-worker-5(----) dbg] Thread exit vibe-worker-5 (index 9) (main=false)
+[2025-02-21 01:22:11.365 main(----) dia] Still waiting for I/O worker threads to exit.
+[2025-02-21 01:22:11.365 vibe-io-1(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.365 vibe-io-0(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.365 vibe-io-2(----) dbg] Worker thread exit.
+[2025-02-21 01:22:11.365 vibe-io-1(----) dbg] Thread exit vibe-io-1 (index 2) (main=false)
+[2025-02-21 01:22:11.366 vibe-io-0(----) dbg] Thread exit vibe-io-0 (index 3) (main=false)
+[2025-02-21 01:22:11.366 vibe-io-2(----) dbg] Thread exit vibe-io-2 (index 1) (main=false)
+[2025-02-21 02:10:28.129 D1C31718(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 02:10:28.130 main(----) dbg] add route GET /api/notes
+[2025-02-21 02:10:28.130 main(----) dbg] add route POST /api/notes
+[2025-02-21 02:10:28.130 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 02:10:28.130 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 02:10:28.130 main(----) dbg] add route GET /api/tags
+[2025-02-21 02:10:28.130 main(----) dbg] add route GET /ws
+[2025-02-21 02:10:28.130 main(----) dbg] add route GET /assets/*
+[2025-02-21 02:10:28.130 main(----) dbg] add route GET *
+[2025-02-21 02:10:28.130 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 02:10:28.131 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 02:10:28.131 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 02:10:28.131 main(----) dia] Running event loop...
+[2025-02-21 02:10:28.131 main(----) dbg] Starting event loop.
+[2025-02-21 02:13:14.600 main(EXpu) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 02:13:14.601 main(EXpu) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 02:13:14.601 main(EXpu) INF] === Request for path: / ===
+[2025-02-21 02:13:14.602 main(EXpu) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 02:13:14.603 main(EXpu) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 02:13:14.603 main(EXpu) INF] Serving index.html
+[2025-02-21 02:13:14.604 main(EXpu) INF] Index content length: 396
+[2025-02-21 02:13:24.616 main(EXpu) dbg] Keep-alive connection timed out!
+[2025-02-21 04:41:17.625 37501AB7(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 04:41:17.626 main(----) dbg] add route GET /api/notes
+[2025-02-21 04:41:17.626 main(----) dbg] add route POST /api/notes
+[2025-02-21 04:41:17.626 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 04:41:17.626 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 04:41:17.626 main(----) dbg] add route GET /api/tags
+[2025-02-21 04:41:17.626 main(----) dbg] add route GET /ws
+[2025-02-21 04:41:17.626 main(----) dbg] add route GET /assets/*
+[2025-02-21 04:41:17.626 main(----) dbg] add route GET *
+[2025-02-21 04:41:17.626 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 04:41:17.626 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 04:41:17.627 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 04:41:17.627 main(----) dia] Running event loop...
+[2025-02-21 04:41:17.627 main(----) dbg] Starting event loop.
+[2025-02-21 04:41:22.524 main(mlHR) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 04:41:22.525 main(mlHR) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 04:41:22.525 main(mlHR) INF] === Request for path: / ===
+[2025-02-21 04:41:22.526 main(mlHR) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 04:41:22.527 main(mlHR) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 04:41:22.527 main(mlHR) INF] Serving index.html
+[2025-02-21 04:41:22.527 main(mlHR) INF] Index content length: 396
+[2025-02-21 04:41:22.567 main(mlHR) dbg] Path 'assets/index-BQZ7foFd.js' -> 'assets/index-BQZ7foFd.js'
+[2025-02-21 04:41:22.573 vibe-worker-10(----) dbg] entering worker thread
+[2025-02-21 04:41:22.574 vibe-worker-7(----) dbg] entering worker thread
+[2025-02-21 04:41:22.574 vibe-worker-0(----) dbg] entering worker thread
+[2025-02-21 04:41:22.574 vibe-io-2(----) dbg] entering worker thread
+[2025-02-21 04:41:22.575 vibe-worker-13(----) dbg] entering worker thread
+[2025-02-21 04:41:22.575 vibe-worker-2(----) dbg] entering worker thread
+[2025-02-21 04:41:22.575 vibe-worker-8(----) dbg] entering worker thread
+[2025-02-21 04:41:22.575 vibe-worker-5(----) dbg] entering worker thread
+[2025-02-21 04:41:22.576 vibe-worker-3(----) dbg] entering worker thread
+[2025-02-21 04:41:22.576 vibe-worker-9(----) dbg] entering worker thread
+[2025-02-21 04:41:22.576 vibe-worker-6(----) dbg] entering worker thread
+[2025-02-21 04:41:22.577 vibe-io-1(----) dbg] entering worker thread
+[2025-02-21 04:41:22.578 vibe-io-0(----) dbg] entering worker thread
+[2025-02-21 04:41:22.578 vibe-worker-12(----) dbg] entering worker thread
+[2025-02-21 04:41:22.578 vibe-worker-1(----) dbg] entering worker thread
+[2025-02-21 04:41:22.578 vibe-worker-4(----) dbg] entering worker thread
+[2025-02-21 04:41:22.579 vibe-worker-11(----) dbg] entering worker thread
+[2025-02-21 04:41:22.579 main(JJLe) dbg] Path 'assets/index-BbJc0FSl.css' -> 'assets/index-BbJc0FSl.css'
+[2025-02-21 04:41:23.991 main(mlHR) INF] === Request for path: /favicon.ico ===
+[2025-02-21 04:41:23.991 main(mlHR) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 04:41:23.992 main(mlHR) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 04:41:23.993 main(mlHR) INF] Serving index.html
+[2025-02-21 04:41:23.993 main(mlHR) INF] Index content length: 396
+[2025-02-21 04:41:32.592 main(JJLe) dbg] Keep-alive connection timed out!
+[2025-02-21 04:41:33.994 main(mlHR) dbg] Keep-alive connection timed out!
+[2025-02-21 04:41:46.321 main(HG+a) INF] === Request for path: / ===
+[2025-02-21 04:41:46.322 main(HG+a) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "Cache-Control": "max-age=0", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-User": "?1", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 04:41:46.323 main(HG+a) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 04:41:46.323 main(HG+a) INF] Serving index.html
+[2025-02-21 04:41:46.323 main(HG+a) INF] Index content length: 396
+[2025-02-21 04:41:46.953 main(HG+a) INF] === Request for path: /favicon.ico ===
+[2025-02-21 04:41:46.954 main(HG+a) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 04:41:46.955 main(HG+a) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 04:41:46.955 main(HG+a) INF] Serving index.html
+[2025-02-21 04:41:46.955 main(HG+a) INF] Index content length: 396
+[2025-02-21 04:41:56.965 main(HG+a) dbg] Keep-alive connection timed out!
+[2025-02-21 04:42:13.148 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 04:42:13.148 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 04:42:13.148 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 04:42:13.148 main(----) dia] Event loop exited with status 0.
+[2025-02-21 04:42:13.148 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 04:42:13.148 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 04:42:13.148 main(----) dia] Main thread exiting
+[2025-02-21 04:42:13.148 main(----) dia] Still waiting for worker threads to exit.
+[2025-02-21 04:42:13.149 vibe-worker-5(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-10(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-2(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-1(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-0(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-9(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-4(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-13(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-5(----) dbg] Thread exit vibe-worker-5 (index 7) (main=false)
+[2025-02-21 04:42:13.149 vibe-worker-12(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-6(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-7(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-11(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.149 vibe-worker-3(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.150 vibe-worker-8(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.150 vibe-worker-10(----) dbg] Thread exit vibe-worker-10 (index 1) (main=false)
+[2025-02-21 04:42:13.150 vibe-worker-2(----) dbg] Thread exit vibe-worker-2 (index 8) (main=false)
+[2025-02-21 04:42:13.150 vibe-worker-1(----) dbg] Thread exit vibe-worker-1 (index 16) (main=false)
+[2025-02-21 04:42:13.150 vibe-worker-0(----) dbg] Thread exit vibe-worker-0 (index 3) (main=false)
+[2025-02-21 04:42:13.150 vibe-worker-9(----) dbg] Thread exit vibe-worker-9 (index 13) (main=false)
+[2025-02-21 04:42:13.150 vibe-worker-4(----) dbg] Thread exit vibe-worker-4 (index 15) (main=false)
+[2025-02-21 04:42:13.150 vibe-worker-13(----) dbg] Thread exit vibe-worker-13 (index 6) (main=false)
+[2025-02-21 04:42:13.150 vibe-worker-12(----) dbg] Thread exit vibe-worker-12 (index 11) (main=false)
+[2025-02-21 04:42:13.150 vibe-worker-6(----) dbg] Thread exit vibe-worker-6 (index 9) (main=false)
+[2025-02-21 04:42:13.151 vibe-worker-7(----) dbg] Thread exit vibe-worker-7 (index 2) (main=false)
+[2025-02-21 04:42:13.151 vibe-worker-11(----) dbg] Thread exit vibe-worker-11 (index 4) (main=false)
+[2025-02-21 04:42:13.151 vibe-worker-3(----) dbg] Thread exit vibe-worker-3 (index 10) (main=false)
+[2025-02-21 04:42:13.151 vibe-worker-8(----) dbg] Thread exit vibe-worker-8 (index 5) (main=false)
+[2025-02-21 04:42:13.153 main(----) dia] Still waiting for I/O worker threads to exit.
+[2025-02-21 04:42:13.153 vibe-io-2(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.153 vibe-io-0(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.153 vibe-io-2(----) dbg] Thread exit vibe-io-2 (index 2) (main=false)
+[2025-02-21 04:42:13.153 vibe-io-1(----) dbg] Worker thread exit.
+[2025-02-21 04:42:13.153 vibe-io-0(----) dbg] Thread exit vibe-io-0 (index 3) (main=false)
+[2025-02-21 04:42:13.154 vibe-io-1(----) dbg] Thread exit vibe-io-1 (index 1) (main=false)
+[2025-02-21 04:43:54.173 BB9010A5(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 04:43:54.174 main(----) dbg] add route GET /api/notes
+[2025-02-21 04:43:54.174 main(----) dbg] add route POST /api/notes
+[2025-02-21 04:43:54.174 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 04:43:54.174 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 04:43:54.174 main(----) dbg] add route GET /api/tags
+[2025-02-21 04:43:54.174 main(----) dbg] add route GET /ws
+[2025-02-21 04:43:54.174 main(----) dbg] add route GET /assets/*
+[2025-02-21 04:43:54.174 main(----) dbg] add route GET *
+[2025-02-21 04:43:54.174 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 04:43:54.174 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 04:43:54.175 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 04:43:54.175 main(----) dia] Running event loop...
+[2025-02-21 04:43:54.175 main(----) dbg] Starting event loop.
+[2025-02-21 04:43:59.409 main(rLDv) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 04:43:59.410 main(rLDv) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 04:43:59.411 main(rLDv) INF] === Request for path: / ===
+[2025-02-21 04:43:59.412 main(rLDv) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 04:43:59.412 main(rLDv) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 04:43:59.412 main(rLDv) INF] Serving index.html
+[2025-02-21 04:43:59.413 main(rLDv) INF] Index content length: 396
+[2025-02-21 04:44:00.869 main(rLDv) INF] === Request for path: /favicon.ico ===
+[2025-02-21 04:44:00.870 main(rLDv) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 04:44:00.871 main(rLDv) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 04:44:00.871 main(rLDv) INF] Serving index.html
+[2025-02-21 04:44:00.871 main(rLDv) INF] Index content length: 396
+[2025-02-21 04:44:10.881 main(rLDv) dbg] Keep-alive connection timed out!
+[2025-02-21 04:51:49.800 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 04:51:49.801 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 04:51:49.801 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 04:51:49.801 main(----) dia] Event loop exited with status 0.
+[2025-02-21 04:51:49.801 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 04:51:49.801 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 04:51:49.801 main(----) dia] Main thread exiting
+[2025-02-21 04:51:54.487 89B01256(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 04:51:54.487 main(----) dbg] add route GET /api/notes
+[2025-02-21 04:51:54.487 main(----) dbg] add route POST /api/notes
+[2025-02-21 04:51:54.487 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 04:51:54.487 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 04:51:54.487 main(----) dbg] add route GET /api/tags
+[2025-02-21 04:51:54.487 main(----) dbg] add route GET /ws
+[2025-02-21 04:51:54.488 main(----) dbg] add route GET /assets/*
+[2025-02-21 04:51:54.488 main(----) dbg] add route GET *
+[2025-02-21 04:51:54.488 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 04:51:54.488 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 04:51:54.488 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 04:51:54.488 main(----) dia] Running event loop...
+[2025-02-21 04:51:54.488 main(----) dbg] Starting event loop.
+[2025-02-21 04:51:57.398 main(wYYT) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 04:51:57.399 main(wYYT) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 04:51:57.399 main(wYYT) INF] === Request for path: / ===
+[2025-02-21 04:51:57.400 main(wYYT) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 04:51:57.401 main(wYYT) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 04:51:57.402 main(wYYT) INF] Serving index.html
+[2025-02-21 04:51:57.402 main(wYYT) INF] Index content length: 396
+[2025-02-21 04:51:58.856 main(wYYT) INF] === Request for path: /favicon.ico ===
+[2025-02-21 04:51:58.857 main(wYYT) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 04:51:58.858 main(wYYT) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 04:51:58.858 main(wYYT) INF] Serving index.html
+[2025-02-21 04:51:58.858 main(wYYT) INF] Index content length: 396
+[2025-02-21 04:52:08.868 main(wYYT) dbg] Keep-alive connection timed out!

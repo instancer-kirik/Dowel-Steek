@@ -2,7 +2,9 @@ import dlangui;
 import dlangui.widgets.lists;
 import dlangui.widgets.controls;
 import dlangui.widgets.layouts;
-import dlangui.platforms.common.platform;
+import dlangui.platforms.common.platform : Platform;
+import dlangui.widgets.widget;
+import dlangui.platforms.sdl.sdlapp : SDLPlatform;
 import std.format : format;
 import std.conv : to;
 import std.array : join;
@@ -12,6 +14,17 @@ import std.path;
 import vault;
 import editor;
 import note;
+import bindbc.sdl;
+import vibe.d;  // We'll need to add vibe.d to dub.json
+
+// Use platform-specific mixin
+version(Windows) {
+    import dlangui.platforms.windows.platform;
+    mixin WINDOWS_APP_ENTRY_POINT;
+} else {
+    import dlangui.platforms.common.platform : APP_ENTRY_POINT;
+    mixin APP_ENTRY_POINT;
+}
 
 class NotesVaultWindow : Window {
     private VaultManager vaultManager;
@@ -19,18 +32,34 @@ class NotesVaultWindow : Window {
     private ListWidget tagsList;
     private string currentTagFilter;
     
+    private void delegate() _onShowHandler;
+    private void delegate() _onCloseHandler;
+
     this() {
         super();
-        windowCaption = "Notes Vault Manager"d;
-        vaultManager = new VaultManager();
+        // Don't load icon yet - wait until after OpenGL init
+        _onShowHandler = {
+            updateTagsList();
+            refreshLists();
+        };
+        _onCloseHandler = {
+            // Cleanup if needed
+        };
         
-        // Create main layout
+        // Create main layout first
         auto mainLayout = new VerticalLayout();
         mainLayout.padding(Rect(10, 10, 10, 10));
         mainLayout.backgroundColor = 0xFFFFFF;
+        mainLayout.layoutWidth = FILL_PARENT;
+        mainLayout.layoutHeight = FILL_PARENT;
+        
+        // Initialize vault manager
+        vaultManager = new VaultManager();
         
         // Add toolbar
         auto toolbar = new HorizontalLayout();
+        toolbar.layoutWidth = FILL_PARENT;  // Make sure toolbar fills width
+        
         auto addNoteBtn = new Button(null, "Add Note"d);
         addNoteBtn.click = &onAddNoteClick;
         auto addTagBtn = new Button(null, "Add Tag"d);
@@ -45,11 +74,18 @@ class NotesVaultWindow : Window {
         
         // Add notes list
         notesList = new ListWidget(null);
+        notesList.layoutWidth = FILL_PARENT;
+        notesList.layoutHeight = FILL_PARENT;
         
         // Add tags panel
         auto tagsPanel = new VerticalLayout();
+        tagsPanel.layoutWidth = FILL_PARENT;
+        tagsPanel.layoutHeight = FILL_PARENT;
+        
         tagsPanel.addChild(new TextWidget(null, "Tags"d));
         tagsList = new ListWidget(null);
+        tagsList.layoutWidth = FILL_PARENT;
+        tagsList.layoutHeight = FILL_PARENT;
         tagsPanel.addChild(tagsList);
         
         // Create split layout with proper weights
@@ -62,56 +98,71 @@ class NotesVaultWindow : Window {
         notesPane.layoutHeight = FILL_PARENT;
         notesPane.addChild(notesList);
         
-        auto tagsPane = new VerticalLayout();
-        tagsPane.layoutWidth = FILL_PARENT;
-        tagsPane.layoutHeight = FILL_PARENT;
-        tagsPane.addChild(tagsList);
-        
         splitLayout.addChild(notesPane);
-        splitLayout.addChild(tagsPane);
+        splitLayout.addChild(tagsPanel);
         
         // Add all to main layout
         mainLayout.addChild(toolbar);
         mainLayout.addChild(splitLayout);
         
-        // Set window content
-        contentWidget = mainLayout;
+        // Set the main widget
+        mainWidget = mainLayout;
         
-        // Update tag list click handler
+        // Set up handlers
         tagsList.itemClick = &onTagSelected;
-        
-        // Add "All Notes" to tags list
-        updateTagsList();
-        
-        // Update notes list click handler
         notesList.itemClick = &onNoteSelected;
         
-        // Initial refresh
+        // Initial data
+        updateTagsList();
         refreshLists();
     }
 
     override void show() {
-        Platform.instance.showWindow(this);
+        // Create window first
+        Platform.instance.createWindow(windowCaption, null, WindowFlag.Resizable, 800, 600);
+        
+        // Now that OpenGL is initialized, we can load the icon
+        try {
+            windowIcon = drawableCache.getImage("dlangui-logo1");
+        } catch (Exception e) {
+            Log.e("Failed to load window icon: ", e.msg);
+        }
+        
+        if (mainWidget) {
+            mainWidget.visibility = Visibility.Visible;
+            mainWidget.invalidate();
+        }
+        
+        if (_onShowHandler)
+            _onShowHandler();
+            
+        requestLayout();
     }
-    
-    override dstring windowCaption() const @property {
+
+    override void close() {
+        if (_onCloseHandler)
+            _onCloseHandler();
+            
+        if (mainWidget) {
+            mainWidget.visibility = Visibility.Gone;
+        }
+    }
+
+    override void invalidate() {
+        if (mainWidget)
+            mainWidget.invalidate();
+    }
+
+    override @property dstring windowCaption() const {
         return "Notes Vault Manager"d;
     }
     
-    override void windowCaption(dstring caption) @property {
-        super.windowCaption = caption;
+    override @property void windowCaption(dstring caption) {
+        // Basic implementation
     }
     
-    override void windowIcon(DrawBufRef icon) @property {
-        super.windowIcon = icon;
-    }
-    
-    override void invalidate() {
-        Platform.instance.invalidateWindow(this);
-    }
-    
-    override void close() {
-        Platform.instance.closeWindow(this);
+    override @property void windowIcon(DrawBufRef icon) {
+        // Basic implementation
     }
 
     private bool onAddNoteClick(Widget w) {
@@ -128,15 +179,17 @@ class NotesVaultWindow : Window {
     }
 
     private bool onTagSelected(Widget source, int itemIndex) {
-        if (itemIndex >= 0 && itemIndex < tagsList.items.length) {
-            currentTagFilter = itemIndex == 0 ? null : tagsList.items[itemIndex].to!string;
+        auto adapter = cast(StringListAdapter)tagsList.adapter;
+        if (itemIndex >= 0 && adapter && itemIndex < adapter.itemCount) {
+            currentTagFilter = itemIndex == 0 ? null : adapter.items[itemIndex].to!string;
             refreshLists();
         }
         return true;
     }
     
     private bool onNoteSelected(Widget source, int itemIndex) {
-        if (itemIndex >= 0 && itemIndex < notesList.items.length) {
+        auto adapter = cast(StringListAdapter)notesList.adapter;
+        if (itemIndex >= 0 && adapter && itemIndex < adapter.itemCount) {
             auto notes = currentTagFilter && currentTagFilter != "All Notes" 
                 ? vaultManager.getNotesByTag(currentTagFilter)
                 : vaultManager.getAllNotes();
@@ -196,6 +249,12 @@ class NotesVaultWindow : Window {
     }
 
     private void updateTagsList() {
+        dstring[] tagItems = ["All Notes"d];
+        auto tags = vaultManager.getAllTags();
+        foreach(tag; tags) {
+            tagItems ~= tag.to!dstring;
+        }
+        
         auto adapter = cast(StringListAdapter)tagsList.adapter;
         if (!adapter) {
             adapter = new StringListAdapter();
@@ -205,17 +264,75 @@ class NotesVaultWindow : Window {
     }
 }
 
-mixin APP_ENTRY_POINT;
-
+// Remove the main() function and use UIAppMain instead
 extern (C) int UIAppMain(string[] args) {
-    // Initialize GUI platform
-    if (!Platform.instance) {
-        Platform.instance = Platform.create();
+    // Initialize SDL first
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_EVENTS) < 0) {
+        return 1;
     }
-    
+    scope(exit) SDL_Quit();
+
+    // Initialize dlangui platform
+    initLogs();
+    Platform.setInstance(new SDLPlatform());
     Platform.instance.uiTheme = "theme_default";
-    Window window = new NotesVaultWindow();
-    window.show();
     
-    return Platform.instance.enterMessageLoop();
-} 
+    // Set up OpenGL attributes before window creation
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
+    
+    try {
+        auto window = new NotesVaultWindow();
+        if (!window) {
+            Log.e("Failed to create window");
+            return 1;
+        }
+        
+        window.show();
+        Log.i("Window shown");
+        
+        return Platform.instance.enterMessageLoop();
+    } catch (Exception e) {
+        Log.e("Error in main loop: ", e.msg);
+        return 1;
+    }
+}
+
+void main() {
+    auto settings = new HTTPServerSettings;
+    settings.port = 3000;
+    
+    auto router = new URLRouter;
+    
+    // API routes
+    router.get("/api/notes", &getNotes);
+    router.post("/api/notes", &createNote);
+    router.get("/api/notes/:id", &getNote);
+    router.put("/api/notes/:id", &updateNote);
+    router.get("/api/tags", &getTags);
+    
+    // Serve frontend static files
+    router.get("*", serveStaticFiles("./frontend/dist"));
+    
+    auto listener = listenHTTP(settings, router);
+    scope(exit) listener.stopListening();
+    
+    logInfo("Server running on http://localhost:3000/");
+    runApplication();
+}
+
+void getNotes(HTTPServerRequest req, HTTPServerResponse res) {
+    auto vaultManager = new VaultManager();
+    auto notes = vaultManager.getAllNotes();
+    res.writeJsonBody(notes);
+}
+
+// ... other API handlers ... 

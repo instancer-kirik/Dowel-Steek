@@ -13,8 +13,16 @@ import std.datetime;
 import core.thread;
 import std.regex;
 import std.typecons : tuple;
-import std.algorithm : map, filter;
+import std.algorithm : map, filter, splitter;
 import std.array : array, join;
+import dlangui.dialogs.msgbox;
+import dlangui.core.stdaction;  // For StandardAction
+import dlangui.widgets.styles;  // For TextFlag
+import std.path : buildPath;
+import std.file : tempDir;
+import std.stdio : File;
+import dlangui.core.types : Point, Rect;  // For Point type
+import dlangui.widgets.widget : Widget, State;  // For Widget and State
 
 // Action for undo/redo
 private struct EditAction {
@@ -22,6 +30,12 @@ private struct EditAction {
     string afterText;
     int beforePos;
     int afterPos;
+}
+
+// Add Touch to EventType enum if not present
+enum EventType {
+    Touch = 100,  // Use a unique number that doesn't conflict with existing EventType values
+    AutoSave = 1
 }
 
 class MarkdownEditor : Dialog {
@@ -35,6 +49,9 @@ class MarkdownEditor : Dialog {
     private EditAction[] undoStack;
     private EditAction[] redoStack;
     private string lastContent;
+    private HorizontalLayout touchToolbar;
+    private bool isSelectionMode;
+    private Point touchStart;
     
     // Keyboard shortcuts
     enum Shortcut {
@@ -48,97 +65,137 @@ class MarkdownEditor : Dialog {
     }
     
     this(Window parent, Note* note) {
-        super(UIString.fromRaw("Edit Note"d), parent);
-        currentNote = note;
+        super(UIString.fromRaw("Edit Note"d), parent, DialogFlag.Resizable, 800, 600);
         
-        // Create main layout
-        auto mainLayout = new VerticalLayout();
-        mainLayout.padding(Rect(10, 10, 10, 10));
-        mainLayout.layoutWidth = FILL_PARENT;
-        mainLayout.layoutHeight = FILL_PARENT;
-        
-        // Add toolbar with keyboard shortcut hints
-        auto toolbar = new HorizontalLayout();
-        auto saveBtn = new Button(null, "Save (Ctrl+S)"d);
-        saveBtn.click = &onSave;
-        
-        auto previewBtn = new Button(null, "Toggle Preview (Ctrl+P)"d);
-        previewBtn.click = &onTogglePreview;
-        
-        auto helpBtn = new Button(null, "Shortcuts (Ctrl+H)"d);
-        helpBtn.click = &onShowShortcuts;
-        
-        auto undoBtn = new Button(null, "Undo (Ctrl+Z)"d);
-        undoBtn.click = &onUndo;
-        auto redoBtn = new Button(null, "Redo (Ctrl+Y)"d);
-        redoBtn.click = &onRedo;
-        
-        toolbar.addChild(saveBtn);
-        toolbar.addChild(previewBtn);
-        toolbar.addChild(helpBtn);
-        toolbar.addChild(undoBtn);
-        toolbar.addChild(redoBtn);
-        
-        // Create split layout for editor and preview
-        auto splitLayout = new HorizontalLayout();
-        splitLayout.layoutWidth = FILL_PARENT;
-        splitLayout.layoutHeight = FILL_PARENT;
-        
-        // Editor pane
-        auto editorPane = new VerticalLayout();
-        editorPane.layoutWidth = FILL_PARENT;
-        editorPane.layoutHeight = FILL_PARENT;
-        
-        // Title field
-        auto titleLayout = new HorizontalLayout();
-        auto titleEdit = new EditLine(null);
-        titleEdit.text = currentNote.title.to!dstring;
-        setupTitleEdit(titleEdit);
-        titleLayout.addChild(titleEdit);
-        
-        // Tags field
-        auto tagsLayout = new HorizontalLayout();
-        auto tagsEdit = new EditLine(null);
-        tagsEdit.text = currentNote.tags.join(", ").to!dstring;
-        setupTagsEdit(tagsEdit);
-        tagsLayout.addChild(tagsEdit);
-        
-        // Content editor
-        contentEdit = new EditBox(null);
-        contentEdit.text = currentNote.content.to!dstring;
-        setupContentEdit();
-        contentEdit.fontFamily = FontFamily.MonoSpace;
-        contentEdit.backgroundColor = 0xFFFFFF;
-        
-        editorPane.addChild(titleLayout);
-        editorPane.addChild(tagsLayout);
-        editorPane.addChild(contentEdit);
-        
-        // Preview pane
-        preview = new TextWidget(null, ""d);
-        preview.fontFamily = FontFamily.SansSerif;
-        preview.textFlags = TextFlag.MultiLine | TextFlag.WordWrap;
-        preview.backgroundColor = 0xFAFAFA;
-        preview.visible = false;
-        
-        splitLayout.addChild(editorPane);
-        splitLayout.addChild(preview);
-        
-        // Add all to main layout
-        mainLayout.addChild(toolbar);
-        mainLayout.addChild(splitLayout);
-        
-        // Set dialog content
-        contentWidget = mainLayout;
-        
-        // Update preview
-        updatePreview();
-        
-        // Start auto-save thread
-        startAutoSave();
-        
-        // Initialize undo system
-        lastContent = currentNote.content;
+        try {
+            // Initialize fields
+            currentNote = note;
+            touchStart = Point(-1, -1);  // Invalid point to start
+            
+            // Create main layout
+            auto mainLayout = new VerticalLayout();
+            mainLayout.padding(Rect(10, 10, 10, 10));
+            mainLayout.layoutWidth = FILL_PARENT;
+            mainLayout.layoutHeight = FILL_PARENT;
+            
+            // Add toolbar with keyboard shortcut hints
+            auto toolbar = new HorizontalLayout();
+            auto saveBtn = new Button(null, "Save (Ctrl+S)"d);
+            saveBtn.click = &onSave;
+            
+            auto previewBtn = new Button(null, "Toggle Preview (Ctrl+P)"d);
+            previewBtn.click = &onTogglePreview;
+            
+            auto helpBtn = new Button(null, "Shortcuts (Ctrl+H)"d);
+            helpBtn.click = &onShowShortcuts;
+            
+            auto undoBtn = new Button(null, "Undo (Ctrl+Z)"d);
+            undoBtn.click = &onUndo;
+            auto redoBtn = new Button(null, "Redo (Ctrl+Y)"d);
+            redoBtn.click = &onRedo;
+            
+            toolbar.addChild(saveBtn);
+            toolbar.addChild(previewBtn);
+            toolbar.addChild(helpBtn);
+            toolbar.addChild(undoBtn);
+            toolbar.addChild(redoBtn);
+            
+            // Create split layout for editor and preview
+            auto splitLayout = new HorizontalLayout();
+            splitLayout.layoutWidth = FILL_PARENT;
+            splitLayout.layoutHeight = FILL_PARENT;
+            
+            // Editor pane
+            auto editorPane = new VerticalLayout();
+            editorPane.layoutWidth = FILL_PARENT;
+            editorPane.layoutHeight = FILL_PARENT;
+            
+            // Title field
+            auto titleLayout = new HorizontalLayout();
+            auto titleEdit = new EditLine(null);
+            titleEdit.text = currentNote.title.to!dstring;
+            setupTitleEdit(titleEdit);
+            titleLayout.addChild(titleEdit);
+            
+            // Tags field
+            auto tagsLayout = new HorizontalLayout();
+            auto tagsEdit = new EditLine(null);
+            tagsEdit.text = currentNote.tags.join(", ").to!dstring;
+            setupTagsEdit(tagsEdit);
+            tagsLayout.addChild(tagsEdit);
+            
+            // Content editor
+            contentEdit = new EditBox(null);
+            contentEdit.text = currentNote.content.to!dstring;
+            setupContentEdit();
+            contentEdit.fontFamily = FontFamily.MonoSpace;
+            contentEdit.backgroundColor = 0xFFFFFF;
+            
+            editorPane.addChild(titleLayout);
+            editorPane.addChild(tagsLayout);
+            editorPane.addChild(contentEdit);
+            
+            // Add touch-friendly toolbar
+            touchToolbar = new HorizontalLayout();
+            touchToolbar.layoutWidth = FILL_PARENT;
+            touchToolbar.padding(Rect(5, 5, 5, 5));
+            
+            // Add touch controls
+            auto cursorLeftBtn = new Button(null, "←"d);
+            cursorLeftBtn.click = &onCursorLeft;
+            cursorLeftBtn.minWidth = 50;  // Larger touch target
+            
+            auto cursorRightBtn = new Button(null, "→"d);
+            cursorRightBtn.click = &onCursorRight;
+            cursorRightBtn.minWidth = 50;
+            
+            auto selectBtn = new Button(null, "Select"d);
+            selectBtn.click = &onToggleSelect;
+            
+            auto insertLinkBtn = new Button(null, "Link"d);
+            insertLinkBtn.click = &onInsertLink;
+            
+            touchToolbar.addChild(cursorLeftBtn);
+            touchToolbar.addChild(cursorRightBtn);
+            touchToolbar.addChild(selectBtn);
+            touchToolbar.addChild(insertLinkBtn);
+            
+            // Add touch toolbar to layout
+            editorPane.addChild(touchToolbar);
+            
+            // Preview pane
+            setupPreview();
+            
+            splitLayout.addChild(editorPane);
+            splitLayout.addChild(preview);
+            
+            // Add all to main layout
+            mainLayout.addChild(toolbar);
+            mainLayout.addChild(splitLayout);
+            
+            // Set dialog content
+            mainLayout.layoutWidth = FILL_PARENT;
+            mainLayout.layoutHeight = FILL_PARENT;
+            this.addChild(mainLayout);  // Dialog inherits from VerticalLayout, so we add the layout as a child
+            
+            // Use contentWidget for Dialog class
+            setupContentEdit();        // Update preview
+            updatePreview();
+            
+            // Start auto-save thread
+            startAutoSave();
+            
+            // Initialize undo system
+            lastContent = currentNote.content;
+            
+            // Enhance content editor for touch
+            contentEdit.minHeight = 30;
+            contentEdit.fontSize = 16;
+            
+        } catch (Exception e) {
+            Log.e("Error in editor initialization: ", e.msg);
+            throw e;
+        }
     }
     
     ~this() {
@@ -152,11 +209,9 @@ class MarkdownEditor : Dialog {
         autoSaveThread = new Thread({
             while (isAutoSaving) {
                 if (isDirty && Clock.currTime - lastEdit > dur!"seconds"(3)) {
-                    Window.postEvent(this, new RunnableEvent(
-                        CUSTOM_RUNNABLE,
-                        this,
-                        &saveChanges
-                    ));
+                    // Use window for event posting
+                    if (auto window = window)  // Get window from Dialog
+                        window.postEvent(new CustomEvent(EventType.AutoSave));
                 }
                 Thread.sleep(dur!"seconds"(1));
             }
@@ -214,10 +269,10 @@ class MarkdownEditor : Dialog {
     
     private void updateSyntaxHighlighting() {
         auto text = contentEdit.text.to!string;
-        auto pos = contentEdit.caretPos;
+        TextPosition pos = contentEdit.caretPos;
         
         // Reset all colors
-        contentEdit.setTextColor(0, text.length, 0x000000);
+        contentEdit.backgroundColor = 0xFFFFFF;
         
         // Define markdown patterns with more precise regex
         static immutable patterns = [
@@ -258,7 +313,7 @@ class MarkdownEditor : Dialog {
             try {
                 auto r = regex(pattern[0], "g");
                 foreach (m; text.matchAll(r)) {
-                    contentEdit.setTextColor(m.pre.length, m.hit.length, pattern[1]);
+                    contentEdit.textColor = pattern[1];
                 }
             } catch (Exception e) {
                 // Skip invalid patterns
@@ -267,7 +322,7 @@ class MarkdownEditor : Dialog {
         }
         
         // Restore cursor position
-        contentEdit.caretPos = pos;
+        contentEdit.setCaretPos(pos.line, pos.pos);
     }
     
     private void saveChanges() {
@@ -292,7 +347,11 @@ class MarkdownEditor : Dialog {
                   "Ctrl+Z: Undo\n" ~
                   "Ctrl+Y: Redo";
         
-        MessageBox.show(msg.to!dstring, "Keyboard Shortcuts"d);
+        window.showMessageBox(
+            UIString.fromRaw("Keyboard Shortcuts"d),
+            UIString.fromRaw(msg.to!dstring),
+            [ACTION_OK]  // Use predefined ACTION_OK constant
+        );
         return true;
     }
     
@@ -301,13 +360,14 @@ class MarkdownEditor : Dialog {
         
         // TODO: Save note changes
         isDirty = false;
-        close(DialogResult.OK);
+        close(new Action(StandardAction.Ok));  // Use StandardAction.Ok
         return true;
     }
     
     private bool onTogglePreview(Widget w) {
-        preview.visible = !preview.visible;
-        if (preview.visible) {
+        preview.visibility = preview.visibility == Visibility.Visible ? 
+            Visibility.Gone : Visibility.Visible;
+        if (preview.visibility == Visibility.Visible) {
             updatePreview();
         }
         return true;
@@ -338,8 +398,8 @@ class MarkdownEditor : Dialog {
             undoStack ~= EditAction(
                 lastContent,
                 newContent,
-                contentEdit.caretPos,
-                contentEdit.caretPos
+                contentEdit.caretPos.pos,
+                contentEdit.caretPos.pos
             );
             lastContent = newContent;
             redoStack.length = 0; // Clear redo stack on new change
@@ -349,7 +409,7 @@ class MarkdownEditor : Dialog {
         isDirty = true;
         lastEdit = Clock.currTime();
         
-        if (preview.visible) {
+        if (preview.visibility) {
             updatePreview();
         }
         
@@ -365,12 +425,12 @@ class MarkdownEditor : Dialog {
         redoStack ~= EditAction(
             contentEdit.text.to!string,
             action.beforeText,
-            contentEdit.caretPos,
+            contentEdit.caretPos.pos,
             action.beforePos
         );
         
         contentEdit.text = action.beforeText.to!dstring;
-        contentEdit.caretPos = action.beforePos;
+        contentEdit.setCaretPos(0, action.beforePos);
         updateSyntaxHighlighting();
         return true;
     }
@@ -384,12 +444,12 @@ class MarkdownEditor : Dialog {
         undoStack ~= EditAction(
             contentEdit.text.to!string,
             action.beforeText,
-            contentEdit.caretPos,
+            contentEdit.caretPos.pos,
             action.beforePos
         );
         
         contentEdit.text = action.beforeText.to!dstring;
-        contentEdit.caretPos = action.beforePos;
+        contentEdit.setCaretPos(0, action.beforePos);
         updateSyntaxHighlighting();
         return true;
     }
@@ -399,8 +459,6 @@ class MarkdownEditor : Dialog {
         
         // Save current content to temp file
         import std.file : write, remove;
-        import std.path : buildPath, tempDir;
-        
         auto tempFile = buildPath(tempDir, "preview.md");
         write(tempFile, currentNote.toMarkdown());
         
@@ -417,40 +475,45 @@ class MarkdownEditor : Dialog {
     
     private void insertMarkdownSyntax(string prefix, string suffix) {
         auto text = contentEdit.text.to!string;
-        auto selStart = contentEdit.selectionStart;
-        auto selEnd = contentEdit.selectionEnd;
+        auto pos = contentEdit.caretPos;
         
-        if (selStart == selEnd) {
+        if (contentEdit.selectionRange.empty) {
             // No selection, just insert at cursor
-            auto newText = text[0..selStart] ~ prefix ~ suffix ~ text[selStart..$];
+            auto newText = text[0..pos.pos] ~ prefix ~ suffix ~ text[pos.pos..$];
             contentEdit.text = newText.to!dstring;
-            contentEdit.selectionStart = selStart + prefix.length;
-            contentEdit.selectionEnd = selStart + prefix.length;
+            contentEdit.setCaretPos(pos.line, pos.pos + cast(int)prefix.length);
         } else {
             // Wrap selection
-            auto selectedText = text[selStart..selEnd];
-            auto newText = text[0..selStart] ~ prefix ~ selectedText ~ 
-                suffix ~ text[selEnd..$];
+            auto sel = contentEdit.selectionRange;
+            auto selText = text[sel.start.pos..sel.end.pos];
+            auto newText = text[0..sel.start.pos] ~ prefix ~ selText ~ 
+                suffix ~ text[sel.end.pos..$];
             contentEdit.text = newText.to!dstring;
-            contentEdit.selectionStart = selStart;
-            contentEdit.selectionEnd = selEnd + prefix.length + suffix.length;
+            contentEdit.setCaretPos(sel.start.line, sel.start.pos);
+            contentEdit.selectionRange = TextRange(
+                TextPosition(sel.start.line, sel.start.pos),
+                TextPosition(sel.end.line, sel.end.pos + cast(int)(prefix.length + suffix.length))
+            );
         }
     }
     
     private void insertLink() {
         auto text = contentEdit.text.to!string;
-        auto selStart = contentEdit.selectionStart;
-        auto selEnd = contentEdit.selectionEnd;
+        auto pos = contentEdit.caretPos;
+        auto sel = contentEdit.selectionRange;
         
-        if (selStart == selEnd) {
+        if (sel.empty) {
             insertMarkdownSyntax("[", "](url)");
         } else {
-            auto selectedText = text[selStart..selEnd];
-            auto newText = text[0..selStart] ~ "[" ~ selectedText ~ 
-                "](url)" ~ text[selEnd..$];
+            auto selectedText = text[sel.start.pos..sel.end.pos];
+            auto newText = text[0..sel.start.pos] ~ "[" ~ selectedText ~ 
+                "](url)" ~ text[sel.end.pos..$];
             contentEdit.text = newText.to!dstring;
-            contentEdit.selectionStart = selEnd + 2;
-            contentEdit.selectionEnd = selEnd + 5;
+            contentEdit.setCaretPos(sel.end.line, sel.end.pos + 2);
+            contentEdit.selectionRange = TextRange(
+                TextPosition(sel.end.line, sel.end.pos + 2),
+                TextPosition(sel.end.line, sel.end.pos + 7)
+            );
         }
     }
     
@@ -474,6 +537,93 @@ class MarkdownEditor : Dialog {
         tagsEdit.contentChange = (EditableContent source) {
             onTagsChanged(source);
         };
+    }
+    
+    private void setupPreview() {
+        preview = new TextWidget(null, ""d);
+        preview.fontFamily = FontFamily.SansSerif;
+        preview.textFlags = TextFlag.init;  // Use correct enum values from dlangui
+        preview.visibility = Visibility.Gone;
+        preview.backgroundColor = 0xFAFAFA;
+    }
+    
+    private void showError(dstring message) {
+        window.showMessageBox(
+            UIString.fromRaw("Error"d),
+            UIString.fromRaw(message),
+            [ACTION_OK]  // Use predefined ACTION_OK constant
+        );
+    }
+    
+    private void setCaretPosition(int line, int col) {
+        contentEdit.setCaretPos(line, col);  // Use setCaretPos instead of assigning to caretPos
+    }
+    
+    private void setTextColor(int pos, int len, uint color) {
+        contentEdit.textColor = color;
+    }
+    
+    override bool onMouseEvent(MouseEvent event) {
+        if (event.action == MouseAction.ButtonDown) {
+            touchStart = Point(event.x, event.y);
+            if (!isSelectionMode) {
+                // Just use raw coordinates divided by a reasonable font size estimate
+                int line = event.y / 20;  // Assuming ~20 pixels per line
+                int col = event.x / 10;   // Assuming ~10 pixels per character
+                contentEdit.setCaretPos(line, col);
+                return true;
+            }
+        } else if (event.action == MouseAction.Move && event.button) {
+            if (isSelectionMode && touchStart.x >= 0) {
+                // Calculate rough positions
+                int startLine = touchStart.y / 20;
+                int startCol = touchStart.x / 10;
+                int endLine = event.y / 20;
+                int endCol = event.x / 10;
+                
+                // First set caret to start
+                contentEdit.setCaretPos(startLine, startCol);
+                
+                // Then move to end position to create selection
+                contentEdit.setCaretPos(endLine, endCol, true);  // true = select
+            }
+        }
+        return super.onMouseEvent(event);
+    }
+    
+    private bool onCursorLeft(Widget w) {
+        auto pos = contentEdit.caretPos;
+        if (pos.pos > 0) {
+            contentEdit.setCaretPos(pos.line, pos.pos - 1);
+        } else if (pos.line > 0) {
+            // Move to end of previous line
+            auto prevLine = contentEdit.content.lines[pos.line - 1];
+            contentEdit.setCaretPos(pos.line - 1, cast(int)prevLine.length);  // Cast length to int
+        }
+        return true;
+    }
+    
+    private bool onCursorRight(Widget w) {
+        auto pos = contentEdit.caretPos;
+        auto currentLine = contentEdit.content.lines[pos.line];
+        if (pos.pos < cast(int)currentLine.length) {  // Cast length to int
+            contentEdit.setCaretPos(pos.line, pos.pos + 1);
+        } else if (pos.line < contentEdit.content.lines.length - 1) {
+            // Move to start of next line
+            contentEdit.setCaretPos(pos.line + 1, 0);
+        }
+        return true;
+    }
+    
+    private bool onToggleSelect(Widget w) {
+        isSelectionMode = !isSelectionMode;
+        w.setState(cast(uint)(isSelectionMode ? State.Selected : State.Normal));  // Cast State to uint
+        return true;
+    }
+    
+    private bool onInsertLink(Widget w) {
+        insertLink();
+        return true;
     }
 }
 
