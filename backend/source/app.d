@@ -19,7 +19,9 @@ import common.vault;  // Use the regular module name
 import common.note;
 import editor;
 import std.stdio;
-
+import vibe.data.json : serializeToJson;
+import std.conv : to;
+import vibe.http.client;
 // File change tracking
 private struct FileChange {
     string path;
@@ -168,11 +170,8 @@ shared static this() {
     logInfo("Found %d existing notes", notes.length);
     
     if (notes.empty) {
-        logInfo("Creating welcome note");
-        auto testNote = Note("Welcome", "Welcome to your Notes Vault!\n\nThis is your first note. You can:\n- Edit this note\n- Create new notes\n- Delete notes\n\nEnjoy!");
-        testNote.addTag("welcome");
-        vaultManager.addNote(testNote);
-        logInfo("Welcome note created");
+        logInfo("Creating welcome notes");
+        createWelcomeNotes(vaultManager);
     }
 }
 
@@ -196,99 +195,130 @@ void main() {
     auto router = new URLRouter;
     
     // API routes first
-    router.get("/api/notes", (HTTPServerRequest req, HTTPServerResponse res) {
-        logInfo("=== GET /api/notes ===");
-        try {
-            logInfo("Creating VaultManager...");
-            auto vaultManager = new VaultManager("notes");
-            
-            logInfo("Getting notes...");
-            auto notes = vaultManager.getAllNotes();
-            logInfo("Got %d notes", notes.length);
-
-            // Always create a valid root node, even with no notes
-            auto rootNode = Json([
-                "type": Json("directory"),
-                "name": Json("root"),
-                "path": Json("/"),
-                "children": Json(notes.length > 0 ? 
-                    notes.map!(note => Json([
-                        "type": Json("file"),
-                        "name": Json(note.title),
-                        "path": Json(note.path),
-                        "note": Json([
-                            "id": Json(note.id),
-                            "title": Json(note.title),
-                            "content": Json(note.content),
-                            "tags": Json(note.tags.map!(t => Json(t)).array),
-                            "path": Json(note.path),
-                            "created": Json(note.created.toISOExtString()),
-                            "modified": Json(note.modified.toISOExtString())
-                        ])
-                    ])).array : 
-                    cast(Json[])[])
-            ]);
-
-            auto response = ["notes": Json([rootNode])];
-            logInfo("Sending response with root node and %d notes", notes.length);
-            res.headers["Access-Control-Allow-Origin"] = "*";
-            res.headers["Content-Type"] = "application/json";
-            res.writeJsonBody(response);
-            logInfo("Response sent successfully");
-        } catch (Exception e) {
-            logError("API Error: %s", e.msg);
-            logError("Stack trace: %s", e.toString());
-            res.statusCode = HTTPStatus.internalServerError;
-            res.writeJsonBody([
-                "error": Json(e.msg),
-                "notes": Json([Json([
-                    "type": Json("directory"),
-                    "name": Json("root"),
-                    "path": Json("/"),
-                    "children": Json(cast(Json[])[])
-                ])])
-            ]);
-        }
-    });
+    router.get("/api/notes", &getAllNotes);
     router.post("/api/notes", &createNote);
     router.get("/api/notes/:id", &getNote);
     router.put("/api/notes/:id", &updateNote);
     router.get("/api/tags", &getTags);
+    
+    // Add this route after other API routes
+    router.get("/api/debug/notes", (HTTPServerRequest req, HTTPServerResponse res) {
+        logInfo("=== GET /api/debug/notes ===");
+        try {
+            auto notesDir = "notes";
+            auto fileInfos = dirEntries(notesDir, "*.md", SpanMode.depth)
+                .filter!(f => f.isFile)
+                .map!(f => [
+                    "path": f.name,
+                    "size": getSize(f.name).to!string,
+                    "modified": timeLastModified(f.name).toISOExtString(),
+                    "content": readText(f.name)
+                ].serializeToJson())
+                .array;
+            
+            auto response = [
+                "directory": notesDir.serializeToJson(),
+                "exists": exists(notesDir).serializeToJson(),
+                "files": fileInfos.serializeToJson()
+            ];
+            
+            res.writeJsonBody(response);
+        } catch (Exception e) {
+            res.statusCode = HTTPStatus.internalServerError;
+            res.writeJsonBody(["error": e.msg.serializeToJson()]);
+        }
+    });
     
     // WebSocket route
     router.get("/ws", handleWebSockets(&handleWebSocket));
     
     // Serve frontend static files
     auto fsettings = new HTTPFileServerSettings;
-    fsettings.serverPathPrefix = "/";
+    fsettings.serverPathPrefix = "/";  // Serve from root
+    
+    // Add proper MIME types
+    fsettings.encodingFileExtension = [
+        ".js": "application/javascript",
+        ".mjs": "application/javascript",
+        ".css": "text/css",
+        ".html": "text/html",
+        ".json": "application/json",
+        ".png": "image/png",
+        ".jpg": "image/jpeg",
+        ".svg": "image/svg+xml",
+        ".ico": "image/x-icon",
+        ".woff": "font/woff",
+        ".woff2": "font/woff2",
+        ".ttf": "font/ttf",
+        ".eot": "application/vnd.ms-fontobject"
+    ];
     
     // Check if frontend directory exists
-    auto frontendPath = "../frontend/dist";
-    if (!exists(frontendPath)) {
-        logError("Frontend directory not found at: %s", frontendPath);
+    auto frontendPath = "../frontend";
+    auto distPath = buildPath(frontendPath, "dist");
+    auto srcPath = frontendPath;
+    
+    bool isDevelopment = !exists(distPath);
+    string servePath = isDevelopment ? srcPath : distPath;
+    
+    if (!exists(servePath)) {
+        logError("Frontend directory not found at: %s", servePath);
         return;
     }
 
-    // Serve static files first
-    router.get("/assets/*", serveStaticFiles(frontendPath, fsettings));
+    // Serve static files
+    router.get("/assets/*", (req, res) {
+        auto path = req.requestPath.toString()[8..$]; // Remove "/assets/" prefix
+        auto fullPath = buildPath(servePath, "assets", path);
+        
+        if (!exists(fullPath)) {
+            logInfo("Asset not found: %s", fullPath);
+            res.statusCode = HTTPStatus.notFound;
+            return;
+        }
 
+        auto ext = extension(path).toLower();
+        string contentType = "application/octet-stream";
+        
+        switch (ext) {
+            case ".js":
+            case ".mjs":
+                contentType = "application/javascript";
+                break;
+            case ".css":
+                contentType = "text/css";
+                break;
+            case ".html":
+                contentType = "text/html";
+                break;
+            case ".json":
+                contentType = "application/json";
+                break;
+            default:
+                break;
+        }
+        
+        res.headers["Content-Type"] = contentType;
+        res.writeBody(readFile(fullPath));
+    });
+    
     // Serve index.html for all unmatched routes (SPA support)
     router.get("*", (HTTPServerRequest req, HTTPServerResponse res) {
         string reqPath = req.requestPath.toString();
         logInfo("=== Request for path: %s ===", reqPath);
-        logInfo("Headers: %s", req.headers);
         
-        if (reqPath.startsWith("/api/") || reqPath == "/ws") {
-            logInfo("Skipping API/WS request");
+        // Skip API, WebSocket and asset requests
+        if (reqPath.startsWith("/api/") || reqPath == "/ws" || reqPath.startsWith("/assets/")) {
+            logInfo("Skipping special request");
             return;
         }
         
-        auto indexPath = buildPath(frontendPath, "index.html");
+        auto indexPath = buildPath(servePath, "index.html");
         logInfo("Looking for index at: %s", indexPath);
         if (exists(indexPath)) {
             logInfo("Serving index.html");
             string content = readText(indexPath);
-            logInfo("Index content length: %d", content.length);
+            
             res.headers["Content-Type"] = "text/html";
             res.writeBody(content);
         } else {
@@ -298,7 +328,7 @@ void main() {
         }
     });
 
-    logInfo("Starting Notes Vault backend server...");
+    logInfo("Starting Quill Garden backend server..."); // A garden for growing your thoughts
     
     auto listener = listenHTTP(settings, router);
     scope(exit) listener.stopListening();
@@ -390,6 +420,91 @@ void updateNote(HTTPServerRequest req, HTTPServerResponse res) {
             res.statusCode = HTTPStatus.notFound;
             res.writeJsonBody(["error": Json("Note not found")]);
         }
+    } catch (Exception e) {
+        res.statusCode = HTTPStatus.internalServerError;
+        res.writeJsonBody(["error": Json(e.msg)]);
+    }
+}
+
+void createWelcomeNotes(VaultManager vaultManager) {
+    logInfo("Creating welcome notes");
+    
+    // Welcome note
+    auto welcome = Note(
+        "Welcome to Quill Garden 🌱",
+        "Welcome to your personal knowledge garden! Here you can:\n\n" ~
+        "- 📝 Create and edit notes\n" ~
+        "- 🏷️ Organize with tags\n" ~
+        "- 🔗 Link notes together\n" ~
+        "- 📌 Pin important notes\n" ~
+        "- 🎨 Color-code for visual organization\n\n" ~
+        "Get started by creating a new note or exploring the examples!"
+    );
+    welcome.addTag("welcome");
+    welcome.isPinned = true;
+    welcome.color = "green";
+    vaultManager.addNote(welcome);
+    
+    // Quick start guide
+    auto quickstart = Note(
+        "Quick Start Guide 🚀",
+        "## Basic Usage\n\n" ~
+        "1. Create a new note with the + button\n" ~
+        "2. Use markdown for formatting\n" ~
+        "3. Add #tags in your content\n" ~
+        "4. Pin important notes\n" ~
+        "5. Use colors to categorize\n\n" ~
+        "## Keyboard Shortcuts\n\n" ~
+        "- `Ctrl/Cmd + N`: New note\n" ~
+        "- `Ctrl/Cmd + S`: Save\n" ~
+        "- `Ctrl/Cmd + F`: Search\n"
+    );
+    quickstart.addTag("guide");
+    quickstart.color = "blue";
+    vaultManager.addNote(quickstart);
+    
+    // Markdown example
+    auto markdown = Note(
+        "Markdown Examples 📘",
+        "# Heading 1\n## Heading 2\n### Heading 3\n\n" ~
+        "**Bold** and *italic* text\n\n" ~
+        "- Bullet points\n" ~
+        "1. Numbered lists\n\n" ~
+        "> Blockquotes look like this\n\n" ~
+        "```\nCode blocks are great for snippets\n```\n\n" ~
+        "[Links](https://example.com) work too!\n\n" ~
+        "Add #tags anywhere in your content"
+    );
+    markdown.addTag("example");
+    markdown.addTag("markdown");
+    markdown.color = "purple";
+    vaultManager.addNote(markdown);
+    
+    logInfo("Welcome notes created");
+}
+
+void getAllNotes(HTTPServerRequest req, HTTPServerResponse res) {
+    try {
+        auto vaultManager = new VaultManager("notes");
+        auto notes = vaultManager.getAllNotes();
+        
+        // Convert notes to JSON array with proper structure
+        auto notesJson = notes.map!(note => Json([
+            "id": Json(note.id),
+            "title": Json(note.title),
+            "content": Json(note.content),
+            "tags": Json(note.tags.map!(t => Json(t)).array),
+            "path": Json(note.path),
+            "created": Json(note.created.toISOExtString()),
+            "modified": Json(note.modified.toISOExtString()),
+            "isPinned": Json(note.isPinned),
+            "isArchived": Json(note.isArchived),
+            "color": Json(note.color)
+        ])).array;
+        
+        res.writeJsonBody([
+            "notes": Json(notesJson)  // Wrap in an object with "notes" key
+        ]);
     } catch (Exception e) {
         res.statusCode = HTTPStatus.internalServerError;
         res.writeJsonBody(["error": Json(e.msg)]);

@@ -3,7 +3,7 @@ import { ContextMenu } from '../ContextMenu/ContextMenu';
 import type { Note } from '../../types';
 
 interface FileTreeProps {
-  notes: (Note | FileNode)[];
+  notes: Note[];
   onNoteSelect: (id: string) => void;
   onNoteMove: (noteId: string, newPath: string) => void;
   onCreateDirectory: (path: string) => void;
@@ -33,11 +33,18 @@ export const FileTree: React.FC<FileTreeProps> = ({
       return [];
     }
 
-    const root: { [key: string]: FileNode } = {};
+    const root: { [key: string]: FileNode } = {
+      '/': {
+        type: 'directory',
+        name: 'Root',
+        path: '/',
+        children: []
+      }
+    };
     
     // First pass: Create directories
     notes.forEach(note => {
-      if (!note) return; // Skip invalid notes
+      if (!note) return;
       const path = note.path || '/unsorted';
       const parts = path.split('/').filter(Boolean);
       let currentPath = '';
@@ -57,23 +64,38 @@ export const FileTree: React.FC<FileTreeProps> = ({
 
     // Second pass: Add files
     notes.forEach(note => {
-      if (!note) return; // Skip invalid notes
+      if (!note) return;
       const path = note.path || '/unsorted';
       const dir = path.substring(0, path.lastIndexOf('/')) || '/';
       const fileNode: FileNode = {
         type: 'file',
-        name: note.title,
-        path: path + '/' + note.title,
+        name: note.title || 'Untitled',
+        path: path + '/' + (note.title || 'Untitled'),
         note
       };
       
       if (root[dir]) {
         root[dir].children = root[dir].children || [];
         root[dir].children.push(fileNode);
+      } else {
+        // If directory doesn't exist, add to root
+        root['/'].children = root['/'].children || [];
+        root['/'].children.push(fileNode);
       }
     });
 
-    return root['/']?.children || [];
+    // Build the tree hierarchy
+    Object.values(root).forEach(node => {
+      if (node.path === '/') return;
+      const parentPath = node.path.substring(0, node.path.lastIndexOf('/')) || '/';
+      const parent = root[parentPath];
+      if (parent && node.type === 'directory') {
+        parent.children = parent.children || [];
+        parent.children.push(node);
+      }
+    });
+
+    return root['/'].children || [];
   };
 
   const handleContextMenu = (e: React.MouseEvent, node: FileNode) => {
@@ -117,17 +139,12 @@ export const FileTree: React.FC<FileTreeProps> = ({
     );
   };
 
-  // Update the type check
-  const isFileNode = (node: any): node is FileNode => {
-    return node && typeof node.type === 'string';
-  };
-
-  const tree = isFileNode(notes[0]) ? notes as FileNode[] : buildTree(notes as Note[]);
+  const tree = buildTree(notes);
 
   return (
     <div className="file-tree">
       <ul>
-        {tree.map(node => renderNode(node as FileNode))}
+        {tree.map(node => renderNode(node))}
       </ul>
       {contextMenu && (
         <ContextMenu
@@ -149,16 +166,6 @@ export const FileTree: React.FC<FileTreeProps> = ({
               icon: '📦',
               action: () => {
                 // TODO: Show directory picker
-              }
-            },
-            {
-              label: 'Find Similar',
-              icon: '🔍',
-              action: () => {
-                if (contextMenu.node.type === 'file' && contextMenu.node.note) {
-                  const similar = findSimilarNotes(contextMenu.node.note, notes as Note[]);
-                  // TODO: Show similar notes dialog
-                }
               }
             }
           ]}

@@ -1,1 +1,13 @@
- 
+preload = ["src/main.tsx"]
+
+[dev]
+port = 5173
+
+[build]
+entrypoints = ["src/main.tsx"]
+outdir = "dist"
+target = "browser"
+minify = true
+
+[define]
+"process.env.NODE_ENV" = "development" 

@@ -974,3 +974,1275 @@
 [2025-02-21 04:51:58.858 main(wYYT) INF] Serving index.html
 [2025-02-21 04:51:58.858 main(wYYT) INF] Index content length: 396
 [2025-02-21 04:52:08.868 main(wYYT) dbg] Keep-alive connection timed out!
+[2025-02-21 04:59:37.130 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 04:59:37.130 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 04:59:37.130 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 04:59:37.130 main(----) dia] Event loop exited with status 0.
+[2025-02-21 04:59:37.131 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 04:59:37.131 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 04:59:37.131 main(----) dia] Main thread exiting
+[2025-02-21 04:59:54.662 main(----) INF] Initializing VaultManager
+[2025-02-21 04:59:54.663 main(----) INF] Found 0 existing notes
+[2025-02-21 04:59:54.663 main(----) INF] Creating welcome note
+[2025-02-21 04:59:54.663 13501487(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 04:59:54.663 main(----) INF] Welcome note created
+[2025-02-21 04:59:54.663 main(----) dbg] add route GET /api/notes
+[2025-02-21 04:59:54.663 main(----) dbg] add route POST /api/notes
+[2025-02-21 04:59:54.663 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 04:59:54.663 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 04:59:54.663 main(----) dbg] add route GET /api/tags
+[2025-02-21 04:59:54.664 main(----) dbg] add route GET /ws
+[2025-02-21 04:59:54.664 main(----) dbg] add route GET /assets/*
+[2025-02-21 04:59:54.664 main(----) dbg] add route GET *
+[2025-02-21 04:59:54.664 main(----) INF] Starting Notes Vault backend server...
+[2025-02-21 04:59:54.664 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 04:59:54.664 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 04:59:54.664 main(----) dia] Running event loop...
+[2025-02-21 04:59:54.664 main(----) dbg] Starting event loop.
+[2025-02-21 04:59:57.488 main(EXLE) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 04:59:57.489 main(EXLE) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 04:59:57.489 main(EXLE) INF] === Request for path: / ===
+[2025-02-21 04:59:57.490 main(EXLE) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 04:59:57.491 main(EXLE) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 04:59:57.491 main(EXLE) INF] Serving index.html
+[2025-02-21 04:59:57.491 main(EXLE) INF] Index content length: 396
+[2025-02-21 04:59:58.976 main(EXLE) INF] === Request for path: /favicon.ico ===
+[2025-02-21 04:59:58.977 main(EXLE) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 04:59:58.979 main(EXLE) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 04:59:58.979 main(EXLE) INF] Serving index.html
+[2025-02-21 04:59:58.979 main(EXLE) INF] Index content length: 396
+[2025-02-21 05:00:08.990 main(EXLE) dbg] Keep-alive connection timed out!
+[2025-02-21 05:00:16.290 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 05:00:16.290 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 05:00:16.290 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 05:00:16.290 main(----) dia] Event loop exited with status 0.
+[2025-02-21 05:00:16.290 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 05:00:16.290 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 05:00:16.290 main(----) dia] Main thread exiting
+[2025-02-21 05:08:44.183 main(----) INF] Initializing VaultManager
+[2025-02-21 05:08:44.184 main(----) INF] Found 0 existing notes
+[2025-02-21 05:08:44.184 main(----) INF] Creating welcome notes
+[2025-02-21 05:08:44.184 main(----) INF] Creating welcome notes
+[2025-02-21 05:08:44.184 1CD014DD(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 05:08:44.184 main(----) INF] Welcome notes created
+[2025-02-21 05:08:44.184 main(----) dbg] add route GET /api/notes
+[2025-02-21 05:08:44.184 main(----) dbg] add route POST /api/notes
+[2025-02-21 05:08:44.184 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 05:08:44.185 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 05:08:44.185 main(----) dbg] add route GET /api/tags
+[2025-02-21 05:08:44.185 main(----) dbg] add route GET /ws
+[2025-02-21 05:08:44.185 main(----) dbg] add route GET /assets/*
+[2025-02-21 05:08:44.185 main(----) dbg] add route GET *
+[2025-02-21 05:08:44.185 main(----) INF] Starting Quill Garden backend server...
+[2025-02-21 05:08:44.185 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 05:08:44.185 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 05:08:44.185 main(----) dia] Running event loop...
+[2025-02-21 05:08:44.185 main(----) dbg] Starting event loop.
+[2025-02-21 05:19:31.393 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 05:19:31.394 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 05:19:31.395 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 05:19:31.395 main(----) dia] Event loop exited with status 0.
+[2025-02-21 05:19:31.396 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 05:19:31.396 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 05:19:31.396 main(----) dia] Main thread exiting
+[2025-02-21 05:19:34.896 main(----) INF] Initializing VaultManager
+[2025-02-21 05:19:34.897 BF1014FE(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 05:19:34.897 main(----) INF] Found 0 existing notes
+[2025-02-21 05:19:34.898 main(----) INF] Creating welcome notes
+[2025-02-21 05:19:34.898 main(----) INF] Creating welcome notes
+[2025-02-21 05:19:34.902 main(----) INF] Welcome notes created
+[2025-02-21 05:19:34.904 main(----) dbg] add route GET /api/notes
+[2025-02-21 05:19:34.904 main(----) dbg] add route POST /api/notes
+[2025-02-21 05:19:34.905 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 05:19:34.905 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 05:19:34.907 main(----) dbg] add route GET /api/tags
+[2025-02-21 05:19:34.907 main(----) dbg] add route GET /ws
+[2025-02-21 05:19:34.907 main(----) dbg] add route GET /assets/*
+[2025-02-21 05:19:34.907 main(----) dbg] add route GET *
+[2025-02-21 05:19:34.907 main(----) INF] Starting Quill Garden backend server...
+[2025-02-21 05:19:34.909 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 05:19:34.909 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 05:19:34.909 main(----) dia] Running event loop...
+[2025-02-21 05:19:34.910 main(----) dbg] Starting event loop.
+[2025-02-21 05:19:37.853 main(4lpe) dbg] Disambiguate done: 108 nodes, 1264 max stack size
+[2025-02-21 05:19:37.855 main(4lpe) dbg] Match tree has 31 (of 108 in the builder) nodes, 8 terminals
+[2025-02-21 05:19:37.855 main(4lpe) INF] === Request for path: / ===
+[2025-02-21 05:19:37.856 main(4lpe) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 05:19:37.857 main(4lpe) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 05:19:37.858 main(4lpe) INF] Serving index.html
+[2025-02-21 05:19:37.859 main(4lpe) INF] Index content length: 396
+[2025-02-21 05:19:39.167 main(4lpe) INF] === Request for path: /favicon.ico ===
+[2025-02-21 05:19:39.169 main(4lpe) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 05:19:39.170 main(4lpe) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 05:19:39.170 main(4lpe) INF] Serving index.html
+[2025-02-21 05:19:39.170 main(4lpe) INF] Index content length: 396
+[2025-02-21 05:19:49.180 main(4lpe) dbg] Keep-alive connection timed out!
+[2025-02-21 05:21:45.227 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 05:21:45.227 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 05:21:45.227 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 05:21:45.227 main(----) dia] Event loop exited with status 0.
+[2025-02-21 05:21:45.227 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 05:21:45.227 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 05:21:45.227 main(----) dia] Main thread exiting
+[2025-02-21 06:26:42.233 main(----) INF] Initializing VaultManager
+[2025-02-21 06:26:42.234 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-21 06:26:42.234 main(----) INF] Initializing vault at: notes
+[2025-02-21 06:26:42.234 main(----) INF] Loading notes from: notes
+[2025-02-21 06:26:42.234 main(----) INF] Found 4 markdown files
+[2025-02-21 06:26:42.234 main(----) INF] Loaded note: Untitled (e0d67b67-aacd-44df-b604-c7dbcff3fa31)
+[2025-02-21 06:26:42.234 main(----) INF] Loaded note: Untitled (71d08cc9-8a5c-46cf-a96a-466a60cd40d6)
+[2025-02-21 06:26:42.234 main(----) INF] Loaded note: Untitled (aba7b03f-c415-4a2c-953a-c50263d5586e)
+[2025-02-21 06:26:42.235 main(----) INF] Loaded note: Untitled (bc4ac685-d397-464f-92f9-bb32139a63f3)
+[2025-02-21 06:26:42.235 main(----) INF] Getting all notes (count: 4)
+[2025-02-21 06:26:42.235 main(----) INF] Note: Untitled (71d08cc9-8a5c-46cf-a96a-466a60cd40d6)
+[2025-02-21 06:26:42.235 main(----) INF] Note: Untitled (aba7b03f-c415-4a2c-953a-c50263d5586e)
+[2025-02-21 06:26:42.235 main(----) INF] Note: Untitled (e0d67b67-aacd-44df-b604-c7dbcff3fa31)
+[2025-02-21 06:26:42.235 main(----) INF] Note: Untitled (bc4ac685-d397-464f-92f9-bb32139a63f3)
+[2025-02-21 06:26:42.235 main(----) INF] Found 4 existing notes
+[2025-02-21 06:26:42.235 main(----) dbg] add route GET /api/notes
+[2025-02-21 06:26:42.236 main(----) dbg] add route POST /api/notes
+[2025-02-21 06:26:42.236 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 06:26:42.236 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 06:26:42.236 main(----) dbg] add route GET /api/tags
+[2025-02-21 06:26:42.236 E1301F40(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 06:26:42.236 main(----) dbg] add route GET /api/debug/notes
+[2025-02-21 06:26:42.236 main(----) dbg] add route GET /ws
+[2025-02-21 06:26:42.236 main(----) dbg] add route GET /assets/*
+[2025-02-21 06:26:42.236 main(----) dbg] add route GET *
+[2025-02-21 06:26:42.236 main(----) INF] Starting Quill Garden backend server...
+[2025-02-21 06:26:42.237 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 06:26:42.237 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 06:26:42.237 main(----) dia] Running event loop...
+[2025-02-21 06:26:42.237 main(----) dbg] Starting event loop.
+[2025-02-21 06:29:11.754 main(ZUVa) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-21 06:29:11.756 main(ZUVa) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-21 06:29:11.756 main(ZUVa) INF] === Request for path: / ===
+[2025-02-21 06:29:11.757 main(ZUVa) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 06:29:11.758 main(ZUVa) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 06:29:11.758 main(ZUVa) INF] Serving index.html
+[2025-02-21 06:29:11.759 main(ZUVa) INF] Index content length: 396
+[2025-02-21 06:29:14.289 main(ZUVa) INF] === Request for path: /favicon.ico ===
+[2025-02-21 06:29:14.290 main(ZUVa) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 06:29:14.291 main(ZUVa) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 06:29:14.292 main(ZUVa) INF] Serving index.html
+[2025-02-21 06:29:14.292 main(ZUVa) INF] Index content length: 396
+[2025-02-21 06:29:24.302 main(ZUVa) dbg] Keep-alive connection timed out!
+[2025-02-21 06:34:37.820 main(----) INF] Received signal 2. Shutting down.
+[2025-02-21 06:34:37.826 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-21 06:34:37.827 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-21 06:34:37.827 main(----) dia] Event loop exited with status 0.
+[2025-02-21 06:34:37.827 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-21 06:34:37.827 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-21 06:34:37.827 main(----) dia] Main thread exiting
+[2025-02-21 14:05:38.312 main(----) INF] Initializing VaultManager
+[2025-02-21 14:05:38.313 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-21 14:05:38.313 main(----) INF] Initializing vault at: notes
+[2025-02-21 14:05:38.313 main(----) INF] Loading notes from: notes
+[2025-02-21 14:05:38.313 main(----) INF] Found 4 markdown files
+[2025-02-21 14:05:38.320 main(----) INF] Loaded note: Untitled (149381b9-1775-4fd4-9b09-34affcab2cbd)
+[2025-02-21 14:05:38.321 main(----) INF] Loaded note: Untitled (3d2ebfdb-4fa9-40f4-afc5-f0ecb3387a6b)
+[2025-02-21 14:05:38.321 main(----) INF] Loaded note: Untitled (4d01ac3f-f58a-4823-b95b-842c876da111)
+[2025-02-21 14:05:38.322 main(----) INF] Loaded note: Heading 1 (033f63bd-b65b-4030-90d8-02213f6834a9)
+[2025-02-21 14:05:38.322 main(----) INF] Getting all notes (count: 4)
+[2025-02-21 14:05:38.322 main(----) INF] Note: Untitled (4d01ac3f-f58a-4823-b95b-842c876da111)
+[2025-02-21 14:05:38.322 main(----) INF] Note: Untitled (149381b9-1775-4fd4-9b09-34affcab2cbd)
+[2025-02-21 14:05:38.322 main(----) INF] Note: Untitled (3d2ebfdb-4fa9-40f4-afc5-f0ecb3387a6b)
+[2025-02-21 14:05:38.322 main(----) INF] Note: Heading 1 (033f63bd-b65b-4030-90d8-02213f6834a9)
+[2025-02-21 14:05:38.322 main(----) INF] Found 4 existing notes
+[2025-02-21 14:05:38.322 main(----) dbg] add route GET /api/notes
+[2025-02-21 14:05:38.322 main(----) dbg] add route POST /api/notes
+[2025-02-21 14:05:38.322 main(----) dbg] add route GET /api/notes/:id
+[2025-02-21 14:05:38.323 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-21 14:05:38.323 main(----) dbg] add route GET /api/tags
+[2025-02-21 14:05:38.323 main(----) dbg] add route GET /api/debug/notes
+[2025-02-21 14:05:38.323 main(----) dbg] add route GET /ws
+[2025-02-21 14:05:38.323 main(----) dbg] add route GET /assets/*
+[2025-02-21 14:05:38.323 main(----) dbg] add route GET *
+[2025-02-21 14:05:38.323 main(----) INF] Starting Quill Garden backend server...
+[2025-02-21 14:05:38.324 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-21 14:05:38.324 main(----) INF] Server running on http://localhost:3000/
+[2025-02-21 14:05:38.325 06301BEE(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-21 14:05:38.325 main(----) dia] Running event loop...
+[2025-02-21 14:05:38.325 main(----) dbg] Starting event loop.
+[2025-02-21 14:05:48.457 main(yoTD) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-21 14:05:48.458 main(yoTD) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-21 14:05:48.458 main(yoTD) INF] === Request for path: /favicon.ico ===
+[2025-02-21 14:05:48.458 main(yoTD) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-21 14:05:48.459 main(yoTD) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-21 14:05:48.459 main(yoTD) INF] Serving index.html
+[2025-02-21 14:05:48.459 main(yoTD) INF] Index content length: 396
+[2025-02-21 14:05:58.469 main(yoTD) dbg] Keep-alive connection timed out!
+[2025-02-22 03:17:31.345 main(----) INF] Initializing VaultManager
+[2025-02-22 03:17:31.345 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 03:17:31.345 main(----) INF] Initializing vault at: notes
+[2025-02-22 03:17:31.345 main(----) INF] Loading notes from: notes
+[2025-02-22 03:17:31.345 main(----) INF] Found 4 markdown files
+[2025-02-22 03:17:31.350 main(----) INF] Loaded note: Untitled (cc1b9274-02d1-4120-ac32-f47188e34fd6)
+[2025-02-22 03:17:31.350 main(----) INF] Loaded note: Untitled (e5ef14d5-9965-4d08-a405-288255bbb3b0)
+[2025-02-22 03:17:31.350 main(----) INF] Loaded note: Untitled (8b2c9f57-e0f6-4ebe-82f1-769e42040e2e)
+[2025-02-22 03:17:31.350 main(----) INF] Loaded note: Heading 1 (02a44b3b-8469-4f1d-b495-d94f90af9ef3)
+[2025-02-22 03:17:31.350 main(----) INF] Getting all notes (count: 4)
+[2025-02-22 03:17:31.350 main(----) INF] Note: Untitled (8b2c9f57-e0f6-4ebe-82f1-769e42040e2e)
+[2025-02-22 03:17:31.350 main(----) INF] Note: Untitled (cc1b9274-02d1-4120-ac32-f47188e34fd6)
+[2025-02-22 03:17:31.350 main(----) INF] Note: Heading 1 (02a44b3b-8469-4f1d-b495-d94f90af9ef3)
+[2025-02-22 03:17:31.350 main(----) INF] Note: Untitled (e5ef14d5-9965-4d08-a405-288255bbb3b0)
+[2025-02-22 03:17:31.350 main(----) INF] Found 4 existing notes
+[2025-02-22 03:17:31.351 main(----) dbg] add route GET /api/notes
+[2025-02-22 03:17:31.351 main(----) dbg] add route POST /api/notes
+[2025-02-22 03:17:31.351 main(----) dbg] add route GET /api/notes/:id
+[2025-02-22 03:17:31.351 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-22 03:17:31.351 main(----) dbg] add route GET /api/tags
+[2025-02-22 03:17:31.351 main(----) dbg] add route GET /api/debug/notes
+[2025-02-22 03:17:31.351 main(----) dbg] add route GET /ws
+[2025-02-22 03:17:31.351 main(----) dbg] add route GET /assets/*
+[2025-02-22 03:17:31.351 main(----) dbg] add route GET *
+[2025-02-22 03:17:31.351 main(----) INF] Starting Quill Garden backend server...
+[2025-02-22 03:17:31.351 5F501F7E(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 03:17:31.352 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-22 03:17:31.352 main(----) INF] Server running on http://localhost:3000/
+[2025-02-22 03:17:31.352 main(----) dia] Running event loop...
+[2025-02-22 03:17:31.352 main(----) dbg] Starting event loop.
+[2025-02-22 03:17:34.711 main(YGe9) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-22 03:17:34.712 main(YGe9) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-22 03:17:34.712 main(YGe9) INF] === Request for path: / ===
+[2025-02-22 03:17:34.713 main(YGe9) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 03:17:34.714 main(YGe9) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 03:17:34.714 main(YGe9) INF] Serving index.html
+[2025-02-22 03:17:34.715 main(YGe9) INF] Index content length: 396
+[2025-02-22 03:17:34.770 main(YGe9) dbg] Path 'assets/index-BQZ7foFd.js' -> 'assets/index-BQZ7foFd.js'
+[2025-02-22 03:17:34.774 vibe-worker-3(----) dbg] entering worker thread
+[2025-02-22 03:17:34.774 vibe-worker-1(----) dbg] entering worker thread
+[2025-02-22 03:17:34.775 vibe-worker-0(----) dbg] entering worker thread
+[2025-02-22 03:17:34.775 vibe-io-1(----) dbg] entering worker thread
+[2025-02-22 03:17:34.776 vibe-worker-13(----) dbg] entering worker thread
+[2025-02-22 03:17:34.776 vibe-worker-7(----) dbg] entering worker thread
+[2025-02-22 03:17:34.777 vibe-worker-6(----) dbg] entering worker thread
+[2025-02-22 03:17:34.778 vibe-worker-2(----) dbg] entering worker thread
+[2025-02-22 03:17:34.779 vibe-io-2(----) dbg] entering worker thread
+[2025-02-22 03:17:34.779 vibe-worker-10(----) dbg] entering worker thread
+[2025-02-22 03:17:34.783 vibe-worker-12(----) dbg] entering worker thread
+[2025-02-22 03:17:34.783 vibe-worker-8(----) dbg] entering worker thread
+[2025-02-22 03:17:34.784 vibe-worker-4(----) dbg] entering worker thread
+[2025-02-22 03:17:34.786 main(YGe9) dbg] Path 'assets/index-BbJc0FSl.css' -> 'assets/index-BbJc0FSl.css'
+[2025-02-22 03:17:34.786 vibe-worker-5(----) dbg] entering worker thread
+[2025-02-22 03:17:34.786 vibe-io-0(----) dbg] entering worker thread
+[2025-02-22 03:17:34.786 vibe-worker-11(----) dbg] entering worker thread
+[2025-02-22 03:17:34.786 vibe-worker-9(----) dbg] entering worker thread
+[2025-02-22 03:17:35.837 main(YGe9) INF] === Request for path: /favicon.ico ===
+[2025-02-22 03:17:35.838 main(YGe9) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 03:17:35.839 main(YGe9) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 03:17:35.839 main(YGe9) INF] Serving index.html
+[2025-02-22 03:17:35.839 main(YGe9) INF] Index content length: 396
+[2025-02-22 03:17:45.849 main(YGe9) dbg] Keep-alive connection timed out!
+[2025-02-22 05:25:34.905 main(//Fu) INF] === Request for path: / ===
+[2025-02-22 05:25:34.906 main(//Fu) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-User": "?1", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 05:25:34.907 main(//Fu) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 05:25:34.907 main(//Fu) INF] Serving index.html
+[2025-02-22 05:25:34.908 main(//Fu) INF] Index content length: 396
+[2025-02-22 05:25:35.644 main(//Fu) INF] === Request for path: /favicon.ico ===
+[2025-02-22 05:25:35.646 main(//Fu) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 05:25:35.647 main(//Fu) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 05:25:35.647 main(//Fu) INF] Serving index.html
+[2025-02-22 05:25:35.647 main(//Fu) INF] Index content length: 396
+[2025-02-22 05:25:41.557 main(----) INF] Received signal 2. Shutting down.
+[2025-02-22 05:25:41.557 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-22 05:25:41.560 main(----) dbg] Event loop done (scheduled tasks=0, waiters=3, thread exit=false).
+[2025-02-22 05:25:41.560 main(----) dia] Event loop exited with status 0.
+[2025-02-22 05:25:41.560 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-22 05:25:41.560 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-22 05:25:41.560 main(----) dia] Main thread exiting
+[2025-02-22 05:25:41.560 main(----) dia] Still waiting for worker threads to exit.
+[2025-02-22 05:25:41.562 vibe-worker-9(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.562 vibe-worker-4(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.562 vibe-worker-0(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.562 vibe-worker-5(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.562 vibe-worker-9(----) dbg] Thread exit vibe-worker-9 (index 16) (main=false)
+[2025-02-22 05:25:41.562 vibe-worker-12(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.562 vibe-worker-2(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.562 vibe-worker-7(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.563 vibe-worker-6(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.563 vibe-worker-13(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.563 vibe-worker-4(----) dbg] Thread exit vibe-worker-4 (index 11) (main=false)
+[2025-02-22 05:25:41.563 vibe-worker-3(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.563 vibe-worker-10(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.563 vibe-worker-1(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.563 vibe-worker-11(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.563 vibe-worker-8(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.563 vibe-worker-0(----) dbg] Thread exit vibe-worker-0 (index 1) (main=false)
+[2025-02-22 05:25:41.564 vibe-worker-5(----) dbg] Thread exit vibe-worker-5 (index 15) (main=false)
+[2025-02-22 05:25:41.564 vibe-worker-12(----) dbg] Thread exit vibe-worker-12 (index 14) (main=false)
+[2025-02-22 05:25:41.564 vibe-worker-2(----) dbg] Thread exit vibe-worker-2 (index 3) (main=false)
+[2025-02-22 05:25:41.564 vibe-worker-7(----) dbg] Thread exit vibe-worker-7 (index 7) (main=false)
+[2025-02-22 05:25:41.564 vibe-worker-6(----) dbg] Thread exit vibe-worker-6 (index 6) (main=false)
+[2025-02-22 05:25:41.564 vibe-worker-13(----) dbg] Thread exit vibe-worker-13 (index 5) (main=false)
+[2025-02-22 05:25:41.565 vibe-worker-3(----) dbg] Thread exit vibe-worker-3 (index 2) (main=false)
+[2025-02-22 05:25:41.565 vibe-worker-10(----) dbg] Thread exit vibe-worker-10 (index 10) (main=false)
+[2025-02-22 05:25:41.565 vibe-worker-1(----) dbg] Thread exit vibe-worker-1 (index 4) (main=false)
+[2025-02-22 05:25:41.565 vibe-worker-11(----) dbg] Thread exit vibe-worker-11 (index 13) (main=false)
+[2025-02-22 05:25:41.565 vibe-worker-8(----) dbg] Thread exit vibe-worker-8 (index 12) (main=false)
+[2025-02-22 05:25:41.569 main(----) dia] Still waiting for I/O worker threads to exit.
+[2025-02-22 05:25:41.570 vibe-io-0(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.570 vibe-io-1(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.570 vibe-io-2(----) dbg] Worker thread exit.
+[2025-02-22 05:25:41.570 vibe-io-0(----) dbg] Thread exit vibe-io-0 (index 1) (main=false)
+[2025-02-22 05:25:41.570 vibe-io-1(----) dbg] Thread exit vibe-io-1 (index 3) (main=false)
+[2025-02-22 05:25:41.570 vibe-io-2(----) dbg] Thread exit vibe-io-2 (index 2) (main=false)
+[2025-02-22 05:25:45.282 main(----) INF] Initializing VaultManager
+[2025-02-22 05:25:45.282 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 05:25:45.282 main(----) INF] Initializing vault at: notes
+[2025-02-22 05:25:45.282 main(----) INF] Loading notes from: notes
+[2025-02-22 05:25:45.282 main(----) INF] Found 4 markdown files
+[2025-02-22 05:25:45.287 main(----) INF] Loaded note: Untitled (5a1c2d8a-fefc-45c8-9ba6-c8f814a9c48b)
+[2025-02-22 05:25:45.287 main(----) INF] Loaded note: Untitled (6dca1426-df19-4d31-9d06-ffe0adce91f1)
+[2025-02-22 05:25:45.287 main(----) INF] Loaded note: Untitled (222ce690-6c92-44bc-9385-24535463920b)
+[2025-02-22 05:25:45.287 main(----) INF] Loaded note: Heading 1 (8ee225dc-94c2-4f0f-af98-cbf5a57702ea)
+[2025-02-22 05:25:45.287 main(----) INF] Getting all notes (count: 4)
+[2025-02-22 05:25:45.287 main(----) INF] Note: Heading 1 (8ee225dc-94c2-4f0f-af98-cbf5a57702ea)
+[2025-02-22 05:25:45.287 main(----) INF] Note: Untitled (5a1c2d8a-fefc-45c8-9ba6-c8f814a9c48b)
+[2025-02-22 05:25:45.287 main(----) INF] Note: Untitled (222ce690-6c92-44bc-9385-24535463920b)
+[2025-02-22 05:25:45.287 main(----) INF] Note: Untitled (6dca1426-df19-4d31-9d06-ffe0adce91f1)
+[2025-02-22 05:25:45.287 main(----) INF] Found 4 existing notes
+[2025-02-22 05:25:45.288 main(----) dbg] add route GET /api/notes
+[2025-02-22 05:25:45.288 main(----) dbg] add route POST /api/notes
+[2025-02-22 05:25:45.288 main(----) dbg] add route GET /api/notes/:id
+[2025-02-22 05:25:45.288 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-22 05:25:45.288 main(----) dbg] add route GET /api/tags
+[2025-02-22 05:25:45.288 main(----) dbg] add route GET /api/debug/notes
+[2025-02-22 05:25:45.288 5AA310FD(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 05:25:45.288 main(----) dbg] add route GET /ws
+[2025-02-22 05:25:45.288 main(----) dbg] add route GET /assets/*
+[2025-02-22 05:25:45.288 main(----) dbg] add route GET *
+[2025-02-22 05:25:45.288 main(----) INF] Starting Quill Garden backend server...
+[2025-02-22 05:25:45.289 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-22 05:25:45.289 main(----) INF] Server running on http://localhost:3000/
+[2025-02-22 05:25:45.289 main(----) dia] Running event loop...
+[2025-02-22 05:25:45.289 main(----) dbg] Starting event loop.
+[2025-02-22 05:25:48.308 main(kJu8) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-22 05:25:48.309 main(kJu8) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-22 05:25:48.309 main(kJu8) INF] === Request for path: / ===
+[2025-02-22 05:25:48.311 main(kJu8) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 05:25:48.312 main(kJu8) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 05:25:48.312 main(kJu8) INF] Serving index.html
+[2025-02-22 05:25:48.312 main(kJu8) INF] Index content length: 396
+[2025-02-22 05:25:49.033 main(kJu8) INF] === Request for path: /favicon.ico ===
+[2025-02-22 05:25:49.035 main(kJu8) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 05:25:49.036 main(kJu8) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 05:25:49.036 main(kJu8) INF] Serving index.html
+[2025-02-22 05:25:49.036 main(kJu8) INF] Index content length: 396
+[2025-02-22 05:25:59.046 main(kJu8) dbg] Keep-alive connection timed out!
+[2025-02-22 18:44:53.190 main(----) INF] Initializing VaultManager
+[2025-02-22 18:44:53.190 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 18:44:53.190 main(----) INF] Initializing vault at: notes
+[2025-02-22 18:44:53.190 main(----) INF] Loading notes from: notes
+[2025-02-22 18:44:53.191 main(----) INF] Found 4 markdown files
+[2025-02-22 18:44:53.195 main(----) INF] Loaded note: Untitled (d254b8c8-a7d1-48b3-b281-163514f68e72)
+[2025-02-22 18:44:53.196 main(----) INF] Loaded note: Untitled (2b0c3a14-4b22-4418-aa84-23d238861b28)
+[2025-02-22 18:44:53.196 main(----) INF] Loaded note: Untitled (4a0ed5eb-f175-4729-b3d5-77ce824730fa)
+[2025-02-22 18:44:53.196 main(----) INF] Loaded note: Heading 1 (51d9a53a-16a4-4a89-8053-baa53fe105db)
+[2025-02-22 18:44:53.196 main(----) INF] Getting all notes (count: 4)
+[2025-02-22 18:44:53.196 main(----) INF] Note: Untitled (2b0c3a14-4b22-4418-aa84-23d238861b28)
+[2025-02-22 18:44:53.196 main(----) INF] Note: Untitled (d254b8c8-a7d1-48b3-b281-163514f68e72)
+[2025-02-22 18:44:53.196 main(----) INF] Note: Untitled (4a0ed5eb-f175-4729-b3d5-77ce824730fa)
+[2025-02-22 18:44:53.196 main(----) INF] Note: Heading 1 (51d9a53a-16a4-4a89-8053-baa53fe105db)
+[2025-02-22 18:44:53.196 main(----) INF] Found 4 existing notes
+[2025-02-22 18:44:53.196 main(----) dbg] add route GET /api/notes
+[2025-02-22 18:44:53.196 41F016D3(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 18:44:53.197 main(----) dbg] add route POST /api/notes
+[2025-02-22 18:44:53.197 main(----) dbg] add route GET /api/notes/:id
+[2025-02-22 18:44:53.197 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-22 18:44:53.197 main(----) dbg] add route GET /api/tags
+[2025-02-22 18:44:53.197 main(----) dbg] add route GET /api/debug/notes
+[2025-02-22 18:44:53.197 main(----) dbg] add route GET /ws
+[2025-02-22 18:44:53.197 main(----) dbg] add route GET /assets/*
+[2025-02-22 18:44:53.197 main(----) dbg] add route GET *
+[2025-02-22 18:44:53.197 main(----) INF] Starting Quill Garden backend server...
+[2025-02-22 18:44:53.197 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-22 18:44:53.198 main(----) INF] Server running on http://localhost:3000/
+[2025-02-22 18:44:53.198 main(----) dia] Running event loop...
+[2025-02-22 18:44:53.198 main(----) dbg] Starting event loop.
+[2025-02-22 18:44:57.222 main(bk1t) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-22 18:44:57.224 main(bk1t) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-22 18:44:57.224 main(bk1t) INF] === Request for path: / ===
+[2025-02-22 18:44:57.225 main(bk1t) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 18:44:57.226 main(bk1t) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 18:44:57.226 main(bk1t) INF] Serving index.html
+[2025-02-22 18:44:57.227 main(bk1t) INF] Index content length: 396
+[2025-02-22 18:44:57.282 main(bk1t) dbg] Path 'assets/index-BQZ7foFd.js' -> 'assets/index-BQZ7foFd.js'
+[2025-02-22 18:44:57.294 vibe-worker-1(----) dbg] entering worker thread
+[2025-02-22 18:44:57.294 vibe-worker-4(----) dbg] entering worker thread
+[2025-02-22 18:44:57.294 vibe-worker-3(----) dbg] entering worker thread
+[2025-02-22 18:44:57.294 vibe-worker-2(----) dbg] entering worker thread
+[2025-02-22 18:44:57.294 vibe-worker-7(----) dbg] entering worker thread
+[2025-02-22 18:44:57.295 vibe-worker-8(----) dbg] entering worker thread
+[2025-02-22 18:44:57.296 vibe-worker-13(----) dbg] entering worker thread
+[2025-02-22 18:44:57.296 vibe-worker-5(----) dbg] entering worker thread
+[2025-02-22 18:44:57.296 vibe-worker-6(----) dbg] entering worker thread
+[2025-02-22 18:44:57.297 vibe-worker-9(----) dbg] entering worker thread
+[2025-02-22 18:44:57.297 vibe-worker-12(----) dbg] entering worker thread
+[2025-02-22 18:44:57.298 vibe-io-0(----) dbg] entering worker thread
+[2025-02-22 18:44:57.300 vibe-worker-10(----) dbg] entering worker thread
+[2025-02-22 18:44:57.300 main(Y22k) dbg] Path 'assets/index-BbJc0FSl.css' -> 'assets/index-BbJc0FSl.css'
+[2025-02-22 18:44:57.300 vibe-io-2(----) dbg] entering worker thread
+[2025-02-22 18:44:57.301 vibe-worker-0(----) dbg] entering worker thread
+[2025-02-22 18:44:57.301 vibe-worker-11(----) dbg] entering worker thread
+[2025-02-22 18:44:57.301 vibe-io-1(----) dbg] entering worker thread
+[2025-02-22 18:44:58.830 main(bk1t) INF] === Request for path: /favicon.ico ===
+[2025-02-22 18:44:58.831 main(bk1t) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 18:44:58.832 main(bk1t) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 18:44:58.832 main(bk1t) INF] Serving index.html
+[2025-02-22 18:44:58.832 main(bk1t) INF] Index content length: 396
+[2025-02-22 18:45:07.313 main(Y22k) dbg] Keep-alive connection timed out!
+[2025-02-22 18:45:08.833 main(bk1t) dbg] Keep-alive connection timed out!
+[2025-02-22 21:45:44.727 main(an9z) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 21:45:44.728 main(an9z) INF] Initializing vault at: notes
+[2025-02-22 21:45:44.728 main(an9z) INF] Loading notes from: notes
+[2025-02-22 21:45:44.728 main(an9z) INF] Found 4 markdown files
+[2025-02-22 21:45:44.729 main(an9z) INF] Loaded note: Untitled (7c127569-a829-45e5-af93-459e0fb51534)
+[2025-02-22 21:45:44.729 main(an9z) INF] Loaded note: Untitled (dbb2897d-e4b5-44b5-9bf3-ba94ef25adb3)
+[2025-02-22 21:45:44.729 main(an9z) INF] Loaded note: Untitled (73557b45-3398-4a1e-9bd9-be0b4b369924)
+[2025-02-22 21:45:44.729 main(an9z) INF] Loaded note: Heading 1 (fdd45d3f-d8a7-4d16-b3fa-1c271e685ea3)
+[2025-02-22 21:45:44.730 main(an9z) INF] Getting all notes (count: 4)
+[2025-02-22 21:45:44.730 main(an9z) INF] Note: Untitled (7c127569-a829-45e5-af93-459e0fb51534)
+[2025-02-22 21:45:44.730 main(an9z) INF] Note: Heading 1 (fdd45d3f-d8a7-4d16-b3fa-1c271e685ea3)
+[2025-02-22 21:45:44.730 main(an9z) INF] Note: Untitled (dbb2897d-e4b5-44b5-9bf3-ba94ef25adb3)
+[2025-02-22 21:45:44.730 main(an9z) INF] Note: Untitled (73557b45-3398-4a1e-9bd9-be0b4b369924)
+[2025-02-22 21:45:44.731 41F295D3(----) dbg] Thread exit  (index 22) (main=false)
+[2025-02-22 21:45:44.731 main(an9z) dbg] Keep-alive connection timed out!
+[2025-02-22 21:48:54.649 main(----) INF] Received signal 2. Shutting down.
+[2025-02-22 21:48:54.650 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-22 21:48:54.650 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-22 21:48:54.650 main(----) dia] Event loop exited with status 0.
+[2025-02-22 21:48:54.650 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-22 21:48:54.650 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-22 21:48:54.650 main(----) dia] Main thread exiting
+[2025-02-22 21:48:54.650 main(----) dia] Still waiting for worker threads to exit.
+[2025-02-22 21:48:54.651 vibe-worker-0(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.652 vibe-worker-10(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.652 vibe-worker-12(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.652 vibe-worker-6(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.652 vibe-worker-0(----) dbg] Thread exit vibe-worker-0 (index 15) (main=false)
+[2025-02-22 21:48:54.652 vibe-worker-2(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.652 vibe-worker-3(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.653 vibe-worker-9(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.653 vibe-worker-5(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.653 vibe-worker-7(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.653 vibe-worker-8(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.653 vibe-worker-4(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.654 vibe-worker-1(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.654 vibe-worker-13(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.654 vibe-worker-11(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.654 vibe-worker-10(----) dbg] Thread exit vibe-worker-10 (index 14) (main=false)
+[2025-02-22 21:48:54.654 vibe-worker-12(----) dbg] Thread exit vibe-worker-12 (index 11) (main=false)
+[2025-02-22 21:48:54.654 vibe-worker-6(----) dbg] Thread exit vibe-worker-6 (index 7) (main=false)
+[2025-02-22 21:48:54.654 vibe-worker-2(----) dbg] Thread exit vibe-worker-2 (index 3) (main=false)
+[2025-02-22 21:48:54.655 vibe-worker-3(----) dbg] Thread exit vibe-worker-3 (index 5) (main=false)
+[2025-02-22 21:48:54.655 vibe-worker-9(----) dbg] Thread exit vibe-worker-9 (index 10) (main=false)
+[2025-02-22 21:48:54.655 vibe-worker-5(----) dbg] Thread exit vibe-worker-5 (index 9) (main=false)
+[2025-02-22 21:48:54.655 vibe-worker-7(----) dbg] Thread exit vibe-worker-7 (index 4) (main=false)
+[2025-02-22 21:48:54.655 vibe-worker-8(----) dbg] Thread exit vibe-worker-8 (index 6) (main=false)
+[2025-02-22 21:48:54.655 vibe-worker-4(----) dbg] Thread exit vibe-worker-4 (index 2) (main=false)
+[2025-02-22 21:48:54.656 vibe-worker-1(----) dbg] Thread exit vibe-worker-1 (index 1) (main=false)
+[2025-02-22 21:48:54.656 vibe-worker-13(----) dbg] Thread exit vibe-worker-13 (index 8) (main=false)
+[2025-02-22 21:48:54.656 vibe-worker-11(----) dbg] Thread exit vibe-worker-11 (index 13) (main=false)
+[2025-02-22 21:48:54.663 main(----) dia] Still waiting for I/O worker threads to exit.
+[2025-02-22 21:48:54.663 vibe-io-2(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.663 vibe-io-0(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.664 vibe-io-2(----) dbg] Thread exit vibe-io-2 (index 7) (main=false)
+[2025-02-22 21:48:54.664 vibe-io-0(----) dbg] Thread exit vibe-io-0 (index 1) (main=false)
+[2025-02-22 21:48:54.664 vibe-io-1(----) dbg] Worker thread exit.
+[2025-02-22 21:48:54.664 vibe-io-1(----) dbg] Thread exit vibe-io-1 (index 4) (main=false)
+[2025-02-22 21:48:54.665 41F267D3(----) dbg] Thread exit  (index 0) (main=false)
+[2025-02-22 21:48:54.666 41F263D3(----) dbg] Thread exit  (index 2) (main=false)
+[2025-02-22 21:48:54.666 41F266D3(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 21:48:54.666 41F265D3(----) dbg] Thread exit  (index 0) (main=false)
+[2025-02-22 21:48:58.728 main(----) INF] Initializing VaultManager
+[2025-02-22 21:48:58.728 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 21:48:58.728 main(----) INF] Initializing vault at: notes
+[2025-02-22 21:48:58.728 main(----) INF] Loading notes from: notes
+[2025-02-22 21:48:58.728 main(----) INF] Found 4 markdown files
+[2025-02-22 21:48:58.733 main(----) INF] Loaded note: Untitled (d28f3561-28e8-496d-a8b5-9fc8d6cf8461)
+[2025-02-22 21:48:58.733 main(----) INF] Loaded note: Untitled (bdc2510d-371c-467a-9507-bbe2520a5d1f)
+[2025-02-22 21:48:58.733 main(----) INF] Loaded note: Untitled (ea02f671-b7d8-4f12-8b31-f0f1e21490c8)
+[2025-02-22 21:48:58.733 main(----) INF] Loaded note: Heading 1 (9c6f7270-8bf6-4e30-b15e-074711436d43)
+[2025-02-22 21:48:58.733 main(----) INF] Getting all notes (count: 4)
+[2025-02-22 21:48:58.733 main(----) INF] Note: Untitled (bdc2510d-371c-467a-9507-bbe2520a5d1f)
+[2025-02-22 21:48:58.733 main(----) INF] Note: Untitled (ea02f671-b7d8-4f12-8b31-f0f1e21490c8)
+[2025-02-22 21:48:58.733 main(----) INF] Note: Heading 1 (9c6f7270-8bf6-4e30-b15e-074711436d43)
+[2025-02-22 21:48:58.733 main(----) INF] Note: Untitled (d28f3561-28e8-496d-a8b5-9fc8d6cf8461)
+[2025-02-22 21:48:58.733 main(----) INF] Found 4 existing notes
+[2025-02-22 21:48:58.734 main(----) dbg] add route GET /api/notes
+[2025-02-22 21:48:58.734 main(----) dbg] add route POST /api/notes
+[2025-02-22 21:48:58.734 main(----) dbg] add route GET /api/notes/:id
+[2025-02-22 21:48:58.734 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-22 21:48:58.734 main(----) dbg] add route GET /api/tags
+[2025-02-22 21:48:58.734 main(----) dbg] add route GET /api/debug/notes
+[2025-02-22 21:48:58.734 main(----) dbg] add route GET /ws
+[2025-02-22 21:48:58.734 main(----) dbg] add route GET /assets/*
+[2025-02-22 21:48:58.734 main(----) dbg] add route GET *
+[2025-02-22 21:48:58.734 main(----) INF] Starting Quill Garden backend server...
+[2025-02-22 21:48:58.734 F06313F3(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 21:48:58.735 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-22 21:48:58.735 main(----) INF] Server running on http://localhost:3000/
+[2025-02-22 21:48:58.735 main(----) dia] Running event loop...
+[2025-02-22 21:48:58.735 main(----) dbg] Starting event loop.
+[2025-02-22 21:49:01.277 main(tTLL) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-22 21:49:01.278 main(tTLL) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-22 21:49:01.278 main(tTLL) INF] === Request for path: / ===
+[2025-02-22 21:49:01.279 main(tTLL) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 21:49:01.280 main(tTLL) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 21:49:01.280 main(tTLL) INF] Serving index.html
+[2025-02-22 21:49:01.281 main(tTLL) INF] Index content length: 396
+[2025-02-22 21:49:02.218 main(tTLL) INF] === Request for path: /favicon.ico ===
+[2025-02-22 21:49:02.219 main(tTLL) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 21:49:02.220 main(tTLL) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 21:49:02.220 main(tTLL) INF] Serving index.html
+[2025-02-22 21:49:02.220 main(tTLL) INF] Index content length: 396
+[2025-02-22 21:49:12.230 main(tTLL) dbg] Keep-alive connection timed out!
+[2025-02-22 21:51:00.298 main(8gy5) INF] === Request for path: / ===
+[2025-02-22 21:51:00.299 main(8gy5) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "Cache-Control": "max-age=0", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-User": "?1", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 21:51:00.300 main(8gy5) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 21:51:00.300 main(8gy5) INF] Serving index.html
+[2025-02-22 21:51:00.300 main(8gy5) INF] Index content length: 396
+[2025-02-22 21:51:01.188 main(8gy5) INF] === Request for path: /favicon.ico ===
+[2025-02-22 21:51:01.189 main(8gy5) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 21:51:01.190 main(8gy5) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 21:51:01.190 main(8gy5) INF] Serving index.html
+[2025-02-22 21:51:01.190 main(8gy5) INF] Index content length: 396
+[2025-02-22 21:51:11.200 main(8gy5) dbg] Keep-alive connection timed out!
+[2025-02-22 21:51:22.362 main(Kciq) INF] === Request for path: / ===
+[2025-02-22 21:51:22.363 main(Kciq) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "Cache-Control": "max-age=0", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-User": "?1", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 21:51:22.364 main(Kciq) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 21:51:22.364 main(Kciq) INF] Serving index.html
+[2025-02-22 21:51:22.364 main(Kciq) INF] Index content length: 396
+[2025-02-22 21:51:23.827 main(Kciq) INF] === Request for path: /favicon.ico ===
+[2025-02-22 21:51:23.828 main(Kciq) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 21:51:23.829 main(Kciq) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 21:51:23.829 main(Kciq) INF] Serving index.html
+[2025-02-22 21:51:23.829 main(Kciq) INF] Index content length: 396
+[2025-02-22 21:51:33.839 main(Kciq) dbg] Keep-alive connection timed out!
+[2025-02-22 21:59:16.060 main(----) INF] Received signal 2. Shutting down.
+[2025-02-22 21:59:16.060 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-22 21:59:16.061 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-22 21:59:16.061 main(----) dia] Event loop exited with status 0.
+[2025-02-22 21:59:16.061 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-22 21:59:16.061 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-22 21:59:16.061 main(----) dia] Main thread exiting
+[2025-02-22 21:59:33.376 main(----) INF] Initializing VaultManager
+[2025-02-22 21:59:33.376 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 21:59:33.376 main(----) INF] Initializing vault at: notes
+[2025-02-22 21:59:33.376 main(----) INF] Loading notes from: notes
+[2025-02-22 21:59:33.376 main(----) INF] Found 4 markdown files
+[2025-02-22 21:59:33.381 main(----) INF] Loaded note: Untitled (7b3c2d0c-e0e5-4900-8737-bb49e8b2d96a)
+[2025-02-22 21:59:33.381 main(----) INF] Loaded note: Untitled (a65c6bf9-ca52-47e1-a45d-3463f5a26fee)
+[2025-02-22 21:59:33.381 main(----) INF] Loaded note: Untitled (fd201813-26b2-45df-90d7-a09f335089c7)
+[2025-02-22 21:59:33.382 main(----) INF] Loaded note: Heading 1 (5609befa-51ac-4beb-b8af-ddada86df1bc)
+[2025-02-22 21:59:33.382 main(----) INF] Getting all notes (count: 4)
+[2025-02-22 21:59:33.382 main(----) INF] Note: Untitled (7b3c2d0c-e0e5-4900-8737-bb49e8b2d96a)
+[2025-02-22 21:59:33.382 main(----) INF] Note: Heading 1 (5609befa-51ac-4beb-b8af-ddada86df1bc)
+[2025-02-22 21:59:33.382 main(----) INF] Note: Untitled (fd201813-26b2-45df-90d7-a09f335089c7)
+[2025-02-22 21:59:33.382 main(----) INF] Note: Untitled (a65c6bf9-ca52-47e1-a45d-3463f5a26fee)
+[2025-02-22 21:59:33.383 main(----) INF] Found 4 existing notes
+[2025-02-22 21:59:33.383 main(----) dbg] add route GET /api/notes
+[2025-02-22 21:59:33.383 main(----) dbg] add route POST /api/notes
+[2025-02-22 21:59:33.383 main(----) dbg] add route GET /api/notes/:id
+[2025-02-22 21:59:33.383 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-22 21:59:33.383 D6B01ADD(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 21:59:33.383 main(----) dbg] add route GET /api/tags
+[2025-02-22 21:59:33.383 main(----) dbg] add route GET /api/debug/notes
+[2025-02-22 21:59:33.383 main(----) dbg] add route GET /ws
+[2025-02-22 21:59:33.383 main(----) dbg] add route GET /assets/*
+[2025-02-22 21:59:33.383 main(----) dbg] add route GET *
+[2025-02-22 21:59:33.383 main(----) INF] Starting Quill Garden backend server...
+[2025-02-22 21:59:33.384 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-22 21:59:33.384 main(----) INF] Server running on http://localhost:3000/
+[2025-02-22 21:59:33.384 main(----) dia] Running event loop...
+[2025-02-22 21:59:33.384 main(----) dbg] Starting event loop.
+[2025-02-22 21:59:38.005 main(Bnxc) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-22 21:59:38.007 main(Bnxc) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-22 21:59:38.007 main(Bnxc) INF] === Request for path: / ===
+[2025-02-22 21:59:38.009 main(Bnxc) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 21:59:38.010 main(Bnxc) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 21:59:38.010 main(Bnxc) INF] Serving index.html
+[2025-02-22 21:59:38.012 main(Bnxc) INF] Index content length: 396
+[2025-02-22 21:59:39.819 main(Bnxc) INF] === Request for path: /favicon.ico ===
+[2025-02-22 21:59:39.822 main(Bnxc) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 21:59:39.824 main(Bnxc) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 21:59:39.825 main(Bnxc) INF] Serving index.html
+[2025-02-22 21:59:39.826 main(Bnxc) INF] Index content length: 396
+[2025-02-22 21:59:49.836 main(Bnxc) dbg] Keep-alive connection timed out!
+[2025-02-22 22:00:00.671 main(----) INF] Received signal 2. Shutting down.
+[2025-02-22 22:00:00.671 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-22 22:00:00.671 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-22 22:00:00.671 main(----) dia] Event loop exited with status 0.
+[2025-02-22 22:00:00.671 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-22 22:00:00.671 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-22 22:00:00.671 main(----) dia] Main thread exiting
+[2025-02-22 22:05:19.401 main(----) INF] Initializing VaultManager
+[2025-02-22 22:05:19.402 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 22:05:19.402 main(----) INF] Initializing vault at: notes
+[2025-02-22 22:05:19.402 main(----) INF] Loading notes from: notes
+[2025-02-22 22:05:19.402 main(----) INF] Found 4 markdown files
+[2025-02-22 22:05:19.407 main(----) INF] Loaded note: Untitled (c63468cf-3cdb-445b-be0e-ef3a4e4c1ec3)
+[2025-02-22 22:05:19.407 main(----) INF] Loaded note: Untitled (147d615c-fa21-444e-ac1b-dd4a9c2300e3)
+[2025-02-22 22:05:19.408 main(----) INF] Loaded note: Untitled (c0688090-6edf-4ab2-ba6a-b024a04383cc)
+[2025-02-22 22:05:19.408 main(----) INF] Loaded note: Heading 1 (46b2b893-4f84-47b5-905e-2d5929bf3900)
+[2025-02-22 22:05:19.408 main(----) INF] Getting all notes (count: 4)
+[2025-02-22 22:05:19.408 main(----) INF] Note: Heading 1 (46b2b893-4f84-47b5-905e-2d5929bf3900)
+[2025-02-22 22:05:19.408 main(----) INF] Note: Untitled (c63468cf-3cdb-445b-be0e-ef3a4e4c1ec3)
+[2025-02-22 22:05:19.408 main(----) INF] Note: Untitled (c0688090-6edf-4ab2-ba6a-b024a04383cc)
+[2025-02-22 22:05:19.408 main(----) INF] Note: Untitled (147d615c-fa21-444e-ac1b-dd4a9c2300e3)
+[2025-02-22 22:05:19.408 main(----) INF] Found 4 existing notes
+[2025-02-22 22:05:19.408 70F017BA(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 22:05:19.409 main(----) dbg] add route GET /api/notes
+[2025-02-22 22:05:19.409 main(----) dbg] add route POST /api/notes
+[2025-02-22 22:05:19.409 main(----) dbg] add route GET /api/notes/:id
+[2025-02-22 22:05:19.409 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-22 22:05:19.409 main(----) dbg] add route GET /api/tags
+[2025-02-22 22:05:19.409 main(----) dbg] add route GET /api/debug/notes
+[2025-02-22 22:05:19.409 main(----) dbg] add route GET /ws
+[2025-02-22 22:05:19.409 main(----) dbg] add route GET /assets/*
+[2025-02-22 22:05:19.409 main(----) dbg] add route GET *
+[2025-02-22 22:05:19.409 main(----) INF] Starting Quill Garden backend server...
+[2025-02-22 22:05:19.410 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-22 22:05:19.410 main(----) INF] Server running on http://localhost:3000/
+[2025-02-22 22:05:19.410 main(----) dia] Running event loop...
+[2025-02-22 22:05:19.410 main(----) dbg] Starting event loop.
+[2025-02-22 22:05:22.290 main(QDxE) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-22 22:05:22.291 main(QDxE) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-22 22:05:22.292 main(QDxE) INF] === Request for path: / ===
+[2025-02-22 22:05:22.293 main(QDxE) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Linux\"", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Sec-Fetch-Site": "none", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Dest": "document", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 22:05:22.293 main(QDxE) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 22:05:22.294 main(QDxE) INF] Serving index.html
+[2025-02-22 22:05:22.294 main(QDxE) INF] Index content length: 396
+[2025-02-22 22:05:23.869 main(QDxE) INF] === Request for path: /favicon.ico ===
+[2025-02-22 22:05:23.869 main(QDxE) INF] Headers: ["Host": "localhost:3000", "Connection": "keep-alive", "sec-ch-ua-platform": "\"Linux\"", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36", "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\", \"Google Chrome\";v=\"132\"", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "no-cors", "Sec-Fetch-Dest": "image", "Referer": "http://localhost:3000/", "Accept-Encoding": "gzip, deflate, br, zstd", "Accept-Language": "en-US,en;q=0.9", "Cookie": "_portal_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYWUlKam5iOXNUWlZCbHg0M3VtRjFmalRw.BORQey7Uc5_p25chyG0_JknlnkPPXMI6AKFMW3HGdUg; _time_tracker_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYY1JBdUQzRGl4Yk56cG5SNVNhdzIwc0Za.faeVSGmm-kUZbHgRJnks-nXqJfjBmfrfyqi_pM9NToE; _deepscape_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYQnhrRk5SMUtQbkt3Q201RFVhZEN4cEdC.oL45i9pjwS0QbbE3bm6id8R2RmEFprlO_EvhgDvy-kY; _game_server_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYRl9rMS0xQ05OZ0tYeFlVTVVnX3BTcDlM.H0kMIS1G4qf6PEC7exY7mk8ZC7Nmt_00AQAuHxeCHEc; paraglide_lang=en"]
+[2025-02-22 22:05:23.871 main(QDxE) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 22:05:23.871 main(QDxE) INF] Serving index.html
+[2025-02-22 22:05:23.871 main(QDxE) INF] Index content length: 396
+[2025-02-22 22:05:33.882 main(QDxE) dbg] Keep-alive connection timed out!
+[2025-02-22 22:11:12.702 main(----) INF] Initializing VaultManager
+[2025-02-22 22:11:12.702 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 22:11:12.702 main(----) INF] Initializing vault at: notes
+[2025-02-22 22:11:12.702 main(----) INF] Loading notes from: notes
+[2025-02-22 22:11:12.702 main(----) INF] Found 4 markdown files
+[2025-02-22 22:11:12.708 main(----) INF] Loaded note: Untitled (a7b881a7-da57-4a95-95cd-a3015c9afc0c)
+[2025-02-22 22:11:12.709 main(----) INF] Loaded note: Untitled (37dbe866-9ed6-4aa6-a62e-2e24627a81f0)
+[2025-02-22 22:11:12.709 main(----) INF] Loaded note: Untitled (5f44c6d7-2952-4b69-8d39-ab0018877722)
+[2025-02-22 22:11:12.709 main(----) INF] Loaded note: Heading 1 (dded410e-694d-40bd-9a10-0cbdd2a6c777)
+[2025-02-22 22:11:12.710 main(----) INF] Getting all notes (count: 4)
+[2025-02-22 22:11:12.710 main(----) INF] Note: Heading 1 (dded410e-694d-40bd-9a10-0cbdd2a6c777)
+[2025-02-22 22:11:12.710 main(----) INF] Note: Untitled (37dbe866-9ed6-4aa6-a62e-2e24627a81f0)
+[2025-02-22 22:11:12.710 main(----) INF] Note: Untitled (5f44c6d7-2952-4b69-8d39-ab0018877722)
+[2025-02-22 22:11:12.710 main(----) INF] Note: Untitled (a7b881a7-da57-4a95-95cd-a3015c9afc0c)
+[2025-02-22 22:11:12.710 4870188B(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 22:11:12.710 main(----) INF] Found 4 existing notes
+[2025-02-22 22:11:12.710 main(----) dbg] add route GET /api/notes
+[2025-02-22 22:11:12.711 main(----) dbg] add route POST /api/notes
+[2025-02-22 22:11:12.711 main(----) dbg] add route GET /api/notes/:id
+[2025-02-22 22:11:12.711 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-22 22:11:12.711 main(----) dbg] add route GET /api/tags
+[2025-02-22 22:11:12.711 main(----) dbg] add route GET /api/debug/notes
+[2025-02-22 22:11:12.711 main(----) dbg] add route GET /ws
+[2025-02-22 22:11:12.711 main(----) dbg] add route GET /assets/*
+[2025-02-22 22:11:12.712 main(----) dbg] add route GET *
+[2025-02-22 22:11:12.712 main(----) INF] Starting Quill Garden backend server...
+[2025-02-22 22:11:12.712 main(----) WRN] Failed to listen on 127.0.0.1:3000
+[2025-02-22 22:11:12.745 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-22 22:11:12.745 main(----) dia] Main thread exiting
+[2025-02-22 22:13:14.957 main(----) INF] Received signal 15. Shutting down.
+[2025-02-22 22:13:14.967 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-22 22:13:14.969 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-22 22:13:14.969 main(----) dia] Event loop exited with status 0.
+[2025-02-22 22:13:14.969 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-22 22:13:14.969 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-22 22:13:14.969 main(----) dia] Main thread exiting
+[2025-02-22 22:13:17.192 main(----) INF] Initializing VaultManager
+[2025-02-22 22:13:17.192 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 22:13:17.192 main(----) INF] Initializing vault at: notes
+[2025-02-22 22:13:17.192 main(----) INF] Loading notes from: notes
+[2025-02-22 22:13:17.192 main(----) INF] Found 4 markdown files
+[2025-02-22 22:13:17.197 main(----) INF] Loaded note: Untitled (6ce1de85-2b3a-47c7-8bf4-c48a458aaa63)
+[2025-02-22 22:13:17.197 main(----) INF] Loaded note: Untitled (6186cf41-128d-45b6-8244-71520663b5f7)
+[2025-02-22 22:13:17.197 main(----) INF] Loaded note: Untitled (e54999bc-c9b1-429f-8662-1ce31f180639)
+[2025-02-22 22:13:17.197 main(----) INF] Loaded note: Heading 1 (ca28f601-83d0-40cf-be37-fbe9a9dcd12a)
+[2025-02-22 22:13:17.197 main(----) INF] Getting all notes (count: 4)
+[2025-02-22 22:13:17.197 main(----) INF] Note: Untitled (e54999bc-c9b1-429f-8662-1ce31f180639)
+[2025-02-22 22:13:17.197 main(----) INF] Note: Untitled (6ce1de85-2b3a-47c7-8bf4-c48a458aaa63)
+[2025-02-22 22:13:17.197 main(----) INF] Note: Heading 1 (ca28f601-83d0-40cf-be37-fbe9a9dcd12a)
+[2025-02-22 22:13:17.197 main(----) INF] Note: Untitled (6186cf41-128d-45b6-8244-71520663b5f7)
+[2025-02-22 22:13:17.198 main(----) INF] Found 4 existing notes
+[2025-02-22 22:13:17.198 main(----) dbg] add route GET /api/notes
+[2025-02-22 22:13:17.198 main(----) dbg] add route POST /api/notes
+[2025-02-22 22:13:17.198 main(----) dbg] add route GET /api/notes/:id
+[2025-02-22 22:13:17.198 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-22 22:13:17.198 main(----) dbg] add route GET /api/tags
+[2025-02-22 22:13:17.198 main(----) dbg] add route GET /api/debug/notes
+[2025-02-22 22:13:17.198 main(----) dbg] add route GET /ws
+[2025-02-22 22:13:17.198 main(----) dbg] add route GET /assets/*
+[2025-02-22 22:13:17.198 main(----) dbg] add route GET *
+[2025-02-22 22:13:17.198 main(----) INF] Starting Quill Garden backend server...
+[2025-02-22 22:13:17.198 863019AE(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 22:13:17.199 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-22 22:13:17.199 main(----) INF] Server running on http://localhost:3000/
+[2025-02-22 22:13:17.199 main(----) dia] Running event loop...
+[2025-02-22 22:13:17.199 main(----) dbg] Starting event loop.
+[2025-02-22 22:13:30.630 main(----) INF] Received signal 2. Shutting down.
+[2025-02-22 22:13:30.630 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-22 22:13:30.630 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-22 22:13:30.630 main(----) dia] Event loop exited with status 0.
+[2025-02-22 22:13:30.630 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-22 22:13:30.630 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-22 22:13:30.630 main(----) dia] Main thread exiting
+[2025-02-22 22:14:28.956 main(----) INF] Initializing VaultManager
+[2025-02-22 22:14:28.957 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 22:14:28.957 main(----) INF] Initializing vault at: notes
+[2025-02-22 22:14:28.957 main(----) INF] Loading notes from: notes
+[2025-02-22 22:14:28.957 main(----) INF] Found 4 markdown files
+[2025-02-22 22:14:28.962 main(----) INF] Loaded note: Untitled (9b35fd88-51e2-4569-93eb-a16d8f0c5ea7)
+[2025-02-22 22:14:28.962 main(----) INF] Loaded note: Untitled (979934fa-2445-44f9-a845-1a8ebea2d7c1)
+[2025-02-22 22:14:28.962 main(----) INF] Loaded note: Untitled (70ad3205-a473-4608-bfa6-17bd24f08b28)
+[2025-02-22 22:14:28.962 main(----) INF] Loaded note: Heading 1 (a2d0f6fa-5488-47d1-8227-da73e0f2bf1c)
+[2025-02-22 22:14:28.962 main(----) INF] Getting all notes (count: 4)
+[2025-02-22 22:14:28.962 main(----) INF] Note: Untitled (979934fa-2445-44f9-a845-1a8ebea2d7c1)
+[2025-02-22 22:14:28.962 main(----) INF] Note: Heading 1 (a2d0f6fa-5488-47d1-8227-da73e0f2bf1c)
+[2025-02-22 22:14:28.962 main(----) INF] Note: Untitled (9b35fd88-51e2-4569-93eb-a16d8f0c5ea7)
+[2025-02-22 22:14:28.962 main(----) INF] Note: Untitled (70ad3205-a473-4608-bfa6-17bd24f08b28)
+[2025-02-22 22:14:28.962 main(----) INF] Found 4 existing notes
+[2025-02-22 22:14:28.963 main(----) dbg] add route GET /api/notes
+[2025-02-22 22:14:28.963 main(----) dbg] add route POST /api/notes
+[2025-02-22 22:14:28.963 main(----) dbg] add route GET /api/notes/:id
+[2025-02-22 22:14:28.963 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-22 22:14:28.963 main(----) dbg] add route GET /api/tags
+[2025-02-22 22:14:28.963 main(----) dbg] add route GET /api/debug/notes
+[2025-02-22 22:14:28.963 main(----) dbg] add route GET /ws
+[2025-02-22 22:14:28.963 main(----) dbg] add route GET /assets/*
+[2025-02-22 22:14:28.963 main(----) dbg] add route GET *
+[2025-02-22 22:14:28.963 B0D019D2(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 22:14:28.963 main(----) INF] Starting Quill Garden backend server...
+[2025-02-22 22:14:28.964 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-22 22:14:28.964 main(----) INF] Server running on http://localhost:3000/
+[2025-02-22 22:14:28.964 main(----) dia] Running event loop...
+[2025-02-22 22:14:28.964 main(----) dbg] Starting event loop.
+[2025-02-22 22:14:31.712 main(UHEP) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-22 22:14:31.713 main(UHEP) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-22 22:14:31.713 main(UHEP) INF] === Request for path: / ===
+[2025-02-22 22:14:31.713 main(UHEP) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 22:14:31.713 main(UHEP) INF] Serving index.html
+[2025-02-22 22:14:31.714 main(UHEP) INF] Index content length: 366
+[2025-02-22 22:14:31.772 main(UHEP) dbg] Path 'assets/index.js' -> 'assets/index.js'
+[2025-02-22 22:14:31.775 vibe-io-1(----) dbg] entering worker thread
+[2025-02-22 22:14:31.775 vibe-worker-4(----) dbg] entering worker thread
+[2025-02-22 22:14:31.775 vibe-worker-2(----) dbg] entering worker thread
+[2025-02-22 22:14:31.776 vibe-worker-5(----) dbg] entering worker thread
+[2025-02-22 22:14:31.776 vibe-io-0(----) dbg] entering worker thread
+[2025-02-22 22:14:31.776 vibe-worker-9(----) dbg] entering worker thread
+[2025-02-22 22:14:31.776 vibe-worker-11(----) dbg] entering worker thread
+[2025-02-22 22:14:31.776 vibe-worker-1(----) dbg] entering worker thread
+[2025-02-22 22:14:31.776 vibe-worker-10(----) dbg] entering worker thread
+[2025-02-22 22:14:31.777 vibe-worker-6(----) dbg] entering worker thread
+[2025-02-22 22:14:31.777 vibe-worker-12(----) dbg] entering worker thread
+[2025-02-22 22:14:31.777 vibe-worker-8(----) dbg] entering worker thread
+[2025-02-22 22:14:31.777 vibe-worker-13(----) dbg] entering worker thread
+[2025-02-22 22:14:31.777 vibe-worker-7(----) dbg] entering worker thread
+[2025-02-22 22:14:31.778 main(pJWt) dbg] Path 'assets/index.css' -> 'assets/index.css'
+[2025-02-22 22:14:31.778 vibe-worker-3(----) dbg] entering worker thread
+[2025-02-22 22:14:31.778 vibe-io-2(----) dbg] entering worker thread
+[2025-02-22 22:14:31.779 vibe-worker-0(----) dbg] entering worker thread
+[2025-02-22 22:14:31.779 main(UHEP) INF] === Request for path: /assets/index.js ===
+[2025-02-22 22:14:31.779 main(UHEP) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 22:14:31.779 main(UHEP) INF] Serving index.html
+[2025-02-22 22:14:31.779 main(UHEP) INF] Index content length: 366
+[2025-02-22 22:14:31.779 main(pJWt) INF] === Request for path: /assets/index.css ===
+[2025-02-22 22:14:31.779 main(pJWt) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 22:14:31.780 main(pJWt) INF] Serving index.html
+[2025-02-22 22:14:31.780 main(pJWt) INF] Index content length: 366
+[2025-02-22 22:14:33.210 main(pJWt) INF] === Request for path: /favicon.ico ===
+[2025-02-22 22:14:33.211 main(pJWt) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 22:14:33.211 main(pJWt) INF] Serving index.html
+[2025-02-22 22:14:33.211 main(pJWt) INF] Index content length: 366
+[2025-02-22 22:14:37.993 main(pJWt) dbg] Path 'assets/index.css' -> 'assets/index.css'
+[2025-02-22 22:14:37.995 main(pJWt) INF] === Request for path: /assets/index.css ===
+[2025-02-22 22:14:37.995 main(pJWt) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-22 22:14:37.996 main(pJWt) INF] Serving index.html
+[2025-02-22 22:14:37.997 main(pJWt) INF] Index content length: 366
+[2025-02-22 22:14:41.784 main(UHEP) dbg] Keep-alive connection timed out!
+[2025-02-22 22:14:48.004 main(pJWt) dbg] Keep-alive connection timed out!
+[2025-02-22 22:16:13.372 main(----) INF] Initializing VaultManager
+[2025-02-22 22:16:13.372 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-22 22:16:13.372 main(----) INF] Initializing vault at: notes
+[2025-02-22 22:16:13.372 main(----) INF] Loading notes from: notes
+[2025-02-22 22:16:13.372 main(----) INF] Found 4 markdown files
+[2025-02-22 22:16:13.377 main(----) INF] Loaded note: Untitled (7d29c3ea-9054-451a-bbe4-e095c366cebe)
+[2025-02-22 22:16:13.377 main(----) INF] Loaded note: Untitled (9a4d6fee-de6f-45cc-874b-05af6958c95c)
+[2025-02-22 22:16:13.377 main(----) INF] Loaded note: Untitled (97cd3e2d-33c0-4750-99ec-b897fddaa2ff)
+[2025-02-22 22:16:13.377 main(----) INF] Loaded note: Heading 1 (653b3da7-2143-460a-b033-df195f8a4a30)
+[2025-02-22 22:16:13.378 main(----) INF] Getting all notes (count: 4)
+[2025-02-22 22:16:13.378 main(----) INF] Note: Untitled (9a4d6fee-de6f-45cc-874b-05af6958c95c)
+[2025-02-22 22:16:13.378 main(----) INF] Note: Heading 1 (653b3da7-2143-460a-b033-df195f8a4a30)
+[2025-02-22 22:16:13.378 main(----) INF] Note: Untitled (7d29c3ea-9054-451a-bbe4-e095c366cebe)
+[2025-02-22 22:16:13.378 main(----) INF] Note: Untitled (97cd3e2d-33c0-4750-99ec-b897fddaa2ff)
+[2025-02-22 22:16:13.378 main(----) INF] Found 4 existing notes
+[2025-02-22 22:16:13.378 main(----) dbg] add route GET /api/notes
+[2025-02-22 22:16:13.378 main(----) dbg] add route POST /api/notes
+[2025-02-22 22:16:13.378 main(----) dbg] add route GET /api/notes/:id
+[2025-02-22 22:16:13.378 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-22 22:16:13.378 main(----) dbg] add route GET /api/tags
+[2025-02-22 22:16:13.378 main(----) dbg] add route GET /api/debug/notes
+[2025-02-22 22:16:13.378 main(----) dbg] add route GET /ws
+[2025-02-22 22:16:13.378 main(----) dbg] add route GET /assets/*
+[2025-02-22 22:16:13.378 main(----) dbg] add route GET *
+[2025-02-22 22:16:13.378 main(----) INF] Starting Quill Garden backend server...
+[2025-02-22 22:16:13.379 3F8D34AF(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-22 22:16:13.379 main(----) WRN] Failed to listen on 127.0.0.1:3000
+[2025-02-22 22:16:13.411 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-22 22:16:13.411 main(----) dia] Main thread exiting
+[2025-02-23 00:46:34.691 main(----) INF] Initializing VaultManager
+[2025-02-23 00:46:34.691 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-23 00:46:34.691 main(----) INF] Initializing vault at: notes
+[2025-02-23 00:46:34.691 main(----) INF] Loading notes from: notes
+[2025-02-23 00:46:34.691 main(----) INF] Found 4 markdown files
+[2025-02-23 00:46:34.696 main(----) INF] Loaded note: Untitled (720a7e72-93ce-4fbd-8295-09afd3af9043)
+[2025-02-23 00:46:34.696 main(----) INF] Loaded note: Untitled (d035cb1c-93f9-4996-88b6-7701449a4f2b)
+[2025-02-23 00:46:34.697 main(----) INF] Loaded note: Untitled (a020431c-329e-4752-b812-ece879d17dfe)
+[2025-02-23 00:46:34.697 main(----) INF] Loaded note: Heading 1 (3aae547a-b2fc-4207-b252-8eb1b570b5c9)
+[2025-02-23 00:46:34.697 main(----) INF] Getting all notes (count: 4)
+[2025-02-23 00:46:34.697 main(----) INF] Note: Untitled (d035cb1c-93f9-4996-88b6-7701449a4f2b)
+[2025-02-23 00:46:34.697 main(----) INF] Note: Untitled (720a7e72-93ce-4fbd-8295-09afd3af9043)
+[2025-02-23 00:46:34.697 main(----) INF] Note: Untitled (a020431c-329e-4752-b812-ece879d17dfe)
+[2025-02-23 00:46:34.697 main(----) INF] Note: Heading 1 (3aae547a-b2fc-4207-b252-8eb1b570b5c9)
+[2025-02-23 00:46:34.697 main(----) INF] Found 4 existing notes
+[2025-02-23 00:46:34.697 main(----) dbg] add route GET /api/notes
+[2025-02-23 00:46:34.697 main(----) dbg] add route POST /api/notes
+[2025-02-23 00:46:34.697 main(----) dbg] add route GET /api/notes/:id
+[2025-02-23 00:46:34.697 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-23 00:46:34.697 main(----) dbg] add route GET /api/tags
+[2025-02-23 00:46:34.697 main(----) dbg] add route GET /api/debug/notes
+[2025-02-23 00:46:34.698 main(----) dbg] add route GET /ws
+[2025-02-23 00:46:34.698 main(----) dbg] add route GET /assets/*
+[2025-02-23 00:46:34.698 main(----) dbg] add route GET *
+[2025-02-23 00:46:34.698 main(----) INF] Starting Quill Garden backend server...
+[2025-02-23 00:46:34.698 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-23 00:46:34.698 main(----) INF] Server running on http://localhost:3000/
+[2025-02-23 00:46:34.698 main(----) dia] Running event loop...
+[2025-02-23 00:46:34.698 main(----) dbg] Starting event loop.
+[2025-02-23 00:46:34.699 46B0176C(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-23 00:54:56.054 main(bdc1) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-23 00:54:56.055 main(bdc1) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-23 00:54:56.055 main(bdc1) INF] === Request for path: / ===
+[2025-02-23 00:54:56.055 main(bdc1) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 00:54:56.055 main(bdc1) INF] Serving index.html
+[2025-02-23 00:54:56.056 main(bdc1) INF] Index content length: 365
+[2025-02-23 00:54:56.113 main(bdc1) INF] === Request for path: /assets/main.js ===
+[2025-02-23 00:54:56.113 main(bdc1) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 00:54:56.113 main(bdc1) INF] Serving index.html
+[2025-02-23 00:54:56.113 main(bdc1) INF] Index content length: 365
+[2025-02-23 00:54:56.121 main(bdc1) INF] === Request for path: /assets/index.css ===
+[2025-02-23 00:54:56.121 main(bdc1) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 00:54:56.121 main(bdc1) INF] Serving index.html
+[2025-02-23 00:54:56.121 main(bdc1) INF] Index content length: 365
+[2025-02-23 00:54:57.722 main(bdc1) INF] === Request for path: /favicon.ico ===
+[2025-02-23 00:54:57.722 main(bdc1) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 00:54:57.722 main(bdc1) INF] Serving index.html
+[2025-02-23 00:54:57.722 main(bdc1) INF] Index content length: 365
+[2025-02-23 00:55:07.732 main(bdc1) dbg] Keep-alive connection timed out!
+[2025-02-23 04:03:05.320 main(----) INF] Initializing VaultManager
+[2025-02-23 04:03:05.320 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-23 04:03:05.320 main(----) INF] Initializing vault at: notes
+[2025-02-23 04:03:05.320 main(----) INF] Loading notes from: notes
+[2025-02-23 04:03:05.321 main(----) INF] Found 4 markdown files
+[2025-02-23 04:03:05.325 main(----) INF] Loaded note: Untitled (5a4b74a3-4eda-4dc4-9761-40cb337eeef9)
+[2025-02-23 04:03:05.326 main(----) INF] Loaded note: Untitled (5f9d3d91-bdc5-4599-ab6f-02f600461ace)
+[2025-02-23 04:03:05.326 main(----) INF] Loaded note: Untitled (8c53a26f-7917-4cb7-b1e0-266de29d8cfb)
+[2025-02-23 04:03:05.326 main(----) INF] Loaded note: Heading 1 (3bf8ba8f-efc0-43fa-97d5-a69a7a5f05f7)
+[2025-02-23 04:03:05.326 main(----) INF] Getting all notes (count: 4)
+[2025-02-23 04:03:05.326 main(----) INF] Note: Untitled (8c53a26f-7917-4cb7-b1e0-266de29d8cfb)
+[2025-02-23 04:03:05.326 main(----) INF] Note: Untitled (5a4b74a3-4eda-4dc4-9761-40cb337eeef9)
+[2025-02-23 04:03:05.326 main(----) INF] Note: Heading 1 (3bf8ba8f-efc0-43fa-97d5-a69a7a5f05f7)
+[2025-02-23 04:03:05.326 main(----) INF] Note: Untitled (5f9d3d91-bdc5-4599-ab6f-02f600461ace)
+[2025-02-23 04:03:05.326 main(----) INF] Found 4 existing notes
+[2025-02-23 04:03:05.326 main(----) dbg] add route GET /api/notes
+[2025-02-23 04:03:05.326 main(----) dbg] add route POST /api/notes
+[2025-02-23 04:03:05.326 main(----) dbg] add route GET /api/notes/:id
+[2025-02-23 04:03:05.326 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-23 04:03:05.327 B8D01E0D(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-23 04:03:05.327 main(----) dbg] add route GET /api/tags
+[2025-02-23 04:03:05.327 main(----) dbg] add route GET /api/debug/notes
+[2025-02-23 04:03:05.327 main(----) dbg] add route GET /ws
+[2025-02-23 04:03:05.327 main(----) dbg] add route GET /assets/*
+[2025-02-23 04:03:05.328 main(----) dbg] add route GET *
+[2025-02-23 04:03:05.328 main(----) INF] Starting Quill Garden backend server...
+[2025-02-23 04:03:05.328 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-23 04:03:05.328 main(----) INF] Server running on http://localhost:3000/
+[2025-02-23 04:03:05.328 main(----) dia] Running event loop...
+[2025-02-23 04:03:05.328 main(----) dbg] Starting event loop.
+[2025-02-23 13:40:02.318 main(----) INF] Initializing VaultManager
+[2025-02-23 13:40:02.318 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-23 13:40:02.318 main(----) INF] Initializing vault at: notes
+[2025-02-23 13:40:02.318 main(----) INF] Loading notes from: notes
+[2025-02-23 13:40:02.318 main(----) INF] Found 4 markdown files
+[2025-02-23 13:40:02.323 main(----) INF] Loaded note: Untitled (17416dac-9dc4-476b-a644-8b0451d988cf)
+[2025-02-23 13:40:02.323 main(----) INF] Loaded note: Untitled (156038bb-ea5b-4fab-957b-aaf5767b967a)
+[2025-02-23 13:40:02.323 main(----) INF] Loaded note: Untitled (d513ab29-2fa4-4de4-a26c-be7ad790889d)
+[2025-02-23 13:40:02.323 main(----) INF] Loaded note: Heading 1 (a05cf226-c1c7-4804-88ab-e2c5f10b2166)
+[2025-02-23 13:40:02.324 main(----) INF] Getting all notes (count: 4)
+[2025-02-23 13:40:02.324 main(----) INF] Note: Untitled (17416dac-9dc4-476b-a644-8b0451d988cf)
+[2025-02-23 13:40:02.324 main(----) INF] Note: Untitled (156038bb-ea5b-4fab-957b-aaf5767b967a)
+[2025-02-23 13:40:02.324 main(----) INF] Note: Untitled (d513ab29-2fa4-4de4-a26c-be7ad790889d)
+[2025-02-23 13:40:02.324 main(----) INF] Note: Heading 1 (a05cf226-c1c7-4804-88ab-e2c5f10b2166)
+[2025-02-23 13:40:02.324 main(----) INF] Found 4 existing notes
+[2025-02-23 13:40:02.324 main(----) dbg] add route GET /api/notes
+[2025-02-23 13:40:02.324 main(----) dbg] add route POST /api/notes
+[2025-02-23 13:40:02.324 main(----) dbg] add route GET /api/notes/:id
+[2025-02-23 13:40:02.324 371012C9(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-23 13:40:02.325 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-23 13:40:02.325 main(----) dbg] add route GET /api/tags
+[2025-02-23 13:40:02.325 main(----) dbg] add route GET /api/debug/notes
+[2025-02-23 13:40:02.325 main(----) dbg] add route GET /ws
+[2025-02-23 13:40:02.325 main(----) dbg] add route GET /assets/*
+[2025-02-23 13:40:02.325 main(----) dbg] add route GET *
+[2025-02-23 13:40:02.325 main(----) INF] Starting Quill Garden backend server...
+[2025-02-23 13:40:02.326 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-23 13:40:02.326 main(----) INF] Server running on http://localhost:3000/
+[2025-02-23 13:40:02.326 main(----) dia] Running event loop...
+[2025-02-23 13:40:02.326 main(----) dbg] Starting event loop.
+[2025-02-23 13:40:06.303 main(a7D6) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-23 13:40:06.304 main(a7D6) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-23 13:40:06.304 main(a7D6) INF] === Request for path: / ===
+[2025-02-23 13:40:06.304 main(a7D6) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:40:06.304 main(a7D6) INF] Serving index.html
+[2025-02-23 13:40:06.305 main(a7D6) INF] Index content length: 365
+[2025-02-23 13:40:06.355 main(a7D6) INF] === Request for path: /assets/main.js ===
+[2025-02-23 13:40:06.355 main(a7D6) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:40:06.355 main(a7D6) INF] Serving index.html
+[2025-02-23 13:40:06.355 main(a7D6) INF] Index content length: 365
+[2025-02-23 13:40:06.360 main(a7D6) INF] === Request for path: /assets/index.css ===
+[2025-02-23 13:40:06.360 main(a7D6) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:40:06.360 main(a7D6) INF] Serving index.html
+[2025-02-23 13:40:06.360 main(a7D6) INF] Index content length: 365
+[2025-02-23 13:40:07.121 main(a7D6) INF] === Request for path: /favicon.ico ===
+[2025-02-23 13:40:07.121 main(a7D6) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:40:07.121 main(a7D6) INF] Serving index.html
+[2025-02-23 13:40:07.121 main(a7D6) INF] Index content length: 365
+[2025-02-23 13:40:17.132 main(a7D6) dbg] Keep-alive connection timed out!
+[2025-02-23 13:40:20.022 main(I2RY) INF] === Request for path: /assets/index.css ===
+[2025-02-23 13:40:20.022 main(I2RY) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:40:20.022 main(I2RY) INF] Serving index.html
+[2025-02-23 13:40:20.023 main(I2RY) INF] Index content length: 365
+[2025-02-23 13:40:30.032 main(I2RY) dbg] Keep-alive connection timed out!
+[2025-02-23 13:44:26.425 main(----) INF] Received signal 2. Shutting down.
+[2025-02-23 13:44:26.425 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-23 13:44:26.425 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-23 13:44:26.425 main(----) dia] Event loop exited with status 0.
+[2025-02-23 13:44:26.426 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-23 13:44:26.426 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-23 13:44:26.426 main(----) dia] Main thread exiting
+[2025-02-23 13:44:48.690 main(----) INF] Initializing VaultManager
+[2025-02-23 13:44:48.691 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-23 13:44:48.691 main(----) INF] Initializing vault at: notes
+[2025-02-23 13:44:48.691 main(----) INF] Loading notes from: notes
+[2025-02-23 13:44:48.691 main(----) INF] Found 4 markdown files
+[2025-02-23 13:44:48.703 main(----) INF] Loaded note: Untitled (cfdcdd1f-7dc7-4ada-8da7-6757177600b7)
+[2025-02-23 13:44:48.703 main(----) INF] Loaded note: Untitled (63b2dadd-ad82-47dc-80ce-058a64e4541e)
+[2025-02-23 13:44:48.703 main(----) INF] Loaded note: Untitled (f1c81ecf-ba0c-4d42-a7a6-5534a0021c0b)
+[2025-02-23 13:44:48.703 main(----) INF] Loaded note: Heading 1 (64dbcb2d-7ca1-4bd1-822f-d506e0ad3947)
+[2025-02-23 13:44:48.703 main(----) INF] Getting all notes (count: 4)
+[2025-02-23 13:44:48.703 main(----) INF] Note: Untitled (cfdcdd1f-7dc7-4ada-8da7-6757177600b7)
+[2025-02-23 13:44:48.703 main(----) INF] Note: Heading 1 (64dbcb2d-7ca1-4bd1-822f-d506e0ad3947)
+[2025-02-23 13:44:48.703 main(----) INF] Note: Untitled (63b2dadd-ad82-47dc-80ce-058a64e4541e)
+[2025-02-23 13:44:48.703 main(----) INF] Note: Untitled (f1c81ecf-ba0c-4d42-a7a6-5534a0021c0b)
+[2025-02-23 13:44:48.703 main(----) INF] Found 4 existing notes
+[2025-02-23 13:44:48.704 main(----) dbg] add route GET /api/notes
+[2025-02-23 13:44:48.704 main(----) dbg] add route POST /api/notes
+[2025-02-23 13:44:48.704 main(----) dbg] add route GET /api/notes/:id
+[2025-02-23 13:44:48.704 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-23 13:44:48.704 main(----) dbg] add route GET /api/tags
+[2025-02-23 13:44:48.704 main(----) dbg] add route GET /api/debug/notes
+[2025-02-23 13:44:48.705 main(----) dbg] add route GET /ws
+[2025-02-23 13:44:48.705 BAC3139E(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-23 13:44:48.705 main(----) dbg] add route GET /assets/*
+[2025-02-23 13:44:48.705 main(----) dbg] add route GET *
+[2025-02-23 13:44:48.706 main(----) INF] Starting Quill Garden backend server...
+[2025-02-23 13:44:48.706 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-23 13:44:48.706 main(----) INF] Server running on http://localhost:3000/
+[2025-02-23 13:44:48.707 main(----) dia] Running event loop...
+[2025-02-23 13:44:48.708 main(----) dbg] Starting event loop.
+[2025-02-23 13:44:53.791 main(ppF/) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-23 13:44:53.792 main(ppF/) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-23 13:44:53.792 main(ppF/) INF] === Request for path: / ===
+[2025-02-23 13:44:53.792 main(ppF/) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:44:53.792 main(ppF/) INF] Serving index.html
+[2025-02-23 13:44:53.854 main(ppF/) INF] Asset not found: ../frontend/dist/assets/main.js
+[2025-02-23 13:44:53.855 main(ppF/) INF] === Request for path: /assets/main.js ===
+[2025-02-23 13:44:53.855 main(ppF/) INF] Skipping special request
+[2025-02-23 13:44:53.855 main(ppF/) dbg] no route match: GET /assets/main.js
+[2025-02-23 13:44:53.855 main(ppF/) dia] No response written for /assets/main.js
+[2025-02-23 13:44:53.867 main(Mzbw) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 13:44:53.867 main(Mzbw) INF] === Request for path: /assets/index.css ===
+[2025-02-23 13:44:53.867 main(Mzbw) INF] Skipping special request
+[2025-02-23 13:44:53.867 main(Mzbw) dbg] no route match: GET /assets/index.css
+[2025-02-23 13:44:53.867 main(Mzbw) dia] No response written for /assets/index.css
+[2025-02-23 13:44:55.480 main(ppF/) INF] === Request for path: /favicon.ico ===
+[2025-02-23 13:44:55.480 main(ppF/) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:44:55.480 main(ppF/) INF] Serving index.html
+[2025-02-23 13:44:58.911 main(ppF/) INF] === Request for path: / ===
+[2025-02-23 13:44:58.911 main(ppF/) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:44:58.911 main(ppF/) INF] Serving index.html
+[2025-02-23 13:44:58.967 main(ppF/) INF] Asset not found: ../frontend/dist/assets/main.js
+[2025-02-23 13:44:58.968 main(ppF/) INF] === Request for path: /assets/main.js ===
+[2025-02-23 13:44:58.968 main(ppF/) INF] Skipping special request
+[2025-02-23 13:44:58.968 main(ppF/) dbg] no route match: GET /assets/main.js
+[2025-02-23 13:44:58.968 main(ppF/) dia] No response written for /assets/main.js
+[2025-02-23 13:44:58.974 main(ppF/) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 13:44:58.974 main(ppF/) INF] === Request for path: /assets/index.css ===
+[2025-02-23 13:44:58.974 main(ppF/) INF] Skipping special request
+[2025-02-23 13:44:58.974 main(ppF/) dbg] no route match: GET /assets/index.css
+[2025-02-23 13:44:58.974 main(ppF/) dia] No response written for /assets/index.css
+[2025-02-23 13:45:00.286 main(ppF/) INF] === Request for path: /favicon.ico ===
+[2025-02-23 13:45:00.286 main(ppF/) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:45:00.286 main(ppF/) INF] Serving index.html
+[2025-02-23 13:45:03.871 main(Mzbw) dbg] Keep-alive connection timed out!
+[2025-02-23 13:45:10.292 main(ppF/) dbg] Keep-alive connection timed out!
+[2025-02-23 13:52:03.604 main(Kq00) INF] === Request for path: /favicon.ico ===
+[2025-02-23 13:52:03.604 main(Kq00) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:52:03.604 main(Kq00) INF] Serving index.html
+[2025-02-23 13:52:03.738 main(Kq00) INF] === Request for path: / ===
+[2025-02-23 13:52:03.738 main(Kq00) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:52:03.738 main(Kq00) INF] Serving index.html
+[2025-02-23 13:52:03.790 main(Kq00) INF] Asset not found: ../frontend/dist/assets/main.js
+[2025-02-23 13:52:03.790 main(Kq00) INF] === Request for path: /assets/main.js ===
+[2025-02-23 13:52:03.790 main(Kq00) INF] Skipping special request
+[2025-02-23 13:52:03.790 main(Kq00) dbg] no route match: GET /assets/main.js
+[2025-02-23 13:52:03.791 main(Kq00) dia] No response written for /assets/main.js
+[2025-02-23 13:52:03.795 main(Kq00) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 13:52:03.795 main(Kq00) INF] === Request for path: /assets/index.css ===
+[2025-02-23 13:52:03.795 main(Kq00) INF] Skipping special request
+[2025-02-23 13:52:03.795 main(Kq00) dbg] no route match: GET /assets/index.css
+[2025-02-23 13:52:03.795 main(Kq00) dia] No response written for /assets/index.css
+[2025-02-23 13:52:04.444 main(Kq00) INF] === Request for path: /favicon.ico ===
+[2025-02-23 13:52:04.444 main(Kq00) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:52:04.444 main(Kq00) INF] Serving index.html
+[2025-02-23 13:52:07.477 main(Kq00) INF] === Request for path: / ===
+[2025-02-23 13:52:07.477 main(Kq00) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:52:07.478 main(Kq00) INF] Serving index.html
+[2025-02-23 13:52:07.536 main(Kq00) INF] Asset not found: ../frontend/dist/assets/main.js
+[2025-02-23 13:52:07.536 main(Kq00) INF] === Request for path: /assets/main.js ===
+[2025-02-23 13:52:07.536 main(Kq00) INF] Skipping special request
+[2025-02-23 13:52:07.536 main(Kq00) dbg] no route match: GET /assets/main.js
+[2025-02-23 13:52:07.536 main(Kq00) dia] No response written for /assets/main.js
+[2025-02-23 13:52:07.541 main(Kq00) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 13:52:07.542 main(Kq00) INF] === Request for path: /assets/index.css ===
+[2025-02-23 13:52:07.542 main(Kq00) INF] Skipping special request
+[2025-02-23 13:52:07.542 main(Kq00) dbg] no route match: GET /assets/index.css
+[2025-02-23 13:52:07.542 main(Kq00) dia] No response written for /assets/index.css
+[2025-02-23 13:52:08.079 main(Kq00) INF] === Request for path: /favicon.ico ===
+[2025-02-23 13:52:08.080 main(Kq00) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 13:52:08.080 main(Kq00) INF] Serving index.html
+[2025-02-23 13:52:10.393 main(Kq00) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 13:52:10.393 main(Kq00) INF] === Request for path: /assets/index.css ===
+[2025-02-23 13:52:10.393 main(Kq00) INF] Skipping special request
+[2025-02-23 13:52:10.393 main(Kq00) dbg] no route match: GET /assets/index.css
+[2025-02-23 13:52:10.394 main(Kq00) dia] No response written for /assets/index.css
+[2025-02-23 13:52:20.402 main(Kq00) dbg] Keep-alive connection timed out!
+[2025-02-23 13:55:25.038 main(----) INF] Received signal 2. Shutting down.
+[2025-02-23 13:55:25.038 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-23 13:55:25.038 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-23 13:55:25.038 main(----) dia] Event loop exited with status 0.
+[2025-02-23 13:55:25.038 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-23 13:55:25.038 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-23 13:55:25.038 main(----) dia] Main thread exiting
+[2025-02-23 14:00:00.553 main(----) INF] Initializing VaultManager
+[2025-02-23 14:00:00.553 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-23 14:00:00.553 main(----) INF] Initializing vault at: notes
+[2025-02-23 14:00:00.553 main(----) INF] Loading notes from: notes
+[2025-02-23 14:00:00.553 main(----) INF] Found 4 markdown files
+[2025-02-23 14:00:00.558 main(----) INF] Loaded note: Untitled (adc3331d-1088-46d0-b038-1644e1dec482)
+[2025-02-23 14:00:00.558 main(----) INF] Loaded note: Untitled (c42640f6-ecc0-45dc-9f34-ece6f2ca1635)
+[2025-02-23 14:00:00.558 main(----) INF] Loaded note: Untitled (41fb3c4a-8002-449f-a198-f53cac2942ff)
+[2025-02-23 14:00:00.558 main(----) INF] Loaded note: Heading 1 (3803dfd1-4d69-4d94-81fd-1a07791529f3)
+[2025-02-23 14:00:00.558 main(----) INF] Getting all notes (count: 4)
+[2025-02-23 14:00:00.558 main(----) INF] Note: Untitled (c42640f6-ecc0-45dc-9f34-ece6f2ca1635)
+[2025-02-23 14:00:00.559 main(----) INF] Note: Untitled (adc3331d-1088-46d0-b038-1644e1dec482)
+[2025-02-23 14:00:00.559 main(----) INF] Note: Heading 1 (3803dfd1-4d69-4d94-81fd-1a07791529f3)
+[2025-02-23 14:00:00.559 main(----) INF] Note: Untitled (41fb3c4a-8002-449f-a198-f53cac2942ff)
+[2025-02-23 14:00:00.559 main(----) INF] Found 4 existing notes
+[2025-02-23 14:00:00.559 main(----) dbg] add route GET /api/notes
+[2025-02-23 14:00:00.559 main(----) dbg] add route POST /api/notes
+[2025-02-23 14:00:00.559 main(----) dbg] add route GET /api/notes/:id
+[2025-02-23 14:00:00.559 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-23 14:00:00.559 main(----) dbg] add route GET /api/tags
+[2025-02-23 14:00:00.559 main(----) dbg] add route GET /api/debug/notes
+[2025-02-23 14:00:00.559 B3101B60(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-23 14:00:00.559 main(----) dbg] add route GET /ws
+[2025-02-23 14:00:00.559 main(----) dbg] add route GET /assets/*
+[2025-02-23 14:00:00.559 main(----) dbg] add route GET *
+[2025-02-23 14:00:00.559 main(----) INF] Starting Quill Garden backend server...
+[2025-02-23 14:00:00.560 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-23 14:00:00.560 main(----) INF] Server running on http://localhost:3000/
+[2025-02-23 14:00:00.560 main(----) dia] Running event loop...
+[2025-02-23 14:00:00.560 main(----) dbg] Starting event loop.
+[2025-02-23 14:00:03.899 main(MWuS) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-23 14:00:03.900 main(MWuS) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-23 14:00:03.900 main(MWuS) INF] === Request for path: / ===
+[2025-02-23 14:00:03.900 main(MWuS) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 14:00:03.900 main(MWuS) INF] Serving index.html
+[2025-02-23 14:00:03.951 main(MWuS) INF] Asset not found: ../frontend/dist/assets/main.js
+[2025-02-23 14:00:03.951 main(MWuS) INF] === Request for path: /assets/main.js ===
+[2025-02-23 14:00:03.951 main(MWuS) INF] Skipping special request
+[2025-02-23 14:00:03.951 main(MWuS) dbg] no route match: GET /assets/main.js
+[2025-02-23 14:00:03.951 main(MWuS) dia] No response written for /assets/main.js
+[2025-02-23 14:00:03.955 main(MWuS) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 14:00:03.955 main(MWuS) INF] === Request for path: /assets/index.css ===
+[2025-02-23 14:00:03.955 main(MWuS) INF] Skipping special request
+[2025-02-23 14:00:03.955 main(MWuS) dbg] no route match: GET /assets/index.css
+[2025-02-23 14:00:03.955 main(MWuS) dia] No response written for /assets/index.css
+[2025-02-23 14:00:05.397 main(MWuS) INF] === Request for path: /favicon.ico ===
+[2025-02-23 14:00:05.397 main(MWuS) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 14:00:05.397 main(MWuS) INF] Serving index.html
+[2025-02-23 14:00:12.677 main(MWuS) INF] === Request for path: / ===
+[2025-02-23 14:00:12.677 main(MWuS) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 14:00:12.677 main(MWuS) INF] Serving index.html
+[2025-02-23 14:00:12.725 main(MWuS) INF] Asset not found: ../frontend/dist/assets/main.js
+[2025-02-23 14:00:12.725 main(MWuS) INF] === Request for path: /assets/main.js ===
+[2025-02-23 14:00:12.725 main(MWuS) INF] Skipping special request
+[2025-02-23 14:00:12.725 main(MWuS) dbg] no route match: GET /assets/main.js
+[2025-02-23 14:00:12.725 main(MWuS) dia] No response written for /assets/main.js
+[2025-02-23 14:00:12.731 main(MWuS) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 14:00:12.731 main(MWuS) INF] === Request for path: /assets/index.css ===
+[2025-02-23 14:00:12.731 main(MWuS) INF] Skipping special request
+[2025-02-23 14:00:12.731 main(MWuS) dbg] no route match: GET /assets/index.css
+[2025-02-23 14:00:12.731 main(MWuS) dia] No response written for /assets/index.css
+[2025-02-23 14:00:13.904 main(MWuS) INF] === Request for path: /favicon.ico ===
+[2025-02-23 14:00:13.904 main(MWuS) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 14:00:13.904 main(MWuS) INF] Serving index.html
+[2025-02-23 14:00:13.955 main(6yAU) dbg] Client didn't send the initial request in a timely manner. Closing connection.
+[2025-02-23 14:00:16.847 main(MWuS) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 14:00:16.847 main(MWuS) INF] === Request for path: /assets/index.css ===
+[2025-02-23 14:00:16.847 main(MWuS) INF] Skipping special request
+[2025-02-23 14:00:16.847 main(MWuS) dbg] no route match: GET /assets/index.css
+[2025-02-23 14:00:16.847 main(MWuS) dia] No response written for /assets/index.css
+[2025-02-23 14:00:26.855 main(MWuS) dbg] Keep-alive connection timed out!
+[2025-02-23 14:18:01.544 main(----) INF] Received signal 2. Shutting down.
+[2025-02-23 14:18:01.544 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-23 14:18:01.544 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-23 14:18:01.544 main(----) dia] Event loop exited with status 0.
+[2025-02-23 14:18:01.544 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-23 14:18:01.544 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-23 14:18:01.544 main(----) dia] Main thread exiting
+[2025-02-23 14:25:22.766 main(----) INF] Initializing VaultManager
+[2025-02-23 14:25:22.767 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-23 14:25:22.767 main(----) INF] Initializing vault at: notes
+[2025-02-23 14:25:22.767 main(----) INF] Loading notes from: notes
+[2025-02-23 14:25:22.767 main(----) INF] Found 4 markdown files
+[2025-02-23 14:25:22.771 main(----) INF] Loaded note: Untitled (ae7d9ac2-e188-424a-89ba-15ef89945962)
+[2025-02-23 14:25:22.772 main(----) INF] Loaded note: Untitled (9eb3a79c-af3b-4282-8a7d-53efdadee9e6)
+[2025-02-23 14:25:22.772 main(----) INF] Loaded note: Untitled (920bcdd6-bc29-4de2-bf55-ee684a6ca813)
+[2025-02-23 14:25:22.772 main(----) INF] Loaded note: Heading 1 (34b18699-026f-48b4-aae3-db59521d81d7)
+[2025-02-23 14:25:22.772 main(----) INF] Getting all notes (count: 4)
+[2025-02-23 14:25:22.772 main(----) INF] Note: Untitled (9eb3a79c-af3b-4282-8a7d-53efdadee9e6)
+[2025-02-23 14:25:22.772 main(----) INF] Note: Untitled (920bcdd6-bc29-4de2-bf55-ee684a6ca813)
+[2025-02-23 14:25:22.772 main(----) INF] Note: Heading 1 (34b18699-026f-48b4-aae3-db59521d81d7)
+[2025-02-23 14:25:22.772 main(----) INF] Note: Untitled (ae7d9ac2-e188-424a-89ba-15ef89945962)
+[2025-02-23 14:25:22.772 main(----) INF] Found 4 existing notes
+[2025-02-23 14:25:22.772 main(----) dbg] add route GET /api/notes
+[2025-02-23 14:25:22.772 main(----) dbg] add route POST /api/notes
+[2025-02-23 14:25:22.772 main(----) dbg] add route GET /api/notes/:id
+[2025-02-23 14:25:22.772 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-23 14:25:22.772 main(----) dbg] add route GET /api/tags
+[2025-02-23 14:25:22.772 main(----) dbg] add route GET /api/debug/notes
+[2025-02-23 14:25:22.772 main(----) dbg] add route GET /ws
+[2025-02-23 14:25:22.773 main(----) dbg] add route GET /assets/*
+[2025-02-23 14:25:22.773 main(----) dbg] add route GET *
+[2025-02-23 14:25:22.773 main(----) INF] Starting Quill Garden backend server...
+[2025-02-23 14:25:22.773 A7B01E37(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-23 14:25:22.773 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-23 14:25:22.773 main(----) INF] Server running on http://localhost:3000/
+[2025-02-23 14:25:22.773 main(----) dia] Running event loop...
+[2025-02-23 14:25:22.773 main(----) dbg] Starting event loop.
+[2025-02-23 14:25:25.291 main(VDf3) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-23 14:25:25.292 main(VDf3) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-23 14:25:25.292 main(VDf3) INF] === Request for path: / ===
+[2025-02-23 14:25:25.292 main(VDf3) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 14:25:25.292 main(VDf3) INF] Serving index.html
+[2025-02-23 14:25:25.345 main(VDf3) INF] Asset not found: ../frontend/dist/assets/main.js
+[2025-02-23 14:25:25.345 main(VDf3) INF] === Request for path: /assets/main.js ===
+[2025-02-23 14:25:25.345 main(VDf3) INF] Skipping special request
+[2025-02-23 14:25:25.345 main(VDf3) dbg] no route match: GET /assets/main.js
+[2025-02-23 14:25:25.345 main(VDf3) dia] No response written for /assets/main.js
+[2025-02-23 14:25:25.349 main(VDf3) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 14:25:25.349 main(VDf3) INF] === Request for path: /assets/index.css ===
+[2025-02-23 14:25:25.349 main(VDf3) INF] Skipping special request
+[2025-02-23 14:25:25.349 main(VDf3) dbg] no route match: GET /assets/index.css
+[2025-02-23 14:25:25.349 main(VDf3) dia] No response written for /assets/index.css
+[2025-02-23 14:25:26.819 main(VDf3) INF] === Request for path: /favicon.ico ===
+[2025-02-23 14:25:26.820 main(VDf3) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 14:25:26.820 main(VDf3) INF] Serving index.html
+[2025-02-23 14:25:30.391 main(VDf3) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 14:25:30.391 main(VDf3) INF] === Request for path: /assets/index.css ===
+[2025-02-23 14:25:30.391 main(VDf3) INF] Skipping special request
+[2025-02-23 14:25:30.391 main(VDf3) dbg] no route match: GET /assets/index.css
+[2025-02-23 14:25:30.391 main(VDf3) dia] No response written for /assets/index.css
+[2025-02-23 14:25:35.353 main(ft4G) dbg] Client didn't send the initial request in a timely manner. Closing connection.
+[2025-02-23 14:25:40.396 main(VDf3) dbg] Keep-alive connection timed out!
+[2025-02-23 15:12:28.964 main(----) INF] Received signal 2. Shutting down.
+[2025-02-23 15:12:28.964 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-23 15:12:28.974 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-23 15:12:28.974 main(----) dia] Event loop exited with status 0.
+[2025-02-23 15:12:28.974 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-23 15:12:28.974 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-23 15:12:28.974 main(----) dia] Main thread exiting
+[2025-02-23 15:12:56.288 main(----) INF] Initializing VaultManager
+[2025-02-23 15:12:56.288 main(----) INF] VaultManager constructor - rootPath: notes
+[2025-02-23 15:12:56.288 main(----) INF] Initializing vault at: notes
+[2025-02-23 15:12:56.288 main(----) INF] Loading notes from: notes
+[2025-02-23 15:12:56.288 main(----) INF] Found 4 markdown files
+[2025-02-23 15:12:56.293 main(----) INF] Loaded note: Untitled (14e056c7-95b6-48b1-9be2-b292fd1759ff)
+[2025-02-23 15:12:56.293 main(----) INF] Loaded note: Untitled (64a3365d-0563-4bbc-91de-fb4f62ce47e0)
+[2025-02-23 15:12:56.293 main(----) INF] Loaded note: Untitled (0d12db8d-91ba-463e-b0a4-5d941a4da9e8)
+[2025-02-23 15:12:56.293 main(----) INF] Loaded note: Heading 1 (8a9bbd8e-e9bc-4d3a-8481-7aba78e01d62)
+[2025-02-23 15:12:56.293 main(----) INF] Getting all notes (count: 4)
+[2025-02-23 15:12:56.293 main(----) INF] Note: Untitled (14e056c7-95b6-48b1-9be2-b292fd1759ff)
+[2025-02-23 15:12:56.293 main(----) INF] Note: Untitled (64a3365d-0563-4bbc-91de-fb4f62ce47e0)
+[2025-02-23 15:12:56.293 main(----) INF] Note: Untitled (0d12db8d-91ba-463e-b0a4-5d941a4da9e8)
+[2025-02-23 15:12:56.293 main(----) INF] Note: Heading 1 (8a9bbd8e-e9bc-4d3a-8481-7aba78e01d62)
+[2025-02-23 15:12:56.294 main(----) INF] Found 4 existing notes
+[2025-02-23 15:12:56.294 main(----) dbg] add route GET /api/notes
+[2025-02-23 15:12:56.294 main(----) dbg] add route POST /api/notes
+[2025-02-23 15:12:56.294 main(----) dbg] add route GET /api/notes/:id
+[2025-02-23 15:12:56.294 main(----) dbg] add route PUT /api/notes/:id
+[2025-02-23 15:12:56.294 main(----) dbg] add route GET /api/tags
+[2025-02-23 15:12:56.294 CF901776(----) dbg] Thread exit  (index 1) (main=false)
+[2025-02-23 15:12:56.294 main(----) dbg] add route GET /api/debug/notes
+[2025-02-23 15:12:56.294 main(----) dbg] add route GET /ws
+[2025-02-23 15:12:56.294 main(----) dbg] add route GET /assets/*
+[2025-02-23 15:12:56.294 main(----) dbg] add route GET *
+[2025-02-23 15:12:56.294 main(----) INF] Starting Quill Garden backend server...
+[2025-02-23 15:12:56.295 main(----) INF] Listening for requests on http://127.0.0.1:3000/
+[2025-02-23 15:12:56.295 main(----) INF] Server running on http://localhost:3000/
+[2025-02-23 15:12:56.295 main(----) dia] Running event loop...
+[2025-02-23 15:12:56.295 main(----) dbg] Starting event loop.
+[2025-02-23 15:12:58.232 main(E1Mx) dbg] Disambiguate done: 138 nodes, 1783 max stack size
+[2025-02-23 15:12:58.233 main(E1Mx) dbg] Match tree has 43 (of 138 in the builder) nodes, 9 terminals
+[2025-02-23 15:12:58.234 main(E1Mx) INF] === Request for path: / ===
+[2025-02-23 15:12:58.234 main(E1Mx) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 15:12:58.234 main(E1Mx) INF] Serving index.html
+[2025-02-23 15:12:58.276 main(E1Mx) INF] Asset not found: ../frontend/dist/assets/main.js
+[2025-02-23 15:12:58.276 main(E1Mx) INF] === Request for path: /assets/main.js ===
+[2025-02-23 15:12:58.276 main(E1Mx) INF] Skipping special request
+[2025-02-23 15:12:58.276 main(E1Mx) dbg] no route match: GET /assets/main.js
+[2025-02-23 15:12:58.276 main(E1Mx) dia] No response written for /assets/main.js
+[2025-02-23 15:12:58.284 main(E1Mx) INF] Asset not found: ../frontend/dist/assets/index.css
+[2025-02-23 15:12:58.284 main(E1Mx) INF] === Request for path: /assets/index.css ===
+[2025-02-23 15:12:58.284 main(E1Mx) INF] Skipping special request
+[2025-02-23 15:12:58.284 main(E1Mx) dbg] no route match: GET /assets/index.css
+[2025-02-23 15:12:58.284 main(E1Mx) dia] No response written for /assets/index.css
+[2025-02-23 15:12:59.789 main(E1Mx) INF] === Request for path: /favicon.ico ===
+[2025-02-23 15:12:59.789 main(E1Mx) INF] Looking for index at: ../frontend/dist/index.html
+[2025-02-23 15:12:59.789 main(E1Mx) INF] Serving index.html
+[2025-02-23 15:13:09.799 main(E1Mx) dbg] Keep-alive connection timed out!
+[2025-02-23 17:08:52.227 main(----) INF] Received signal 2. Shutting down.
+[2025-02-23 17:08:52.232 main(----) dbg] Event loop exit reason (exit flag=false): exited
+[2025-02-23 17:08:52.233 main(----) dbg] Event loop done (scheduled tasks=0, waiters=1, thread exit=false).
+[2025-02-23 17:08:52.233 main(----) dia] Event loop exited with status 0.
+[2025-02-23 17:08:52.233 main(----) INF] Stopped to listen for HTTP requests on 127.0.0.1:3000
+[2025-02-23 17:08:52.233 main(----) dbg] Thread exit main (index 0) (main=true)
+[2025-02-23 17:08:52.233 main(----) dia] Main thread exiting

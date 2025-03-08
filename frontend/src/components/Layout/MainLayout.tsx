@@ -26,7 +26,10 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
         if (activeNote) onSaveNote(activeNote);
       }} />
       <div className="content-area">
-        <Sidebar notes={notes} onNoteSelect={onNoteSelect} />
+        <Sidebar 
+          notes={notes} 
+          onNoteSelect={onNoteSelect}
+        />
         <EditorTabs 
           notes={notes}
           activeNoteId={activeNoteId}

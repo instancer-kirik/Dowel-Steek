@@ -1,0 +1,18 @@
+name = "shiny"
+version = "0.1.0"
+target = "javascript"
+
+description = "A modern notes app built with Gleam and Lustre"
+licences = ["Apache-2.0"]
+repository = { type = "github", user = "kirik", repo = "shiny" }
+
+[dependencies]
+gleam_stdlib = "~> 0.34"
+lustre = "~> 3.0"
+gleam_http = "~> 3.5"
+mist = "~> 0.15"
+gleam_json = "~> 0.7"
+gleam_erlang = "~> 0.24"
+
+[dev-dependencies]
+gleeunit = "~> 1.0" 

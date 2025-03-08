@@ -6,6 +6,9 @@ export interface Note {
   path?: string;
   created: Date;
   modified: Date;
+  isPinned?: boolean;
+  isArchived?: boolean;
+  color?: string;
 }
 
 export interface FileNode {
@@ -17,5 +20,5 @@ export interface FileNode {
 }
 
 export interface ApiResponse {
-  notes: FileNode[];
+  notes: Note[];
 } 

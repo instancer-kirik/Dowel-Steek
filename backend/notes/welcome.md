@@ -1,8 +1,8 @@
 ---
 title: Welcome
 tags: [welcome]
-created: 2025-02-20T23:51:54.4871747
-modified: 2025-02-20T23:51:54.4871778
+created: 2025-02-20T23:59:54.6632164
+modified: 2025-02-20T23:59:54.6632211
 ---
 
 Welcome to your Notes Vault!

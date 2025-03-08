@@ -7,7 +7,7 @@ import dlangui.core.events;
 import dlangui.core.types;
 import dlangui.widgets.widget;
 import dlangui.core.signals;
-import note;
+import notes.note;
 import std.conv : to;
 import std.datetime;
 import core.thread;
@@ -629,6 +629,59 @@ class MarkdownEditor : Dialog {
 
 private enum UserEventType {
     AutoSave = 1
+}
+
+class NotesVaultWindow : Window {
+    this() {
+        super();
+        windowCaption = "Notes"d;
+        
+        try {
+            // Create main layout
+            auto mainLayout = new VerticalLayout();
+            mainLayout.layoutWidth = FILL_PARENT;
+            mainLayout.layoutHeight = FILL_PARENT;
+            mainLayout.backgroundColor = 0xFFFFFF;
+            mainLayout.padding(Rect(10, 10, 10, 10));
+            
+            // Add some content
+            auto label = new TextWidget(null, "Notes Window"d);
+            label.textColor = 0x000000;
+            mainLayout.addChild(label);
+            
+            // Set main widget
+            mainWidget = mainLayout;
+            
+        } catch (Exception e) {
+            Log.e("NotesVaultWindow init error: ", e.msg);
+        }
+    }
+
+    override void show() {
+        try {
+            // Create window with proper flags
+            auto window = Platform.instance.createWindow(windowCaption, null,
+                WindowFlag.Resizable,
+                600, 400);  // Smaller initial size
+            
+            if (!window) {
+                Log.e("Failed to create notes window");
+                return;
+            }
+            
+            // Set up main widget
+            if (mainWidget) {
+                window.mainWidget = mainWidget;
+                mainWidget.invalidate();
+            }
+            
+            // Show window
+            window.show();
+            
+        } catch (Exception e) {
+            Log.e("Show notes window error: ", e.msg);
+        }
+    }
 } 
 
  

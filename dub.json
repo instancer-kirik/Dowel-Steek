@@ -1,15 +1,49 @@
 {
 	"name": "notes-vault",
-	"description": "A notes vault manager with tagging and sorting capabilities",
+	"description": "A notes management application",
 	"authors": [
 		"Your Name"
 	],
 	"copyright": "Copyright © 2024",
+	"license": "proprietary",
 	"targetType": "executable",
 	"mainSourceFile": "source/app.d",
-	"sourcePaths": ["source", "common"],
-	"importPaths": ["source", "common"],
+	"dependencies": {
+		"dlangui": "~>0.10.4",
+		"bindbc-sdl": "~>1.4.2",
+		"vibe-d": "~>0.9.7"
+	},
+    "copyFiles-windows": [
+        "views/res/*"
+    ],
+    "copyFiles": [
+        "views/res/*"
+    ],
+	"stringImportPaths": [
+		"views/res"
+	],
+	"subConfigurations": {
+		"dlangui": "sdl"
+	},
+	"versions": [
+		"SDL_2014",
+		"USE_SDL",
+		"USE_FREETYPE",
+		"BACKEND_SDL"
+	],
+	"sourcePaths": ["source"],
+	"importPaths": ["source"],
 	"subPackages": [
 		"./backend/"
-	]
+	],
+	"buildTypes": {
+		"debug": {
+			"buildOptions": ["debugMode", "debugInfo"],
+			"dflags": ["-version=USE_SDL"]
+		},
+		"release": {
+			"buildOptions": ["releaseMode", "optimize", "inline"],
+			"dflags": ["-version=USE_SDL"]
+		}
+	}
 }
