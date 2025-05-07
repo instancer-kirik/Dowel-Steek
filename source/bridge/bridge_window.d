@@ -7,11 +7,27 @@ import dlangui.platforms.common.platform;
 import dlangui.graphics.glsupport;
 import dlangui.graphics.gldrawbuf;
 import dlangui.core.types;
+import dlangui.core.logger;
 import std.json;
 import vibe.d;
 import bridge.scene3d;
 import bindbc.sdl;
 import bindbc.opengl;
+import source.bridge.gl_utils;
+import std.math : cos, sin, PI, tan;
+import std.string : toStringz, fromStringz;
+import std.conv : to;
+
+// Load OpenGL functions
+private bool loadGL() {
+    GLSupport retVal = loadOpenGL();
+    
+    if(retVal != GLSupport.gl11) {
+        // Error loading OpenGL
+        return false;
+    }
+    return true;
+}
 
 // Basic 3D object types
 enum ObjectType {
@@ -28,72 +44,154 @@ private struct CameraControl {
     Point lastMousePos;
     float rotationSpeed = 0.01f;
     float panSpeed = 0.1f;
+    float zoomSpeed = 0.5f;
 }
 
 // Scene object with transform
 class SceneObject {
-    vec3 position;
-    vec3 rotation;
-    vec3 scale;
+    Vec3 position;
+    Vec3 rotation;
+    Vec3 scale;
     ObjectType type;
     string id;
     
+    // OpenGL specific data
+    GLuint vao = 0, vbo = 0, ebo = 0; // Vertex Array, Vertex Buffer, Element Buffer
+    GLsizei vertexCount = 0; // Number of vertices or indices to draw
+    float[] vertices; // CPU-side copy for now
+    uint[] indices;   // CPU-side copy for now (optional)
+
     this(string id, ObjectType type) {
         this.id = id;
         this.type = type;
         position = vec3(0, 0, 0);
         rotation = vec3(0, 0, 0);
         scale = vec3(1, 1, 1);
+
+        setupMesh();
     }
     
-    void render(GLDrawBuf buf) {
-        // Basic rendering based on type
-        buf.pushMatrix();
-        buf.translate(position.x, position.y, position.z);
-        buf.rotate(rotation.x, rotation.y, rotation.z);
-        buf.scale(scale.x, scale.y, scale.z);
-        
+    // Create VAO/VBO for the object's mesh
+    void setupMesh() {
+        if (vao != 0) { // Already setup
+            glDeleteVertexArrays(1, &vao);
+            glDeleteBuffers(1, &vbo);
+            if (ebo != 0) glDeleteBuffers(1, &ebo);
+        }
+
         final switch(type) {
             case ObjectType.Cube:
-                drawCube(buf);
-                break;
-            case ObjectType.Sphere:
-                drawSphere(buf);
-                break;
-            case ObjectType.Cylinder:
-                drawCylinder(buf);
+                // X, Y, Z, R, G, B (interleaved)
+                vertices = [
+                    // Front face (red)
+                    -0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
+                     0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
+                     0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
+                    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
+                    // Back face (green)
+                    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
+                     0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
+                     0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
+                    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
+                    // ... add other faces with different colors for clarity ...
+                    // Top face (blue)
+                     -0.5f,  0.5f,  0.5f, 0.0f, 0.0f, 1.0f,
+                      0.5f,  0.5f,  0.5f, 0.0f, 0.0f, 1.0f,
+                      0.5f,  0.5f, -0.5f, 0.0f, 0.0f, 1.0f,
+                     -0.5f,  0.5f, -0.5f, 0.0f, 0.0f, 1.0f,
+                     // Bottom face (yellow)
+                     -0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 0.0f,
+                      0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 0.0f,
+                      0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 0.0f,
+                     -0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 0.0f,
+                     // Right face (magenta)
+                      0.5f, -0.5f,  0.5f, 1.0f, 0.0f, 1.0f,
+                      0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 1.0f,
+                      0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 1.0f,
+                      0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 1.0f,
+                     // Left face (cyan)
+                     -0.5f, -0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
+                     -0.5f, -0.5f, -0.5f, 0.0f, 1.0f, 1.0f,
+                     -0.5f,  0.5f, -0.5f, 0.0f, 1.0f, 1.0f,
+                     -0.5f,  0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
+                ];
+                indices = [
+                     0,  1,  2,  2,  3,  0, // Front
+                     4,  5,  6,  6,  7,  4, // Back
+                     8,  9, 10, 10, 11,  8, // Top
+                    12, 13, 14, 14, 15, 12, // Bottom
+                    16, 17, 18, 18, 19, 16, // Right
+                    20, 21, 22, 22, 23, 20, // Left
+                ];
+                vertexCount = cast(GLsizei)indices.length;
                 break;
             case ObjectType.Grid:
-                drawGrid(buf);
+                // Grid lines
+                int lines = 11; // -5 to +5
+                float size = 5.0f;
+                vertices.length = 0; // Clear
+                for(int i = 0; i < lines; ++i) {
+                    float pos = (cast(float)i / (lines - 1) - 0.5f) * 2.0f * size;
+                    // X, Y, Z, R, G, B (grey color for grid)
+                    vertices ~= [pos, 0.0f, -size,  0.5f, 0.5f, 0.5f];
+                    vertices ~= [pos, 0.0f,  size,  0.5f, 0.5f, 0.5f];
+                    vertices ~= [-size, 0.0f, pos,  0.5f, 0.5f, 0.5f];
+                    vertices ~= [ size, 0.0f, pos,  0.5f, 0.5f, 0.5f];
+                }
+                indices.length = 0; // No EBO for grid lines, drawing directly
+                vertexCount = cast(GLsizei)(vertices.length / 6); // Each line segment is 2 vertices
                 break;
         }
+
+        if (vertices.length == 0) return;
+
+        glGenVertexArrays(1, &vao);
+        glGenBuffers(1, &vbo);
         
-        buf.popMatrix();
-    }
-    
-    private void drawCube(GLDrawBuf buf) {
-        // Simple cube wireframe
-        buf.drawRect3D(vec3(-1, -1, -1), vec3(1, 1, 1), 0xFFFFFF);
-    }
-    
-    private void drawSphere(GLDrawBuf buf) {
-        // Simple sphere approximation
-        buf.drawEllipse3D(vec3(0, 0, 0), 1.0f, 1.0f, 0xFFFFFF);
-    }
-    
-    private void drawCylinder(GLDrawBuf buf) {
-        // Simple cylinder approximation
-        buf.drawRect3D(vec3(-0.5, -1, -0.5), vec3(0.5, 1, 0.5), 0xFFFFFF);
-    }
-    
-    private void drawGrid(GLDrawBuf buf) {
-        // Draw grid lines
-        for(int i = -5; i <= 5; i++) {
-            buf.drawLine3D(vec3(i, 0, -5), vec3(i, 0, 5), 0x808080);
-            buf.drawLine3D(vec3(-5, 0, i), vec3(5, 0, i), 0x808080);
+        glBindVertexArray(vao);
+
+        glBindBuffer(GL_ARRAY_BUFFER, vbo);
+        glBufferData(GL_ARRAY_BUFFER, vertices.length * float.sizeof, vertices.ptr, GL_STATIC_DRAW);
+
+        if (indices.length > 0) {
+            glGenBuffers(1, &ebo);
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+            glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.length * uint.sizeof, indices.ptr, GL_STATIC_DRAW);
         }
+
+        // Vertex Positions
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * float.sizeof, cast(void*)0);
+        glEnableVertexAttribArray(0);
+        // Vertex Colors
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * float.sizeof, cast(void*)(3 * float.sizeof));
+        glEnableVertexAttribArray(1);
+
+        glBindBuffer(GL_ARRAY_BUFFER, 0); // Unbind VBO
+        glBindVertexArray(0); // Unbind VAO
     }
     
+    // Clean up GPU resources
+    void dispose() {
+        if (vao != 0) glDeleteVertexArrays(1, &vao);
+        if (vbo != 0) glDeleteBuffers(1, &vbo);
+        if (ebo != 0) glDeleteBuffers(1, &ebo);
+        vao = vbo = ebo = 0;
+    }
+
+    // Model matrix for this object
+    Mat4 getModelMatrix() {
+        Mat4 model = Mat4.identity();
+        // Apply scale, then rotation, then translation (TRS)
+        // This is a simplified TRS, a full matrix library would be better.
+        // For now, we'll just do translation. Rotations/Scales need matrix math.
+        // model = Mat4.scaling(scale.x, scale.y, scale.z) * model;
+        // model = Mat4.rotationX(rotation.x) * model;
+        // model = Mat4.rotationY(rotation.y) * model;
+        // model = Mat4.rotationZ(rotation.z) * model;
+        model = Mat4.translation(position.x, position.y, position.z) * model;
+        return model;
+    }
+
     JSONValue toJSON() {
         return JSONValue([
             "id": JSONValue(id),
@@ -121,205 +219,182 @@ class SceneObject {
 class Bridge3DView : Widget {
     private SceneObject[] objects;
     private CameraControl control;
-    private vec3 cameraPos;
-    private vec3 cameraRot;
+    private Vec3 cameraPos;
+    private Vec3 cameraRot;
     private float cameraFOV = 45.0f;
     
+    private GLuint shaderProgram = 0;
+    private GLint modelLoc, viewLoc, projLoc; // Uniform locations
+
     this() {
         super("bridge3d");
-        cameraPos = vec3(0, 0, 10);
-        backgroundColor = 0x2D2D2D;
+        cameraPos = vec3(0, 2, 10);
+        cameraRot = vec3(0,0,0);
+        backgroundColor = 0x202030;
         
-        // Add default objects
-        addDefaultObjects();
+        // This ensures OpenGL context is ready for setup calls
+        // It's a bit of a hack; ideally, initGL is called once after window show.
+        postLayout( { initGL(); addDefaultObjects(); } );
+    }
+    
+    ~this() {
+        if (shaderProgram != 0) glDeleteProgram(shaderProgram);
+        foreach(obj; objects) obj.dispose();
+    }
+
+    // Initialize OpenGL resources (shaders, etc.)
+    // This should be called after the GL context is available.
+    void initGL() {
+        if (shaderProgram != 0) return; // Already initialized
+
+        // Check if GL is loaded, try to load if not (DLangUI usually handles this via GLDrawBuf)
+        if (!glActiveTexture) { // A quick check if GL functions are loaded
+            if (!loadOpenGL()) { // bindbc-opengl's load function
+                 Log.e("Bridge3DView: Failed to load OpenGL functions!");
+                 return;
+            }
+        }
+        
+        shaderProgram = createShaderProgram("source/bridge/shaders/simple.vert", 
+                                            "source/bridge/shaders/simple.frag");
+        if (shaderProgram == 0) {
+            Log.e("Failed to create shader program!");
+            return;
+        }
+
+        modelLoc = glGetUniformLocation(shaderProgram, "model");
+        viewLoc  = glGetUniformLocation(shaderProgram, "view");
+        projLoc  = glGetUniformLocation(shaderProgram, "projection");
+        Log.d("Shader program created. modelLoc: ", modelLoc, " viewLoc: ", viewLoc, " projLoc: ", projLoc);
     }
     
     private void addDefaultObjects() {
-        // Add reference grid
         auto grid = new SceneObject("grid", ObjectType.Grid);
-        grid.position = vec3(0, -2, 0);
         objects ~= grid;
         
-        // Add demo cube
         auto cube = new SceneObject("demo_cube", ObjectType.Cube);
-        cube.position = vec3(0, 0, 0);
+        cube.position = vec3(0, 0.5f, 0);
         objects ~= cube;
+
+        invalidate();
     }
     
     override void onDraw(DrawBuf buf) {
         auto glbuf = cast(GLDrawBuf)buf;
-        if (!glbuf)
+        if (!glbuf) {
+            buf.drawText("GLDrawBuf not available", 10, 10, 0xFF0000);
             return;
-
-        // Set up OpenGL state
+        }
+        if (shaderProgram == 0) {
+             initGL(); // Try to init if not done (e.g. on first draw)
+             if (shaderProgram == 0) {
+                buf.drawText("Shader Program Failed to Initialize", 10, 30, 0xFF0000);
+                return;
+             }
+        }
+        
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
         
-        // Clear buffers
-        glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+        uint bg = backgroundColor;
+        glClearColor(((bg >> 16) & 0xFF)/255.0f, ((bg >> 8) & 0xFF)/255.0f, (bg & 0xFF)/255.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        // Set up projection matrix
-        float aspect = cast(float)width / cast(float)height;
-        mat4 projection;
-        projection.setPerspective(cameraFOV, aspect, 0.1f, 100.0f);
-        
-        // Set up view matrix
-        mat4 view;
-        view.setIdentity();
-        view.translate(-cameraPos.x, -cameraPos.y, -cameraPos.z);
-        view.rotate(cameraRot.x, 1, 0, 0);
-        view.rotate(cameraRot.y, 0, 1, 0);
-        view.rotate(cameraRot.z, 0, 0, 1);
+        glUseProgram(shaderProgram);
+
+        // Projection matrix
+        float aspect = (height > 0) ? (cast(float)width / cast(float)height) : 1.0f;
+        Mat4 projection = Mat4.perspective(cameraFOV * (PI / 180.0f), aspect, 0.1f, 100.0f);
+        glUniformMatrix4fv(projLoc, 1, GL_FALSE, projection.M.ptr);
+
+        // View matrix (camera)
+        Mat4 view = Mat4.identity();
+        // Apply rotations (order: Yaw, Pitch, Roll for FPS-like camera)
+        // This is a simplified view matrix. Proper camera needs more robust math.
+        view = Mat4.translation(-cameraPos.x, -cameraPos.y, -cameraPos.z) * view; // Translate
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, view.M.ptr);
 
         // Draw objects
         foreach(obj; objects) {
-            // Set up model matrix
-            mat4 model;
-            model.setIdentity();
-            model.translate(obj.position.x, obj.position.y, obj.position.z);
-            model.rotate(obj.rotation.x, 1, 0, 0);
-            model.rotate(obj.rotation.y, 0, 1, 0);
-            model.rotate(obj.rotation.z, 0, 0, 1);
-            model.scale(obj.scale.x, obj.scale.y, obj.scale.z);
+            if (obj.vao == 0) continue; // Skip if mesh not ready
 
-            // Combine matrices
-            mat4 mvp = projection * view * model;
+            Mat4 model = obj.getModelMatrix();
+            glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model.M.ptr);
 
-            // Draw object
-            final switch(obj.type) {
-                case ObjectType.Cube:
-                    drawCube(mvp);
-                    break;
-                case ObjectType.Sphere:
-                    drawSphere(mvp);
-                    break;
-                case ObjectType.Cylinder:
-                    drawCylinder(mvp);
-                    break;
-                case ObjectType.Grid:
-                    drawGrid(mvp);
-                    break;
+            glBindVertexArray(obj.vao);
+            if (obj.type == ObjectType.Grid) {
+                glDrawArrays(GL_LINES, 0, obj.vertexCount);
+            } else if (obj.indices.length > 0) {
+                glDrawElements(GL_TRIANGLES, obj.vertexCount, GL_UNSIGNED_INT, null);
+            } else {
+                glDrawArrays(GL_TRIANGLES, 0, obj.vertexCount); // Fallback if no indices but not lines
             }
+            glBindVertexArray(0);
         }
+        glUseProgram(0); // Unbind shader
 
-        // Restore OpenGL state
+        // Restore OpenGL state modified
         glDisable(GL_DEPTH_TEST);
         glDisable(GL_CULL_FACE);
     }
-
-    private void drawCube(mat4 mvp) {
-        // Simple cube vertices
-        static immutable float[] vertices = [
-            // Front face
-            -1, -1,  1,
-             1, -1,  1,
-             1,  1,  1,
-            -1,  1,  1,
-            // Back face
-            -1, -1, -1,
-            -1,  1, -1,
-             1,  1, -1,
-             1, -1, -1,
-        ];
-
-        // Draw cube wireframe
-        glColor3f(1.0f, 1.0f, 1.0f);
-        glBegin(GL_LINE_LOOP);
-        foreach(i; 0..4) {
-            glVertex3f(vertices[i*3], vertices[i*3+1], vertices[i*3+2]);
-        }
-        glEnd();
-        glBegin(GL_LINE_LOOP);
-        foreach(i; 4..8) {
-            glVertex3f(vertices[i*3], vertices[i*3+1], vertices[i*3+2]);
-        }
-        glEnd();
-    }
-
-    private void drawGrid(mat4 mvp) {
-        glColor3f(0.5f, 0.5f, 0.5f);
-        glBegin(GL_LINES);
-        for(int i = -5; i <= 5; i++) {
-            glVertex3f(i, 0, -5);
-            glVertex3f(i, 0,  5);
-            glVertex3f(-5, 0, i);
-            glVertex3f( 5, 0, i);
-        }
-        glEnd();
-    }
-
-    private void drawSphere(mat4 mvp) {
-        // Simplified sphere as point for now
-        glColor3f(1.0f, 1.0f, 1.0f);
-        glPointSize(5.0f);
-        glBegin(GL_POINTS);
-        glVertex3f(0, 0, 0);
-        glEnd();
-    }
-
-    private void drawCylinder(mat4 mvp) {
-        // Simplified cylinder as line for now
-        glColor3f(1.0f, 1.0f, 1.0f);
-        glBegin(GL_LINES);
-        glVertex3f(0, -1, 0);
-        glVertex3f(0,  1, 0);
-        glEnd();
-    }
     
     override bool onMouseEvent(MouseEvent event) {
-        switch(event.action) {
+        bool handled = false;
+         switch(event.action) {
             case MouseAction.ButtonDown:
                 if (event.button == MouseButton.Left) {
                     control.rotating = true;
                     control.lastMousePos = Point(event.x, event.y);
-                    return true;
-                }
-                if (event.button == MouseButton.Right) {
+                    handled = true;
+                } else if (event.button == MouseButton.Right) {
                     control.panning = true;
                     control.lastMousePos = Point(event.x, event.y);
-                    return true;
+                    handled = true;
                 }
                 break;
                 
             case MouseAction.ButtonUp:
-                if (event.button == MouseButton.Left)
+                if (event.button == MouseButton.Left && control.rotating) {
                     control.rotating = false;
-                if (event.button == MouseButton.Right)
+                    handled = true;
+                } else if (event.button == MouseButton.Right && control.panning) {
                     control.panning = false;
-                return true;
+                    handled = true;
+                }
+                break;
                 
             case MouseAction.Move:
                 if (control.rotating) {
-                    float dx = (event.x - control.lastMousePos.x) * control.rotationSpeed;
-                    float dy = (event.y - control.lastMousePos.y) * control.rotationSpeed;
-                    cameraRot.y += dx;
-                    cameraRot.x += dy;
+                    float dx = (event.x - control.lastMousePos.x);
+                    float dy = (event.y - control.lastMousePos.y);
+                    cameraRot.y += dx * control.rotationSpeed;
+                    cameraRot.x += dy * control.rotationSpeed;
+                    // Clamp pitch to avoid flipping
+                    cameraRot.x = std.math.clamp(cameraRot.x, -PI/2.0f + 0.01f, PI/2.0f - 0.01f);
                     control.lastMousePos = Point(event.x, event.y);
                     invalidate();
-                    return true;
-                }
-                if (control.panning) {
+                    handled = true;
+                } else if (control.panning) {
+                    // Simple panning for now, a proper implementation would consider camera orientation
                     float dx = (event.x - control.lastMousePos.x) * control.panSpeed;
                     float dy = (event.y - control.lastMousePos.y) * control.panSpeed;
                     cameraPos.x -= dx;
                     cameraPos.y += dy;
                     control.lastMousePos = Point(event.x, event.y);
                     invalidate();
-                    return true;
+                    handled = true;
                 }
                 break;
                 
             case MouseAction.Wheel:
-                cameraPos.z += event.wheelDelta * 0.5f;
+                cameraPos.z -= event.wheelDelta * control.zoomSpeed;
                 invalidate();
-                return true;
-                
-            default:
+                handled = true;
                 break;
+            default: break;
         }
-        return false;
+        return handled;
     }
     
     void updateFromState(JSONValue state) {
@@ -360,7 +435,6 @@ class BridgeWindow : Window {
             // Create 3D view
             mainView = new Bridge3DView();
             mainView.layoutWidth = FILL_PARENT;
-            mainLayout.layoutHeight = FILL_PARENT;
             mainLayout.addChild(mainView);
             
             // Create side panel with tabs
@@ -391,10 +465,10 @@ class BridgeWindow : Window {
             viewTab.addChild(resetBtn);
             
             // Add FOV slider
-            viewTab.addChild(new TextWidget(null, "Field of View"d));
+            viewTab.addChild(new TextWidget(null, "Field of View (Deg)"d));
             auto fovSlider = new SliderWidget("fov");
             fovSlider.setRange(30, 120);
-            fovSlider.position = 45;
+            fovSlider.position = cast(int)mainView.cameraFOV;
             fovSlider.change = &onFOVChanged;
             viewTab.addChild(fovSlider);
             
@@ -416,8 +490,12 @@ class BridgeWindow : Window {
     }
     
     private bool onResetCamera(Widget w) {
-        mainView.cameraPos = vec3(0, 0, 10);
+        mainView.cameraPos = vec3(0, 2, 10);
         mainView.cameraRot = vec3(0, 0, 0);
+        mainView.cameraFOV = 45.0f;
+        if(auto fovSlider = cast(SliderWidget)tabs.findChildRecursive("fov")) {
+            fovSlider.position = cast(int)mainView.cameraFOV;
+        }
         mainView.invalidate();
         sendCameraState();
         return true;
@@ -492,8 +570,8 @@ class BridgeWindow : Window {
             windowCaption,
             null,
             WindowFlag.Resizable,
-            800,
-            600
+            1024,
+            768
         );
         
         if (window && mainWidget) {

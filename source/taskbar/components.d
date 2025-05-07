@@ -12,6 +12,8 @@ import std.conv : to;
 import std.datetime.systime : Clock;
 import std.format : format;
 import taskbar.buttons;
+import terminal.window;
+
 
 // Base taskbar components (TaskBar, TaskButton, etc)
 // ... move existing TaskBar code here ...
@@ -132,24 +134,26 @@ class WindowList : HorizontalLayout {
 
 class StartMenu : PopupMenu {
     private MenuItem _root;
+    private MenuItem _appsSubMenu;
 
     this() {
         _root = new MenuItem(null);
         super(_root);
         
         // Add menu items
-        _root.add(new Action(1, "Applications"d));
+        _appsSubMenu = new MenuItem("Applications"d);
+        _root.add(_appsSubMenu);
         _root.add(new Action(2, "Settings"d));
         _root.add(new Action(3, "File Manager"d));
         _root.addSeparator();
         _root.add(new Action(4, "Log Out"d));
         
-        // Add submenus
-        auto apps = new MenuItem(null);
-        apps.add(new Action(101, "Terminal"d));
-        apps.add(new Action(102, "Browser"d));
-        apps.add(new Action(103, "Text Editor"d));
-        _root.add(apps);
+        // Add items to the Applications submenu
+        _appsSubMenu.add(new Action(101, "Terminal"d));
+        _appsSubMenu.add(new Action(102, "Browser"d));
+        _appsSubMenu.add(new Action(103, "Text Editor"d));
+        _appsSubMenu.addSeparator();
+        _appsSubMenu.add(new Action(104, "AMOS Visualizer"d));
         
         menuItemAction = &handleMenuAction;
     }
@@ -159,23 +163,31 @@ class StartMenu : PopupMenu {
             case 1: // Applications
                 return true;
             case 2: // Settings
-                // TODO: Show settings window
+                Log.i("Settings menu item clicked (TODO)");
                 return true;
             case 3: // File Manager
-                // TODO: Launch file manager
+                Log.i("File Manager menu item clicked (TODO)");
                 return true;
             case 4: // Log Out
-                if (auto win = Platform.instance.focusedWindow)  // Use focusedWindow instead of activeWindow
+                foreach(win; Platform.instance.allWindows) {
                     Platform.instance.closeWindow(win);
+                }
                 return true;
             case 101: // Terminal
-                // TODO: Launch terminal
+                auto term = new TerminalWindow();
+                term.show();
+                Log.i("Terminal launched as separate window");
                 return true;
             case 102: // Browser
-                // TODO: Launch browser
+                Log.i("Browser menu item clicked (TODO)");
                 return true;
             case 103: // Text Editor
-                // TODO: Launch text editor
+                Log.i("Text Editor menu item clicked (TODO)");
+                return true;
+            case 104: // AMOS Visualizer
+                auto viz = new AsterVisualizerWindow();
+                viz.show();
+                Log.i("AMOS Visualizer launched as separate window");
                 return true;
             default:
                 return false;

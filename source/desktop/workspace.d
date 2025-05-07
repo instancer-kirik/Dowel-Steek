@@ -48,7 +48,7 @@ class WorkspaceManager : FrameLayout {
         _iconGrid.addIcon("Documents"d, "folder-documents", null);
         _iconGrid.addIcon("Downloads"d, "folder-downloads", null);
         _iconGrid.addIcon("Trash"d, "user-trash", null);
-
+        
         // Initialize workspaces
         workspaces.length = 9;  // 9 workspaces by default
     }

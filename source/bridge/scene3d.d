@@ -5,6 +5,8 @@ import dlangui.graphics.glsupport;
 import dlangui.graphics.gldrawbuf;
 import dlangui.core.types;
 import std.json;
+import std.math;
+import std.conv;
 
 // Basic 3D object types
 enum ObjectType {
@@ -16,7 +18,7 @@ enum ObjectType {
 
 // Scene object with transform
 class SceneObject {
-    vec3 position;  // Changed from Vec3 to vec3
+    vec3 position;
     vec3 rotation;
     vec3 scale;
     ObjectType type;
@@ -25,18 +27,22 @@ class SceneObject {
     this(string id, ObjectType type) {
         this.id = id;
         this.type = type;
-        position = vec3(0, 0, 0);  // Updated constructor syntax
+        position = vec3(0, 0, 0);
         rotation = vec3(0, 0, 0);
         scale = vec3(1, 1, 1);
     }
     
     void render(GLDrawBuf buf) {
-        // Basic rendering based on type
-        buf.pushMatrix();
-        buf.translate(position.x, position.y, position.z);
-        buf.rotate(rotation.x, rotation.y, rotation.z);
-        buf.scale(scale.x, scale.y, scale.z);
+        // Use DlangUI's drawing methods
+        buf.save();
         
+        // Apply transformations using DlangUI's methods
+        buf.translate(position.x, position.y, position.z);
+        buf.rotateX(rotation.x * 180.0f / PI);
+        buf.rotateY(rotation.y * 180.0f / PI);
+        buf.rotateZ(rotation.z * 180.0f / PI);
+        
+        // Draw based on type
         final switch(type) {
             case ObjectType.Cube:
                 drawCube(buf);
@@ -52,36 +58,105 @@ class SceneObject {
                 break;
         }
         
-        buf.popMatrix();
+        buf.restore();
     }
-
+    
     private void drawCube(GLDrawBuf buf) {
-        // Simple cube wireframe
-        buf.drawRect3D(vec3(-1, -1, -1), vec3(1, 1, 1), 0xFFFFFF);
+        // Draw cube wireframe using DlangUI's line drawing
+        buf.setColor(0xFFFFFF);
+        
+        // Front face
+        buf.drawLine(Point(-1, -1), Point(1, -1));
+        buf.drawLine(Point(1, -1), Point(1, 1));
+        buf.drawLine(Point(1, 1), Point(-1, 1));
+        buf.drawLine(Point(-1, 1), Point(-1, -1));
+        
+        // Back face
+        buf.drawLine(Point(-1, -1, -1), Point(1, -1, -1));
+        buf.drawLine(Point(1, -1, -1), Point(1, 1, -1));
+        buf.drawLine(Point(1, 1, -1), Point(-1, 1, -1));
+        buf.drawLine(Point(-1, 1, -1), Point(-1, -1, -1));
+        
+        // Connecting lines
+        buf.drawLine(Point(-1, -1, -1), Point(-1, -1, 1));
+        buf.drawLine(Point(1, -1, -1), Point(1, -1, 1));
+        buf.drawLine(Point(1, 1, -1), Point(1, 1, 1));
+        buf.drawLine(Point(-1, 1, -1), Point(-1, 1, 1));
     }
     
     private void drawSphere(GLDrawBuf buf) {
-        // Simple sphere approximation
-        buf.drawEllipse3D(vec3(0, 0, 0), 1.0f, 1.0f, 0xFFFFFF);
+        // Draw sphere approximation using circles
+        buf.setColor(0xFFFFFF);
+        
+        // Draw three main circles
+        const int SEGMENTS = 32;
+        for (int i = 0; i < SEGMENTS; i++) {
+            float angle1 = i * 2 * PI / SEGMENTS;
+            float angle2 = (i + 1) * 2 * PI / SEGMENTS;
+            
+            // XY plane
+            buf.drawLine(
+                Point(cos(angle1), sin(angle1)),
+                Point(cos(angle2), sin(angle2))
+            );
+            
+            // XZ plane
+            buf.drawLine(
+                Point(cos(angle1), 0, sin(angle1)),
+                Point(cos(angle2), 0, sin(angle2))
+            );
+            
+            // YZ plane
+            buf.drawLine(
+                Point(0, cos(angle1), sin(angle1)),
+                Point(0, cos(angle2), sin(angle2))
+            );
+        }
     }
     
     private void drawCylinder(GLDrawBuf buf) {
-        // Simple cylinder approximation
-        buf.drawRect3D(vec3(-0.5, -1, -0.5), vec3(0.5, 1, 0.5), 0xFFFFFF);
+        // Draw cylinder wireframe
+        buf.setColor(0xFFFFFF);
+        
+        // Draw circles at top and bottom
+        const int SEGMENTS = 16;
+        for (int i = 0; i < SEGMENTS; i++) {
+            float angle1 = i * 2 * PI / SEGMENTS;
+            float angle2 = (i + 1) * 2 * PI / SEGMENTS;
+            
+            // Bottom circle
+            buf.drawLine(
+                Point(0.5f * cos(angle1), -1, 0.5f * sin(angle1)),
+                Point(0.5f * cos(angle2), -1, 0.5f * sin(angle2))
+            );
+            
+            // Top circle
+            buf.drawLine(
+                Point(0.5f * cos(angle1), 1, 0.5f * sin(angle1)),
+                Point(0.5f * cos(angle2), 1, 0.5f * sin(angle2))
+            );
+            
+            // Vertical lines
+            buf.drawLine(
+                Point(0.5f * cos(angle1), -1, 0.5f * sin(angle1)),
+                Point(0.5f * cos(angle1), 1, 0.5f * sin(angle1))
+            );
+        }
     }
     
     private void drawGrid(GLDrawBuf buf) {
         // Draw grid lines
+        buf.setColor(0x808080);
         for(int i = -5; i <= 5; i++) {
-            buf.drawLine3D(vec3(i, 0, -5), vec3(i, 0, 5), 0x808080);
-            buf.drawLine3D(vec3(-5, 0, i), vec3(5, 0, i), 0x808080);
+            buf.drawLine(Point(i, 0, -5), Point(i, 0, 5));
+            buf.drawLine(Point(-5, 0, i), Point(5, 0, i));
         }
     }
     
-    JSONValue toJSON() {
+    JSONValue toJSON() const {
         return JSONValue([
             "id": JSONValue(id),
-            "type": JSONValue(cast(string)type),
+            "type": JSONValue(type.to!string),
             "position": JSONValue([
                 "x": JSONValue(position.x),
                 "y": JSONValue(position.y),
