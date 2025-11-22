@@ -124,7 +124,7 @@ class WindowList : HorizontalLayout {
         auto btn = new TaskButton(to!string(window.windowCaption));
         btn.text = window.windowCaption;
         btn.click = delegate(Widget src) {
-            Platform.instance.setActiveWindow(window);  // Use setActiveWindow instead of activate
+            window.show();
             return true;
         };
         addChild(btn);
@@ -141,7 +141,7 @@ class StartMenu : PopupMenu {
         super(_root);
         
         // Add menu items
-        _appsSubMenu = new MenuItem("Applications"d);
+        _appsSubMenu = new MenuItem();
         _root.add(_appsSubMenu);
         _root.add(new Action(2, "Settings"d));
         _root.add(new Action(3, "File Manager"d));
@@ -169,9 +169,10 @@ class StartMenu : PopupMenu {
                 Log.i("File Manager menu item clicked (TODO)");
                 return true;
             case 4: // Log Out
-                foreach(win; Platform.instance.allWindows) {
-                    Platform.instance.closeWindow(win);
-                }
+                // foreach(win; Platform.instance.getRegisteredWindows()) { // Old problematic line
+                //     Platform.instance.closeWindow(win);
+                // }
+                Log.i("Log Out clicked - window closing temporarily disabled pending proper implementation.");
                 return true;
             case 101: // Terminal
                 auto term = new TerminalWindow();
@@ -185,8 +186,8 @@ class StartMenu : PopupMenu {
                 Log.i("Text Editor menu item clicked (TODO)");
                 return true;
             case 104: // AMOS Visualizer
-                auto viz = new AsterVisualizerWindow();
-                viz.show();
+                // auto viz = new AsterVisualizerWindow();
+                // viz.show();
                 Log.i("AMOS Visualizer launched as separate window");
                 return true;
             default:

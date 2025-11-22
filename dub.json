@@ -1,78 +1,108 @@
 {
-	"name": "dowel-steek-suite",
-	"description": "A suite of applications including a desktop environment and 3D editor.",
-	"authors": [
-		"Your Name"
-	],
-	"copyright": "Copyright © 2024",
-	"license": "proprietary",
-	"dependencies": {
-		"dlangui": "~>0.10.8",
-		"bindbc-sdl": "~>1.4.2",
-		"vibe-d": "~>0.9.7"
-	},
-    "copyFiles-windows": [
-        "views/res/*"
-    ],
-    "copyFiles": [
-        "views/res/*"
-    ],
-	"stringImportPaths": [
-		"views/res"
-	],
-	"sourcePaths": ["source"],
-	"importPaths": ["source"],
-
-    "configurations": [
-        {
-            "name": "desktop",
-            "targetType": "executable",
-            "targetName": "dowel-steek-desktop",
-            "mainSourceFile": "source/app.d",
-            "subConfigurations": {
-                "dlangui": "sdl"
-            },
-            "versions": [
-                "SDL_2014",
-                "USE_SDL",
-                "USE_FREETYPE",
-                "BACKEND_SDL",
-                "DESKTOP_APP"
-            ],
-            "excludedSourceFiles": [
-                "source/D.d",
-                "source/bridge/*"
-            ]
-        },
-        {
-            "name": "bridge_editor",
-            "targetType": "executable",
-            "targetName": "bridge-editor",
-            "mainSourceFile": "source/D.d",
-            "dependencies": {
-                "dlangui": "~>0.10.8"
-            },
-            "subConfigurations": {
-                "dlangui": "sdl"
-            },
-            "versions": [
-                "SDL_2014",
-                "USE_SDL",
-                "USE_FREETYPE",
-                "BACKEND_SDL",
-                "ENABLE_OPENGL",
-                "BRIDGE_APP"
-            ],
-            "excludedSourceFiles": [
-                "source/app.d",
-                "source/desktop/*",
-                "source/taskbar/*",
-                "source/terminal/*",
-                "source/notes/*",
-                "source/visualizer/*"
-            ]
-        }
-    ],
-	"subPackages": [
-	]
+  "authors": ["Your Name"],
+  "configurations": [
+    {
+      "excludedSourceFiles": ["source/D.d", "source/bridge/*", "source/cli/*"],
+      "mainSourceFile": "source/app.d",
+      "name": "desktop",
+      "subConfigurations": {
+        "dlangui": "sdl"
+      },
+      "targetName": "dowel-steek-desktop",
+      "targetType": "executable",
+      "dflags": ["-main"],
+      "versions": ["USE_SDL", "USE_FREETYPE", "BACKEND_SDL", "DESKTOP_APP"]
+    },
+    {
+      "dependencies": {
+        "dlangui": "~>0.10.8"
+      },
+      "excludedSourceFiles": [
+        "source/app.d",
+        "source/desktop/*",
+        "source/taskbar/*",
+        "source/terminal/*",
+        "source/notes/*",
+        "source/visualizer/*",
+        "source/cli/*"
+      ],
+      "mainSourceFile": "source/D.d",
+      "name": "bridge_editor",
+      "subConfigurations": {
+        "dlangui": "sdl"
+      },
+      "targetName": "bridge-editor",
+      "targetType": "executable",
+      "versions": [
+        "SDL_2014",
+        "USE_SDL",
+        "USE_FREETYPE",
+        "BACKEND_SDL",
+        "ENABLE_OPENGL",
+        "BRIDGE_APP"
+      ]
+    },
+    {
+      "dependencies": {
+        "toml": "~>2.0.1"
+      },
+      "excludedSourceFiles": [
+        "source/app.d",
+        "source/D.d",
+        "source/desktop/*",
+        "source/taskbar/*",
+        "source/terminal/*",
+        "source/visualizer/*",
+        "source/bridge/*"
+      ],
+      "importPaths": ["source", "source/cli"],
+      "mainSourceFile": "source/cli/smart_open.d",
+      "name": "smart_open_cli",
+      "sourcePaths": ["source", "source/cli"],
+      "targetName": "xdg-smart-open",
+      "targetType": "executable",
+      "versions": ["SMART_OPEN_CLI"]
+    },
+    {
+      "dependencies": {
+        "dlangui": "~>0.10.8"
+      },
+      "excludedSourceFiles": [
+        "source/app.d",
+        "source/D.d",
+        "source/desktop/*",
+        "source/taskbar/*",
+        "source/terminal/*",
+        "source/notes/*",
+        "source/visualizer/*",
+        "source/bridge/*",
+        "source/cli/*",
+        "source/editor.d"
+      ],
+      "mainSourceFile": "source/chatgpt_app.d",
+      "name": "chatgpt_viewer",
+      "subConfigurations": {
+        "dlangui": "sdl"
+      },
+      "targetName": "chatgpt-viewer",
+      "targetType": "executable",
+      "dflags": ["-main"],
+      "versions": ["USE_SDL", "USE_FREETYPE", "BACKEND_SDL", "CHATGPT_VIEWER"]
+    }
+  ],
+  "copyFiles": ["views/res/*"],
+  "copyFiles-windows": ["views/res/*"],
+  "copyright": "Copyright © 2024",
+  "dependencies": {
+    "bindbc-sdl": "~>1.4.2",
+    "dlangui": "~>0.10.8",
+    "toml": "~>2.0.1",
+    "vibe-d": "~>0.9.7"
+  },
+  "description": "A suite of applications including a desktop environment and 3D editor.",
+  "importPaths": ["source"],
+  "license": "proprietary",
+  "name": "dowel-steek-suite",
+  "sourcePaths": ["source"],
+  "stringImportPaths": ["views/res"]
 }

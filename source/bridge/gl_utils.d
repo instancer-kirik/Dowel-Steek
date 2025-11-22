@@ -1,10 +1,11 @@
-module source.bridge.gl_utils;
+module bridge.gl_utils;
 
 import bindbc.opengl;
 import std.stdio;
 import std.file;
 import std.string : toStringz, fromStringz;
 import std.conv : to;
+import dlangui.core.logger;
 
 GLuint loadShader(GLenum type, const string filePath) {
     char[] source;
@@ -104,6 +105,21 @@ struct Mat4 {
     }
     
     // TODO: Add rotation, scaling, multiplication
+
+    // Matrix multiplication
+    Mat4 opBinary(string op : "*")(Mat4 rhs) const {
+        Mat4 result;
+        for (int i = 0; i < 4; ++i) {
+            for (int j = 0; j < 4; ++j) {
+                float sum = 0;
+                for (int k = 0; k < 4; ++k) {
+                    sum += this.M[i * 4 + k] * rhs.M[k * 4 + j];
+                }
+                result.M[i * 4 + j] = sum;
+            }
+        }
+        return result;
+    }
 }
 
 // Matrix multiplication (basic)

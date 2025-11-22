@@ -20,8 +20,10 @@
 		"openssl-static": "1.0.5+3.0.8",
 		"stdx-allocator": "2.77.5",
 		"taggedalgebraic": "0.11.23",
-		"vibe-container": "1.6.1",
-		"vibe-core": "2.10.1",
+		"toml": "2.0.1",
+		"unit-threaded": "2.0.5",
+		"vibe-container": "1.6.2",
+		"vibe-core": "2.11.0",
 		"vibe-d": "0.9.8",
 		"x11": "1.0.21",
 		"xdgpaths": "0.2.5"

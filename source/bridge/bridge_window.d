@@ -3,29 +3,31 @@ module bridge.bridge_window;
 import dlangui;
 import dlangui.widgets.layouts;
 import dlangui.widgets.controls;
+import dlangui.widgets.editors;
 import dlangui.platforms.common.platform;
-import dlangui.graphics.glsupport;
 import dlangui.graphics.gldrawbuf;
 import dlangui.core.types;
 import dlangui.core.logger;
 import std.json;
-import vibe.d;
-import bridge.scene3d;
+import vibe.http.client;
+
 import bindbc.sdl;
 import bindbc.opengl;
-import source.bridge.gl_utils;
+import bridge.gl_utils;
 import std.math : cos, sin, PI, tan;
+import std.algorithm : clamp;
 import std.string : toStringz, fromStringz;
 import std.conv : to;
 
 // Load OpenGL functions
 private bool loadGL() {
-    GLSupport retVal = loadOpenGL();
+    bindbc.opengl.GLSupport retVal = bindbc.opengl.loadOpenGL();
     
-    if(retVal != GLSupport.gl11) {
-        // Error loading OpenGL
+    if(retVal < bindbc.opengl.GLSupport.gl11) {
+        Log.e("Bridge3DView: Failed to load OpenGL version 1.1 or higher. Support: ", retVal);
         return false;
     }
+    Log.i("Bridge3DView: OpenGL loaded via bindbc-opengl. Support: ", retVal);
     return true;
 }
 
@@ -49,9 +51,9 @@ private struct CameraControl {
 
 // Scene object with transform
 class SceneObject {
-    Vec3 position;
-    Vec3 rotation;
-    Vec3 scale;
+    bridge.gl_utils.Vec3 position;
+    bridge.gl_utils.Vec3 rotation;
+    bridge.gl_utils.Vec3 scale;
     ObjectType type;
     string id;
     
@@ -64,9 +66,9 @@ class SceneObject {
     this(string id, ObjectType type) {
         this.id = id;
         this.type = type;
-        position = vec3(0, 0, 0);
-        rotation = vec3(0, 0, 0);
-        scale = vec3(1, 1, 1);
+        position = bridge.gl_utils.vec3(0, 0, 0);
+        rotation = bridge.gl_utils.vec3(0, 0, 0);
+        scale = bridge.gl_utils.vec3(1, 1, 1);
 
         setupMesh();
     }
@@ -141,9 +143,24 @@ class SceneObject {
                 indices.length = 0; // No EBO for grid lines, drawing directly
                 vertexCount = cast(GLsizei)(vertices.length / 6); // Each line segment is 2 vertices
                 break;
+            case ObjectType.Sphere:
+                // TODO: Implement sphere mesh
+                Log.w("Sphere mesh not implemented yet in SceneObject.setupMesh");
+                vertices.length = 0;
+                indices.length = 0;
+                vertexCount = 0;
+                break;
+            case ObjectType.Cylinder:
+                // TODO: Implement cylinder mesh
+                Log.w("Cylinder mesh not implemented yet in SceneObject.setupMesh");
+                vertices.length = 0;
+                indices.length = 0;
+                vertexCount = 0;
+                break;
         }
 
-        if (vertices.length == 0) return;
+        if (vertices.length == 0 && type != ObjectType.Sphere && type != ObjectType.Cylinder) return; // Allow empty for unimplemented
+        if (vertices.length == 0) return; // General check
 
         glGenVertexArrays(1, &vao);
         glGenBuffers(1, &vbo);
@@ -179,8 +196,8 @@ class SceneObject {
     }
 
     // Model matrix for this object
-    Mat4 getModelMatrix() {
-        Mat4 model = Mat4.identity();
+    bridge.gl_utils.Mat4 getModelMatrix() {
+        bridge.gl_utils.Mat4 model = bridge.gl_utils.Mat4.identity();
         // Apply scale, then rotation, then translation (TRS)
         // This is a simplified TRS, a full matrix library would be better.
         // For now, we'll just do translation. Rotations/Scales need matrix math.
@@ -188,14 +205,14 @@ class SceneObject {
         // model = Mat4.rotationX(rotation.x) * model;
         // model = Mat4.rotationY(rotation.y) * model;
         // model = Mat4.rotationZ(rotation.z) * model;
-        model = Mat4.translation(position.x, position.y, position.z) * model;
+        model = bridge.gl_utils.Mat4.translation(position.x, position.y, position.z) * model;
         return model;
     }
 
     JSONValue toJSON() {
         return JSONValue([
             "id": JSONValue(id),
-            "type": JSONValue(cast(string)type),
+            "type": JSONValue(to!string(type)),
             "position": JSONValue([
                 "x": JSONValue(position.x),
                 "y": JSONValue(position.y),
@@ -219,8 +236,8 @@ class SceneObject {
 class Bridge3DView : Widget {
     private SceneObject[] objects;
     private CameraControl control;
-    private Vec3 cameraPos;
-    private Vec3 cameraRot;
+    private bridge.gl_utils.Vec3 cameraPos;
+    private bridge.gl_utils.Vec3 cameraRot;
     private float cameraFOV = 45.0f;
     
     private GLuint shaderProgram = 0;
@@ -228,13 +245,12 @@ class Bridge3DView : Widget {
 
     this() {
         super("bridge3d");
-        cameraPos = vec3(0, 2, 10);
-        cameraRot = vec3(0,0,0);
+        cameraPos = bridge.gl_utils.vec3(0, 2, 10);
+        cameraRot = bridge.gl_utils.vec3(0,0,0);
         backgroundColor = 0x202030;
         
-        // This ensures OpenGL context is ready for setup calls
-        // It's a bit of a hack; ideally, initGL is called once after window show.
-        postLayout( { initGL(); addDefaultObjects(); } );
+        // Use layoutFinished signal
+        this.layoutFinished.connect( { initGL(); addDefaultObjects(); } );
     }
     
     ~this() {
@@ -249,8 +265,8 @@ class Bridge3DView : Widget {
 
         // Check if GL is loaded, try to load if not (DLangUI usually handles this via GLDrawBuf)
         if (!glActiveTexture) { // A quick check if GL functions are loaded
-            if (!loadOpenGL()) { // bindbc-opengl's load function
-                 Log.e("Bridge3DView: Failed to load OpenGL functions!");
+            if (!loadGL()) { // bindbc-opengl's load function
+                 Log.e("Bridge3DView: Failed to load OpenGL functions via local loadGL!");
                  return;
             }
         }
@@ -273,7 +289,7 @@ class Bridge3DView : Widget {
         objects ~= grid;
         
         auto cube = new SceneObject("demo_cube", ObjectType.Cube);
-        cube.position = vec3(0, 0.5f, 0);
+        cube.position = bridge.gl_utils.vec3(0, 0.5f, 0);
         objects ~= cube;
 
         invalidate();
@@ -282,13 +298,13 @@ class Bridge3DView : Widget {
     override void onDraw(DrawBuf buf) {
         auto glbuf = cast(GLDrawBuf)buf;
         if (!glbuf) {
-            buf.drawText("GLDrawBuf not available", 10, 10, 0xFF0000);
+            // Log.e("GLDrawBuf not available"); // Removed drawText
             return;
         }
         if (shaderProgram == 0) {
              initGL(); // Try to init if not done (e.g. on first draw)
              if (shaderProgram == 0) {
-                buf.drawText("Shader Program Failed to Initialize", 10, 30, 0xFF0000);
+                // Log.e("Shader Program Failed to Initialize"); // Removed drawText
                 return;
              }
         }
@@ -305,21 +321,21 @@ class Bridge3DView : Widget {
 
         // Projection matrix
         float aspect = (height > 0) ? (cast(float)width / cast(float)height) : 1.0f;
-        Mat4 projection = Mat4.perspective(cameraFOV * (PI / 180.0f), aspect, 0.1f, 100.0f);
+        bridge.gl_utils.Mat4 projection = bridge.gl_utils.Mat4.perspective(cameraFOV * (PI / 180.0f), aspect, 0.1f, 100.0f);
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, projection.M.ptr);
 
         // View matrix (camera)
-        Mat4 view = Mat4.identity();
+        bridge.gl_utils.Mat4 view = bridge.gl_utils.Mat4.identity();
         // Apply rotations (order: Yaw, Pitch, Roll for FPS-like camera)
         // This is a simplified view matrix. Proper camera needs more robust math.
-        view = Mat4.translation(-cameraPos.x, -cameraPos.y, -cameraPos.z) * view; // Translate
+        view = bridge.gl_utils.Mat4.translation(-cameraPos.x, -cameraPos.y, -cameraPos.z) * view; // Translate
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, view.M.ptr);
 
         // Draw objects
         foreach(obj; objects) {
             if (obj.vao == 0) continue; // Skip if mesh not ready
 
-            Mat4 model = obj.getModelMatrix();
+            bridge.gl_utils.Mat4 model = obj.getModelMatrix();
             glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model.M.ptr);
 
             glBindVertexArray(obj.vao);
@@ -371,7 +387,7 @@ class Bridge3DView : Widget {
                     cameraRot.y += dx * control.rotationSpeed;
                     cameraRot.x += dy * control.rotationSpeed;
                     // Clamp pitch to avoid flipping
-                    cameraRot.x = std.math.clamp(cameraRot.x, -PI/2.0f + 0.01f, PI/2.0f - 0.01f);
+                    cameraRot.x = clamp(cameraRot.x, -PI/2.0f + 0.01f, PI/2.0f - 0.01f);
                     control.lastMousePos = Point(event.x, event.y);
                     invalidate();
                     handled = true;
@@ -400,12 +416,12 @@ class Bridge3DView : Widget {
     void updateFromState(JSONValue state) {
         if ("camera" in state) {
             auto cam = state["camera"];
-            cameraPos = vec3(
+            cameraPos = bridge.gl_utils.vec3(
                 cam["position"]["x"].floating,
                 cam["position"]["y"].floating,
                 cam["position"]["z"].floating
             );
-            cameraRot = vec3(
+            cameraRot = bridge.gl_utils.vec3(
                 cam["rotation"]["x"].floating,
                 cam["rotation"]["y"].floating,
                 cam["rotation"]["z"].floating
@@ -420,7 +436,7 @@ class Bridge3DView : Widget {
 class BridgeWindow : Window {
     private Bridge3DView mainView;
     private VerticalLayout sidePanel;
-    private WebSocket ws;
+    private vibe.http.client.WebSocketClient ws;
     private TabWidget tabs;
     
     this() {
@@ -469,7 +485,7 @@ class BridgeWindow : Window {
             auto fovSlider = new SliderWidget("fov");
             fovSlider.setRange(30, 120);
             fovSlider.position = cast(int)mainView.cameraFOV;
-            fovSlider.change = &onFOVChanged;
+            fovSlider.onPositionChanged = &onFOVChanged;
             viewTab.addChild(fovSlider);
             
             // Add tabs
@@ -490,8 +506,8 @@ class BridgeWindow : Window {
     }
     
     private bool onResetCamera(Widget w) {
-        mainView.cameraPos = vec3(0, 2, 10);
-        mainView.cameraRot = vec3(0, 0, 0);
+        mainView.cameraPos = bridge.gl_utils.vec3(0, 2, 10);
+        mainView.cameraRot = bridge.gl_utils.vec3(0, 0, 0);
         mainView.cameraFOV = 45.0f;
         if(auto fovSlider = cast(SliderWidget)tabs.findChildRecursive("fov")) {
             fovSlider.position = cast(int)mainView.cameraFOV;
@@ -501,18 +517,15 @@ class BridgeWindow : Window {
         return true;
     }
     
-    private bool onFOVChanged(Widget w) {
-        auto slider = cast(SliderWidget)w;
-        if (slider) {
-            mainView.cameraFOV = slider.position;
-            mainView.invalidate();
-            sendCameraState();
-        }
+    private bool onFOVChanged(Widget sliderWidget, int newPosition) {
+        mainView.cameraFOV = newPosition;
+        mainView.invalidate();
+        sendCameraState();
         return true;
     }
     
     private void sendCameraState() {
-        if (!ws) return;
+        if (!ws || ws.readyState != vibe.http.client.WebSocketReadyState.Open) return;
         
         auto cam = mainView.cameraPos;
         auto rot = mainView.cameraRot;
@@ -521,47 +534,72 @@ class BridgeWindow : Window {
             "type": JSONValue("camera_updated"),
             "camera": JSONValue([
                 "position": JSONValue([
-                    "x": cam.x,
-                    "y": cam.y,
-                    "z": cam.z
+                    "x": JSONValue(cam.x),
+                    "y": JSONValue(cam.y),
+                    "z": JSONValue(cam.z)
                 ]),
                 "rotation": JSONValue([
-                    "x": rot.x,
-                    "y": rot.y,
-                    "z": rot.z
+                    "x": JSONValue(rot.x),
+                    "y": JSONValue(rot.y),
+                    "z": JSONValue(rot.z)
                 ]),
-                "fov": fov
+                "fov": JSONValue(fov)
             ])
         ]).toString());
     }
     
     private void connectWebSocket() {
         try {
-            ws = connectWebSocket("ws://localhost:4040/bridge");
-            ws.onMessage = &onWebSocketMessage;
+            // Ensure vibe.d's event loop is running if not already handled by DLangUI/Platform
+            // runTask is for vibe.d's fiber-based tasks. DLangUI usually runs its own main loop.
+            // Direct call should be fine if vibe.d's event driver is compatible or started.
+            Log.i("Attempting to connect WebSocket to ws://localhost:4040/bridge");
+            ws = vibe.http.client.connectWebSocketClient("ws://localhost:4040/bridge");
+            Log.i("WebSocket connectWebSocketClient called.");
+
+            // WebSocketClient uses onTextMessage, onBinaryMessage, onError, onClose
+            ws.onTextMessage = &onWebSocketTextMessage;
+            ws.onClose = { 
+                Log.i("WebSocket connection closed."); 
+                // Optionally try to reconnect or update UI
+            };
+            // ws.onError = (string message) { Log.e("WebSocket error: ", message); };
+            Log.i("WebSocket event handlers assigned.");
+            
         } catch (Exception e) {
             Log.e("WebSocket connection error: ", e.msg);
+            Log.e("Full error: ", e.toString());
         }
     }
     
-    private void onWebSocketMessage(scope WebSocket ws, string message) {
+    private void onWebSocketTextMessage(string message) { 
         try {
+            Log.d("WebSocket message received: ", message);
             auto state = parseJSON(message);
-            mainView.updateFromState(state);
+            // Ensure state is not null and has expected structure before accessing
+            if (state.type != JSONType.null_) {
+                 mainView.updateFromState(state);
+            } else {
+                Log.w("Parsed JSON state is null from message: ", message);
+            }
+        } catch (JSONException e) {
+            Log.e("WebSocket JSON parsing error: ", e.msg, " for message: ", message);
         } catch (Exception e) {
-            Log.e("WebSocket message error: ", e.msg);
+            Log.e("WebSocket message processing error: ", e.msg);
         }
     }
     
     private bool onLayoutChanged(Widget source, int itemIndex) {
-        if (!ws) return false;
+        if (!ws || ws.readyState != vibe.http.client.WebSocketReadyState.Open) return false;
         
         // Send layout change to Gleam
-        ws.send(JSONValue([
-            "type": JSONValue("layout_changed"),
-            "layout": JSONValue(source.text.toString())
-        ]).toString());
-        
+        auto comboBox = cast(ComboBox)source;
+        if (comboBox) {
+            ws.send(JSONValue([
+                "type": JSONValue("layout_changed"),
+                "layout": JSONValue(comboBox.items[itemIndex])
+            ]).toString());
+        }
         return true;
     }
     
@@ -581,7 +619,9 @@ class BridgeWindow : Window {
     }
     
     override void close() {
-        if (ws) ws.close();
+        if (ws && ws.readyState == vibe.http.client.WebSocketReadyState.Open) {
+            ws.close();
+        }
         Platform.instance.closeWindow(this);
     }
     

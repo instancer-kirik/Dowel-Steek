@@ -1,0 +1,3 @@
+headers = /home/kirik/Code/Dowel-Steek/mobile-rewrite/zig-core/c_headers/dowel_minimal_api.h
+staticLibraries = libdowel-steek-minimal.a
+libraryPaths = /home/kirik/Code/Dowel-Steek/mobile-rewrite/zig-core/zig-out/lib

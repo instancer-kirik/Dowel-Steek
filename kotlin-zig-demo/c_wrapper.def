@@ -1,0 +1,3 @@
+headers = /home/kirik/Code/Dowel-Steek/kotlin-zig-demo/c_wrapper.h
+staticLibraries = libdowel-steek-c-wrapper.a
+libraryPaths = /home/kirik/Code/Dowel-Steek/kotlin-zig-demo

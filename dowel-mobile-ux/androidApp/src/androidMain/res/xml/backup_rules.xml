@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Include user data for backup -->
+    <include domain="sharedpref" path="." />
+    <include domain="database" path="." />
+    <include domain="file" path="." />
+    <include domain="external" path="." />
+
+    <!-- Exclude sensitive data -->
+    <exclude domain="sharedpref" path="auth_tokens.xml" />
+    <exclude domain="sharedpref" path="secure_preferences.xml" />
+    <exclude domain="database" path="secure.db" />
+    <exclude domain="file" path="private_keys/" />
+    <exclude domain="file" path="cache/" />
+    <exclude domain="file" path="temp/" />
+
+    <!-- Exclude app-specific cache directories -->
+    <exclude domain="file" path="image_cache/" />
+    <exclude domain="file" path="network_cache/" />
+</full-backup-content>

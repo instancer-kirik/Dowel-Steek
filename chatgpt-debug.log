@@ -1,0 +1,8 @@
+2025-Aug-24 20:53:24.9220849 - UIAppMain started
+Args: ["./dowel-steek-desktop", "--help"]
+2025-Aug-24 20:53:24.9221832 - Creating window
+2025-Aug-24 20:53:25.7808846 - Window created successfully
+2025-Aug-24 20:53:25.780956 - Creating ChatGPTViewerWindow
+2025-Aug-24 20:53:25.7933314 - ChatGPTViewerWindow created
+2025-Aug-24 20:53:25.7933964 - Main widget set
+2025-Aug-24 20:53:26.0254682 - Window shown, entering message loop

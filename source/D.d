@@ -1,227 +1,65 @@
-module D;
+module D; // This is the main module for the 'bridge_editor' configuration
 
 import dlangui;
-import dlangui.widgets.layouts;
-import dlangui.widgets.controls;
 import dlangui.platforms.common.platform;
-import dlangui.graphics.glsupport;
-import dlangui.graphics.gldrawbuf;
-import dlangui.core.types;
-import bridge.scene3d;
-import bridge.bridge_window;
-import bindbc.opengl;
+import dlangui.platforms.sdl.sdlapp; // For SDLPlatform if manual setup
+
+import bridge.bridge_window; // Our main editor window
+import bindbc.opengl;          // For bindbc.opengl.loadOpenGL
 import dlangui.core.logger;
+import bindbc.sdl; // <<< ADDED for SDL_Init
+import std.string : fromStringz; // <<< ADDED for fromStringz
+import std.conv : to; // For to!string if needed, though fromStringz is specific
 
-class MainWindow : Window {
-    private Scene3DWidget scene;
-    private VerticalLayout sidePanel;
-    private TabWidget tabs;
-    
-    this() {
-        super();  // Call base constructor without parameters
-        
-        try {
-            // Create main layout
-            auto mainLayout = new HorizontalLayout();
-            mainLayout.layoutWidth = FILL_PARENT;
-            mainLayout.layoutHeight = FILL_PARENT;
-            
-            // Create 3D scene view
-            scene = new Scene3DWidget();
-            scene.layoutWidth = FILL_PARENT;
-            scene.layoutHeight = FILL_PARENT;
-            mainLayout.addChild(scene);
-            
-            // Create side panel with tabs
-            tabs = new TabWidget("tabs");
-            tabs.layoutWidth = 250;
-            tabs.layoutHeight = FILL_PARENT;
-            
-            // Layout tab
-            auto layoutTab = new VerticalLayout();
-            layoutTab.padding(Rect(8, 8, 8, 8));
-            layoutTab.backgroundColor = 0x1E1E1E;
-            
-            auto layoutSelector = new ComboBox("layouts");
-            layoutSelector.items = ["Default", "Split", "Quad"];
-            layoutSelector.selectedItemIndex = 0;
-            layoutSelector.itemClick = &onLayoutChanged;
-            layoutTab.addChild(layoutSelector);
-            
-            // View controls tab
-            auto viewTab = new VerticalLayout();
-            viewTab.padding(Rect(8, 8, 8, 8));
-            viewTab.backgroundColor = 0x1E1E1E;
-            
-            // Add camera controls
-            viewTab.addChild(new TextWidget(null, "Camera Controls"d));
-            auto resetBtn = new Button("reset", "Reset Camera"d);
-            resetBtn.click = &onResetCamera;
-            viewTab.addChild(resetBtn);
-            
-            // Add FOV slider
-            viewTab.addChild(new TextWidget(null, "Field of View"d));
-            auto fovSlider = new SliderWidget("fov");
-            fovSlider.setRange(30, 120);
-            fovSlider.position = 45;
-            fovSlider.onSliderChange = &onFOVChanged;  // Fixed event handler name
-            viewTab.addChild(fovSlider);
-            
-            // Add tabs
-            tabs.addTab(layoutTab, "Layout"d);
-            tabs.addTab(viewTab, "View"d);
-            
-            mainLayout.addChild(tabs);
-            
-            // Set main widget
-            mainWidget = mainLayout;
-            
-        } catch (Exception e) {
-            Log.e("MainWindow init error: ", e.msg);
-        }
-    }
-    
-    private bool onResetCamera(Widget w) {
-        if (scene) {
-            scene.resetCamera();
-            return true;
-        }
-        return false;
-    }
-    
-    private bool onFOVChanged(Widget source, int value) {  // Fixed signature
-        if (scene) {
-            scene.setFOV(cast(float)value);
-            return true;
-        }
-        return false;
-    }
-    
-    private bool onLayoutChanged(Widget source, int itemIndex) {
-        if (scene) {
-            scene.setLayout(itemIndex);
-            return true;
-        }
-        return false;
-    }
-    
-    override void show() {
-        // Create window using correct API
-        auto win = Platform.instance.createWindow("3D Scene Editor"d, null,
-            WindowFlag.Resizable, 1280, 720);
-        if (win)
-            win.mainWidget = this;
-    }
-
-    // Implement required abstract methods
-    override @property dstring windowCaption() const {
-        return "3D Scene Editor"d;
-    }
-
-    override @property void windowCaption(dstring caption) {
-        // Ignore caption changes
-    }
-
-    override @property void windowIcon(DrawBufRef icon) {
-        // Ignore icon changes
-    }
-
-    override void invalidate() {
-        if (mainWidget)
-            mainWidget.invalidate();
-    }
-
-    override void close() {
-        Platform.instance.closeWindow(this);
-    }
-}
-
-// Custom 3D scene widget using DlangUI's OpenGL support
-class Scene3DWidget : Widget {
-    private SceneObject[] objects;
-    private vec3 cameraPos = vec3(0, 0, 10);
-    private vec3 cameraRot = vec3(0, 0, 0);
-    private float cameraFOV = 45.0f;
-    
-    this() {
-        super("scene3d");
-        backgroundColor = 0x2D2D2D;
-        
-        // Add default objects
-        addDefaultObjects();
-    }
-    
-    private void addDefaultObjects() {
-        // Add reference grid
-        auto grid = new SceneObject("grid", ObjectType.Grid);
-        grid.position = vec3(0, -2, 0);
-        objects ~= grid;
-        
-        // Add demo cube
-        auto cube = new SceneObject("demo_cube", ObjectType.Cube);
-        cube.position = vec3(0, 0, 0);
-        objects ~= cube;
-    }
-    
-    override void onDraw(DrawBuf buf) {
-        if (auto glbuf = cast(GLDrawBuf)buf) {
-            // Set up OpenGL state
-            glbuf.save();
-            
-            // Apply camera transform
-            glbuf.translate(cameraPos.x, cameraPos.y, cameraPos.z);
-            glbuf.rotateX(cameraRot.x);
-            glbuf.rotateY(cameraRot.y);
-            glbuf.rotateZ(cameraRot.z);
-            
-            // Draw objects
-            foreach(obj; objects) {
-                obj.render(glbuf);
-            }
-            
-            glbuf.restore();
-        }
-    }
-    
-    void resetCamera() {
-        cameraPos = vec3(0, 0, 10);
-        cameraRot = vec3(0, 0, 0);
-        invalidate();
-    }
-    
-    void setFOV(float fov) {
-        cameraFOV = fov;
-        invalidate();
-    }
-    
-    void setLayout(int layoutIndex) {
-        // Update object layout based on selected index
-        invalidate();
-    }
-    
-    override bool onMouseEvent(MouseEvent event) {
-        // Handle mouse input for camera control
-        return true;
-    }
-    
-    override bool onKeyEvent(KeyEvent event) {
-        // Handle keyboard input for camera control
-        return true;
-    }
-}
-
-mixin APP_ENTRY_POINT;
-
+// This UIAppMain will be the entry point for the 'bridge_editor' target
+// as specified by "mainSourceFile": "source/D.d" in dub.json
 extern (C) int UIAppMain(string[] args) {
-    // Initialize DlangUI with SDL backend
-    Platform.instance = Platform.create("sdl");
-    if (!Platform.instance)
-        return -1;
+    // Platform initialization:
+    // If your dub.json for bridge_editor uses "subConfigurations": {"dlangui": "sdl"},
+    // DLangUI often mixes in an APP_ENTRY_POINT that sets up Platform.instance.
+    // If not, or to be explicit:
+    if (!Platform.instance) {
+        Log.i("D.d: Manually initializing SDLPlatform for Bridge Editor.");
+        if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_EVENTS) != 0) {
+             Log.e("D.d: Failed to init SDL: ", fromStringz(SDL_GetError()));
+             return 1;
+        }
+        // SDL_Quit will be handled by SDLPlatform's destructor or a scope(exit) in main loop
+        Platform.setInstance(new SDLPlatform());
+    }
+    Platform.instance.uiTheme = "theme_default";
+
+    // Load OpenGL functions (from bindbc-opengl)
+    // This is important if Bridge3DView uses direct GL calls.
+    version(ENABLE_OPENGL) { // ENABLE_OPENGL should be in versions for bridge_editor config
+        auto supportLevel = bindbc.opengl.loadOpenGL(); // bindbc.opengl.GLSupport
+        if (supportLevel < bindbc.opengl.GLSupport.gl11) { // Check against bindbc.opengl's enum
+            Log.e("D.d: Failed to load required OpenGL version for Bridge Editor. Support: ", supportLevel);
+            // Depending on how critical GL is, you might return or let DLangUI try to proceed.
+            // return 1; 
+        } else {
+            Log.i("D.d: OpenGL loaded via bindbc-opengl. Support: ", supportLevel);
+        }
+    } else {
+        Log.w("D.d: ENABLE_OPENGL version is not set for bridge_editor. OpenGL features may not work.");
+    }
+
+    Window window;
+    try {
+        Log.i("D.d: Creating BridgeWindow...");
+        window = new BridgeWindow(); // This is our modernized window
+        window.show();               // This calls BridgeWindow.show()
+        Log.i("D.d: BridgeWindow.show() called.");
+    } catch (Exception e) {
+        Log.e("D.d: Error during BridgeWindow creation or show: ", e.msg);
+        if(window) window.close(); // Attempt to clean up
+        return 1;
+    }
     
-    // Create and show main window
-    Window window = new MainWindow();
-    window.show();
-    
-    // Run message loop
+    Log.i("D.d: Entering message loop for Bridge Editor...");
     return Platform.instance.enterMessageLoop();
 }
+
+// The old MainWindow, Scene3DWidget, etc. classes from this file are now OBSOLETE
+// if BridgeWindow is the new main interface. You can delete them from this file
+// to avoid confusion and errors.
