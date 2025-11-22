@@ -13,6 +13,7 @@ out/
 target/
 zig-out/
 zig-cache/
+.zig-cache/
 
 # Environment files
 .env
@@ -193,6 +194,21 @@ temp/
 *.pkg
 *.deb
 *.rpm
+
+# Compiled binaries (common names)
+backend
+dowel-steek-desktop
+notes-vault
+xdg-smart-open
+mobile-os-persistent
+mobile-os-persistent.o
+
+# Test binaries and demos
+safe_test
+integration_test
+final_demo
+*_demo
+*_test
 
 # Database files
 *.db
