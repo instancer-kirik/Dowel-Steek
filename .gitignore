@@ -210,6 +210,17 @@ final_demo
 *_demo
 *_test
 
+# Kotlin Native compiled files
+*.kexe
+*.klib
+
+# Object files and test binaries
+*.o
+test_closure
+test_simple
+terminal-ux-demo.kexe
+ux-showcase.kexe
+
 # Database files
 *.db
 *.sqlite
