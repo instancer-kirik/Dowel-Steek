@@ -88,6 +88,72 @@
       "targetType": "executable",
       "dflags": ["-main"],
       "versions": ["USE_SDL", "USE_FREETYPE", "BACKEND_SDL", "CHATGPT_VIEWER"]
+    },
+    {
+      "dependencies": {
+        "dlangui": "~>0.10.8"
+      },
+      "excludedSourceFiles": [
+        "source/app.d",
+        "source/D.d",
+        "source/desktop/*",
+        "source/taskbar/*",
+        "source/terminal/*",
+        "source/notes/*",
+        "source/visualizer/*",
+        "source/bridge/*",
+        "source/cli/*",
+        "source/editor.d",
+        "source/chatgpt_app.d",
+        "source/security/password_manager/gui.d",
+        "source/security/authenticator/gui.d",
+        "source/security/security_app.d"
+      ],
+      "mainSourceFile": "source/security/simple_security_app.d",
+      "name": "security_app",
+      "subConfigurations": {
+        "dlangui": "sdl"
+      },
+      "targetName": "dowel-steek-security",
+      "targetType": "executable",
+      "dflags": ["-main"],
+      "versions": ["USE_SDL", "USE_FREETYPE", "BACKEND_SDL", "SECURITY_APP"]
+    },
+    {
+      "dependencies": {
+        "dlangui": "~>0.10.8"
+      },
+      "excludedSourceFiles": [
+        "source/app.d",
+        "source/D.d",
+        "source/desktop/*",
+        "source/taskbar/*",
+        "source/terminal/*",
+        "source/notes/*",
+        "source/visualizer/*",
+        "source/bridge/*",
+        "source/cli/*",
+        "source/editor.d",
+        "source/chatgpt_app.d",
+        "source/security/password_manager/gui.d",
+        "source/security/authenticator/gui.d",
+        "source/security/security_app.d",
+        "source/security/simple_security_app.d"
+      ],
+      "mainSourceFile": "source/security/enhanced_security_app.d",
+      "name": "enhanced_security_app",
+      "subConfigurations": {
+        "dlangui": "sdl"
+      },
+      "targetName": "dowel-steek-enhanced-security",
+      "targetType": "executable",
+      "dflags": ["-main"],
+      "versions": [
+        "USE_SDL",
+        "USE_FREETYPE",
+        "BACKEND_SDL",
+        "ENHANCED_SECURITY_APP"
+      ]
     }
   ],
   "copyFiles": ["views/res/*"],
